@@ -1,0 +1,298 @@
+---
+// Algorithm.astro - Method section
+
+const basePath = import.meta.env.BASE_URL;
+---
+
+<section id="method" class="content-section alt-background">
+  <div class="section-container">
+    <h2 class="section-title">Method</h2>
+
+    <!-- Framework -->
+    <div class="method-block">
+      <div class="method-block-header">
+        <span class="method-tag">Framework</span>
+        <h3>A Two-Axis View of Reasoning Quality</h3>
+      </div>
+      <div class="method-block-body">
+        <p class="eq-intro">where <em class="math-var">X</em> = input prompt, <em class="math-var">Z</em> = model output:</p>
+        <div class="equation-box">
+          <span class="notation" data-tooltip="Total entropy of model outputs — overall variability of Z across all inputs">H(Z)</span>
+          &nbsp;=&nbsp;
+          <span class="notation elt-mi" data-tooltip="Mutual information — how much does the output change when the input changes? High = outputs are input-specific">I(X;&thinsp;Z)</span>
+          &nbsp;+&nbsp;
+          <span class="notation elt-cond" data-tooltip="Conditional entropy — for a fixed input, how varied are the outputs? High = model explores different strategies">H(Z&thinsp;|&thinsp;X)</span>
+        </div>
+
+        <!-- Figure 1 -->
+        <div class="framework-figure">
+          <img src={`${basePath}teaser-ragen-2.png`} alt="Four quadrants of reasoning on Entropy H and MI I" class="paper-fig" />
+          <p class="fig-caption"><strong>Figure 1.</strong> <strong class="qname-collapse">Template collapse</strong> (top-left): entropy looks healthy, but outputs are input-agnostic.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diagnosis -->
+    <div class="method-block">
+      <div class="method-block-header">
+        <span class="method-tag">Diagnosis</span>
+        <h3>Detecting Template Collapse</h3>
+      </div>
+      <div class="method-block-body">
+        <p class="diag-lead">Score every output against every input. In a healthy model, the diagonal dominates. Under collapse, all rows look the same.</p>
+
+        <div class="matrix-compare">
+          <!-- Healthy matrix -->
+          <div class="matrix-panel">
+            <div class="matrix-label matrix-label-good">Diverse Reasoning</div>
+            <table class="score-matrix">
+              <thead><tr><th></th><th>X<sub>1</sub></th><th>X<sub>2</sub></th><th>X<sub>3</sub></th></tr></thead>
+              <tbody>
+                <tr><th>Z<sub>1</sub></th><td class="hi">0.9</td><td class="lo">0.1</td><td class="lo">0.2</td></tr>
+                <tr><th>Z<sub>2</sub></th><td class="lo">0.2</td><td class="hi">0.8</td><td class="lo">0.1</td></tr>
+                <tr><th>Z<sub>3</sub></th><td class="lo">0.1</td><td class="lo">0.2</td><td class="hi">0.9</td></tr>
+              </tbody>
+            </table>
+            <div class="matrix-verdict good">Retrieval Acc = 100% &nbsp;&middot;&nbsp; MI high</div>
+          </div>
+
+          <!-- Collapsed matrix -->
+          <div class="matrix-panel">
+            <div class="matrix-label matrix-label-bad">Template Collapse</div>
+            <table class="score-matrix">
+              <thead><tr><th></th><th>X<sub>1</sub></th><th>X<sub>2</sub></th><th>X<sub>3</sub></th></tr></thead>
+              <tbody>
+                <tr><th>Z<sub>1</sub></th><td class="mid">0.5</td><td class="mid">0.5</td><td class="mid">0.4</td></tr>
+                <tr><th>Z<sub>2</sub></th><td class="mid">0.4</td><td class="mid">0.5</td><td class="mid">0.5</td></tr>
+                <tr><th>Z<sub>3</sub></th><td class="mid">0.5</td><td class="mid">0.4</td><td class="mid">0.5</td></tr>
+              </tbody>
+            </table>
+            <div class="matrix-verdict bad">Retrieval Acc &rarr; random &nbsp;&middot;&nbsp; MI &rarr; 0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNR Mechanism -->
+    <div class="method-block">
+      <div class="method-block-header">
+        <span class="method-tag">Mechanism</span>
+        <h3>Why Collapse Happens: Signal vs. Noise</h3>
+      </div>
+      <div class="method-block-body">
+        <img src={`${basePath}figure2.png`} alt="SNR mechanism diagram" class="paper-fig fig-mechanism" />
+        <div class="equation-box">
+          <span class="notation" data-tooltip="Total policy gradient applied at each update">g<sub>total</sub></span>
+          &nbsp;=&nbsp;
+          <span class="notation elt-signal" data-tooltip="Task gradient — strength proportional to reward variance across rollouts">g<sub>task</sub></span>
+          &nbsp;+&nbsp;
+          <span class="notation elt-noise" data-tooltip="Regularization gradient — KL/entropy penalty, input-agnostic, always present">g<sub>reg</sub></span>
+        </div>
+        <div class="snr-cards">
+          <div class="snr-card snr-signal">
+            <strong>Signal</strong> g<sub>task</sub> &mdash; scales with reward variance. Low variance &rarr; weak signal.
+          </div>
+          <div class="snr-card snr-noise">
+            <strong>Noise</strong> g<sub>reg</sub> &mdash; KL/entropy penalty, constant regardless of input.
+          </div>
+        </div>
+        <p class="snr-punchline">Low reward variance &rarr; noise dominates &rarr; outputs converge to a single template.</p>
+      </div>
+    </div>
+
+    <!-- Intervention -->
+    <div class="method-block intervention">
+      <div class="method-block-header">
+        <span class="method-tag intervention-tag">Intervention</span>
+        <h3>RAGEN-2: SNR-Adaptive Filtering</h3>
+      </div>
+      <div class="method-block-body">
+        <ol class="intervention-steps">
+          <li>Sample rollouts per prompt, compute reward variance.</li>
+          <li>Keep top &rho; fraction (high-signal prompts).</li>
+          <li>Run PPO / GRPO on the retained subset.</li>
+        </ol>
+        <div class="compat-note">
+          Compatible with PPO &middot; DAPO &middot; GRPO &middot; Dr. GRPO, etc.
+        </div>
+        <div class="rv-filter-fig-wrap">
+          <img src={`${basePath}rv-filter.png`} alt="RV-Filter overview" class="paper-fig fig-rv-filter" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style is:global>
+  /* === Method blocks === */
+  .method-block {
+    background: white;
+    border-radius: 14px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    border-left: 5px solid #2a2f6c;
+    transition: box-shadow 0.2s ease;
+  }
+  .method-block:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.11); }
+  .method-block.intervention {
+    border-left-color: #1a7a4a;
+    background: linear-gradient(135deg, #f0fff8 0%, #fff 100%);
+  }
+  .method-block-header {
+    display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1rem;
+  }
+  .method-tag {
+    background: #2a2f6c; color: white; font-size: 0.72rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px; text-transform: uppercase;
+    letter-spacing: 0.05em; white-space: nowrap;
+  }
+  .intervention-tag { background: #1a7a4a; }
+  .method-block-header h3 { margin: 0; font-size: 1.3rem; color: #1a1f3c; font-weight: 700; }
+  .method-block-body { color: #444; line-height: 1.7; }
+  .method-block-body p { margin-bottom: 0.8rem; }
+
+  /* === Equation box === */
+  .equation-box {
+    background: #f4f6ff; border: 1px solid #c0c8f0; border-radius: 10px;
+    padding: 0.9rem 1.5rem; font-family: 'Georgia', serif; font-size: 1.15rem;
+    font-style: italic; text-align: center; margin: 0.5rem 0; color: #2a2f6c;
+    overflow: visible; position: relative;
+  }
+
+  .eq-intro {
+    font-size: 0.9rem; color: #666; margin-bottom: 0.3rem;
+  }
+  .math-var {
+    font-family: 'Georgia', serif; color: #444;
+  }
+
+  /* Notation: hover tooltip on equation terms */
+  .notation {
+    position: relative; cursor: help;
+    border-bottom: 1px dashed #8890c0; padding-bottom: 1px;
+  }
+  .notation:hover::after {
+    content: attr(data-tooltip);
+    position: absolute; bottom: calc(100% + 10px); left: 50%;
+    transform: translateX(-50%); background: #1a1f3c; color: white;
+    padding: 8px 12px; border-radius: 8px; font-size: 0.82rem;
+    font-style: normal; font-weight: 400; font-family: 'Inter', sans-serif;
+    line-height: 1.45; white-space: normal; width: max-content;
+    max-width: 280px; z-index: 100; pointer-events: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  }
+  .notation:hover::before {
+    content: ''; position: absolute; bottom: calc(100% + 4px);
+    left: 50%; transform: translateX(-50%);
+    border: 6px solid transparent; border-top-color: #1a1f3c;
+    z-index: 100; pointer-events: none;
+  }
+
+  /* Color underlines override the default dashed */
+  .elt-mi { border-bottom: 2px solid #4a5ec0; }
+  .elt-cond { border-bottom: 2px solid #d08520; }
+  .elt-signal { border-bottom: 2px solid #2e7d32; }
+  .elt-noise { border-bottom: 2px solid #e65100; }
+
+  /* === Framework figure === */
+  .framework-figure { margin-top: 1.2rem; }
+  .framework-figure .paper-fig {
+    border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .fig-caption {
+    font-size: 0.88rem; color: #666; line-height: 1.55;
+    margin-top: 0.7rem; text-align: center;
+  }
+  .qname-collapse { color: #e65100; }
+
+  /* === Diagnosis: matrix comparison === */
+  .diag-lead {
+    font-size: 0.93rem; margin-bottom: 1rem;
+  }
+  .matrix-compare {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.2rem; margin: 0.5rem 0;
+  }
+  @media (max-width: 600px) { .matrix-compare { grid-template-columns: 1fr; } }
+
+  .matrix-panel {
+    text-align: center;
+  }
+  .matrix-label {
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 0.5rem;
+  }
+  .matrix-label-good { color: #2e7d32; }
+  .matrix-label-bad { color: #e65100; }
+
+  .score-matrix {
+    width: 100%; border-collapse: collapse; font-size: 0.88rem;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  }
+  .score-matrix th {
+    font-weight: 400; color: #666; padding: 6px 8px;
+    font-style: italic; font-family: 'Georgia', serif;
+  }
+  .score-matrix thead th {
+    border-bottom: 2px solid #e0e0e0;
+  }
+  .score-matrix tbody th {
+    text-align: right; border-right: 2px solid #e0e0e0;
+  }
+  .score-matrix td {
+    padding: 8px 10px; text-align: center; border-radius: 4px;
+  }
+  .score-matrix .hi {
+    background: #c8e6c9; color: #1b5e20; font-weight: 700;
+  }
+  .score-matrix .lo {
+    background: #f5f5f5; color: #aaa;
+  }
+  .score-matrix .mid {
+    background: #fff3e0; color: #bf6c00;
+  }
+
+  .matrix-verdict {
+    font-size: 0.78rem; margin-top: 0.5rem; font-weight: 600;
+    padding: 4px 8px; border-radius: 6px; display: inline-block;
+  }
+  .matrix-verdict.good { background: #e8f5e9; color: #2e7d32; }
+  .matrix-verdict.bad { background: #fff3e0; color: #e65100; }
+
+  /* === SNR cards === */
+  .snr-cards {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.8rem; margin: 0.8rem 0; font-size: 0.9rem; line-height: 1.55;
+  }
+  @media (max-width: 600px) { .snr-cards { grid-template-columns: 1fr; } }
+  .snr-card { padding: 1rem; border-radius: 10px; }
+  .snr-signal { background: #e8f5e9; border: 1px solid #a5d6a7; }
+  .snr-noise { background: #fff3e0; border: 1px solid #ffcc80; }
+  .snr-punchline {
+    font-size: 0.9rem; color: #e65100; text-align: center;
+    padding: 0.6rem 1rem; background: #fff8f0;
+    border-radius: 8px; border: 1px solid #ffe0b2; margin-top: 0.3rem;
+  }
+
+  /* === Figures === */
+  .paper-fig { width: 100%; height: auto; border-radius: 8px; display: block; }
+  .fig-mechanism { margin-bottom: 1rem; max-width: 860px; margin-left: auto; margin-right: auto; }
+  .rv-filter-fig-wrap { margin-top: 1.2rem; overflow-x: auto; }
+  .fig-rv-filter { min-width: 600px; width: 100%; }
+
+  /* === Intervention === */
+  .intervention-steps { margin: 0.5rem 0 0.8rem 1.2rem; line-height: 1.7; font-size: 0.93rem; }
+  .intervention-steps li { margin-bottom: 0.3rem; }
+  .compat-note {
+    background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px;
+    padding: 0.5rem 1rem; font-size: 0.85rem; color: #2e7d32; font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .method-block { padding: 1.5rem; }
+    .equation-box { font-size: 1rem; padding: 0.7rem 1rem; }
+    .eq-legend { grid-template-columns: 1fr; }
+  }
+</style>

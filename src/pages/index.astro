@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Algorithm from '../components/Algorithm.astro';
+// import ChartsSection from '../components/ChartsSection.astro';
+import FindingsSection from '../components/FindingsSection.astro';
+// import TrajectoryViewer from '../components/TrajectoryViewer.astro';  // Hidden but preserved
+
+import AuthorsCitation from '../components/AuthorsCitation.astro';
+
+// Import component-specific styles
+import '../styles/section.css';
+import '../styles/hero.css';
+import '../styles/authors.css';
+import '../styles/resources.css';
+// import '../styles/trajectoryViewer.css';  // Hidden but preserved
+
+
+const pageTitle = "RAGEN-2: Reasoning Collapse in Agentic RL";
+---
+<Layout title={pageTitle}>
+  <!-- 1. Teaser Section -->
+  <Hero />
+  
+  <!-- 2. Algorithm Section -->
+  <Algorithm />
+  
+  <!-- 4. Key Findings Section -->
+  <FindingsSection />
+  
+  <!-- Trajectory Viewer Section (Original Data Viewer) - Hidden but preserved -->
+  <!-- <TrajectoryViewer /> -->
+  
+  <!-- 5. Citation Section -->
+  <AuthorsCitation />
+</Layout>
+
+<script>
+  // import { initTrajectoryViewer } from '../scripts/trajectoryViewer';  // Hidden but preserved
+
+  import { initCitationCopy } from '../scripts/citation';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize citation copy functionality
+    initCitationCopy();
+    
+    // Initialize trajectory viewer - Hidden but preserved
+    // initTrajectoryViewer();
+    
+    // Text animation for hero section
+    const animateTitle = () => {
+      const titleElement = document.getElementById('animated-title');
+      
+      if (titleElement) {
+        // Handle the new two-line title structure
+        const titleLines = titleElement.querySelectorAll('.title-line');
+        
+        titleLines.forEach((line, lineIndex) => {
+          const lineText = (line as HTMLElement).innerText;
+          (line as HTMLElement).innerHTML = '';
+          
+          for (let i = 0; i < lineText.length; i++) {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'reveal-char';
+            charSpan.style.animationDelay = `${(lineIndex * lineText.length + i) * 0.05}s`;
+            
+            // Special handling for spaces to ensure they display correctly
+            if (lineText[i] === ' ') {
+              charSpan.innerHTML = '&nbsp;';
+            } else {
+              charSpan.innerText = lineText[i];
+            }
+            
+                         (line as HTMLElement).appendChild(charSpan);
+          }
+        });
+      }
+    };
+    
+    // Run animation
+    animateTitle();
+  });
+</script>
