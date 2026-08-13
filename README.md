@@ -37,3 +37,9 @@ The main homepage includes a top hero news banner:
 - `News: We released RAGEN-2`
 
 That banner links to `/v2/`.
+
+## LAGEN Research Page
+
+The latency-aware agents project page is implemented at `src/pages/lagen/index.astro`.
+With the repository's default `SITE_BASE=/lagen/`, preview it at `/lagen/lagen/`.
+Its paper, figures, and replay media live under `public/lagen/`.

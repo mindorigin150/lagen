@@ -1,0 +1,20 @@
+---
+const basePath = import.meta.env.BASE_URL;
+const sections = [
+  ["Protocol", "#protocol"],
+  ["Brittleness", "#brittleness"],
+  ["Training", "#training"],
+  ["Context", "#context"],
+  ["Replay", "#replay"],
+  ["Citation", "#citation"],
+];
+---
+<header class="lagen-header">
+  <div class="lagen-header-inner">
+    <a href={`${basePath}lagen/`} class="lagen-mark"><span class="lagen-mark-code">LAGEN</span><span>Latency-Aware Agents</span></a>
+    <nav aria-label="LAGEN research sections">
+      {sections.map(([label, href]) => <a href={href}>{label}</a>)}
+    </nav>
+    <a class="lab-link" href={basePath}>MLL Lab</a>
+  </div>
+</header>

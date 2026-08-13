@@ -1,0 +1,113 @@
+---
+import LagenLayout from "../../layouts/LagenLayout.astro";
+
+const basePath = import.meta.env.BASE_URL;
+const asset = (name: string) => `${basePath}lagen/${name}`;
+const citation = `@misc{latencyawareagents2026,\n  title={The Cost of Thinking: Evaluating Latency Sensitivity in Real-Time Foundation Model Agents},\n  author={Anonymous Authors},\n  year={2026},\n  note={Anonymous research draft}\n}`;
+---
+<LagenLayout title="LAGEN: Latency-Aware Agents">
+  <section class="lagen-hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">LAGEN / RESEARCH DRAFT</p>
+      <h1>Latency-Aware Agents</h1>
+      <p class="hero-subtitle">The Cost of Thinking: from deployment profiling to profile-conditioned control.</p>
+      <p class="hero-lede">Real deployment latency is not an implementation nuisance. It changes which state receives an otherwise valid action, and it can make a capable foundation-model agent fail before its decision arrives.</p>
+      <div class="hero-authors">
+        <p class="author-line">
+          <a href="https://zihanwang314.github.io/">Zenus Wang</a><sup>*†1</sup>,
+          <a href="https://chigui0.github.io/">Chi Gui</a><sup>†2</sup>,
+          <a href="#">Xing Jin</a><sup>†3</sup>,
+          <a href="https://qinengwang-aiden.github.io/">Qineng Wang</a><sup>†1</sup>,
+          <a href="https://lichengliu03.github.io/">Licheng Liu</a><sup>†4</sup>,
+          <a href="https://jameskrw.github.io/">Kangrui Wang</a><sup>1</sup>
+        </p>
+        <p class="author-line">
+          <a href="https://shiqichen17.github.io/">Shiqi Chen</a><sup>5</sup>,
+          <a href="https://scholar.google.com/citations?user=WR875gYAAAAJ&hl=en">Linjie Li</a><sup>6</sup>,
+          <a href="https://zyang-ur.github.io/">Zhengyuan Yang</a><sup>7</sup>,
+          <a href="https://williamzhangsjtu.github.io/">Pingyue Zhang</a><sup>1</sup>,
+          <a href="https://2prime.github.io/">Yiping Lu</a><sup>1</sup>,
+          <a href="https://jiajunwu.com/">Jiajun Wu</a><sup>8</sup>,
+          <a href="https://profiles.stanford.edu/fei-fei-li">Li Fei-Fei</a><sup>8</sup>
+        </p>
+        <p class="author-line">
+          <a href="https://www.microsoft.com/en-us/research/people/lijuanw/">Lijuan Wang</a><sup>7</sup>,
+          <a href="https://homes.cs.washington.edu/~yejin/">Yejin Choi</a><sup>8</sup>,
+          <a href="https://limanling.github.io/">Manling Li</a><sup>1</sup>
+        </p>
+        <p class="author-note"><sup>†</sup> Core Contributors &nbsp; <sup>*</sup> Project Lead</p>
+        <p class="affiliations"><sup>1</sup>Northwestern University · <sup>2</sup>UIUC · <sup>3</sup>University of British Columbia · <sup>4</sup>Imperial College London · <sup>5</sup>City University of Hong Kong · <sup>6</sup>University of Washington · <sup>7</sup>Microsoft · <sup>8</sup>Stanford University</p>
+      </div>
+      <div class="resource-row">
+        <a class="resource-button primary" href={asset("Latency_Aware_Agents_Paper_Draft.pdf")} target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+        <a class="resource-button" href="#citation">Citation</a>
+        <a class="resource-button" href={`${basePath}`}>Lab homepage</a>
+      </div>
+    </div>
+    <figure class="hero-media">
+      <video src={asset("demos/causal-fork.mp4")} poster={asset("demos/hero-teaser.webp")} muted autoplay loop playsinline preload="metadata" aria-label="The same Flappy Bird scene under two action-execution clocks"></video>
+      <figcaption><span>Same observation, different execution clocks</span><a href="#brittleness">Explore the evidence ↓</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="thesis-strip" aria-label="Core thesis">
+    <p class="section-kicker">Core thesis</p>
+    <p>A latency-aware agent profiles the deployment clock, replays its temporal structure, and conditions control policies on the timing regime they must act through.</p>
+  </section>
+
+  <section class="paper-section" id="protocol">
+    <div class="section-heading"><span class="section-number">01</span><div><p class="section-kicker">Latency-aware evaluation protocol</p><h2>Separate the observation clock from the inference clock.</h2><p>We decouple environment cadence <em>T<sub>k</sub></em> from inference delay <em>δ<sub>k</sub></em>. Fixed delays, stochastic jitter, and measured hardware traces become reproducible conditions instead of hidden runtime artifacts.</p></div></div>
+    <figure class="paper-figure wide"><img src={asset("figures/protocol.png")} alt="Diagram of observation cadence and inference latency in a real-time agent" loading="lazy" /><figcaption><strong>Protocol.</strong> A decision is executed when it arrives, not when it is requested. The familiar world-pausing evaluation is the δ = 0 special case.</figcaption></figure>
+    <div class="fact-grid"><div><b>T<sub>k</sub></b><span>observation cadence</span></div><div><b>δ<sub>k</sub></b><span>inference delay</span></div><div><b>τ<sub>k</sub></b><span>action arrival time</span></div></div>
+  </section>
+
+  <section class="paper-section tinted" id="brittleness">
+    <div class="section-heading"><span class="section-number">02</span><div><p class="section-kicker">Empirical study</p><h2>One tick of mismatch can erase a policy's advantage.</h2><p>Across three environments and three VLA families, policies trained at low latency collapse when evaluation latency shifts. The cliff is steepest in Flappy Bird and remains visible in long-horizon control.</p></div></div>
+    <figure class="paper-figure"><img src={asset("figures/vla-degradation.png")} alt="OpenVLA, pi zero point five, and GR00T performance under increasing evaluation latency" loading="lazy" /><figcaption><strong>VLA degradation.</strong> The same visual policy can move from a strong zero-latency score to near-zero return after a small execution delay.</figcaption></figure>
+    <figure class="paper-figure"><img src={asset("figures/flappy-heatmap.png")} alt="Train-evaluation latency heatmaps for Flappy Bird" loading="lazy" /><figcaption><strong>Train-evaluation mismatch.</strong> Performance concentrates near matched latency conditions rather than forming a latency-invariant policy.</figcaption></figure>
+    <div class="callout"><b>Deployment implication</b><span>Benchmarks that pause the world measure a special case. They can overstate the behavior a policy will deliver on target hardware.</span></div>
+  </section>
+
+  <section class="paper-section" id="jitter">
+    <div class="section-heading"><span class="section-number">03</span><div><p class="section-kicker">Latency variance</p><h2>Same mean. Different fate.</h2><p>Holding the mean delay fixed, stochastic profiles reduce return beyond a fixed delay. The tail of the profile matters because a late action can arrive after the control window has closed.</p></div></div>
+    <figure class="paper-figure"><img src={asset("figures/jitter-destructiveness.png")} alt="Small-model and VLA performance under fixed and stochastic latency profiles" loading="lazy" /><figcaption><strong>Jitter sensitivity.</strong> Relative return is normalized to fixed latency. Wider profiles are more destructive, especially on tasks with a narrow reaction window.</figcaption></figure>
+    <div class="media-row"><figure class="mini-media"><video src={asset("demos/jitter-replay.mp4")} muted controls playsinline preload="metadata" aria-label="Fixed and normal latency replay"></video><figcaption>Recorded replay: fixed delay versus a sampled latency profile.</figcaption></figure><div class="callout quiet"><b>What to report</b><span>Mean inference time is insufficient. Deployment profiles should expose temporal structure and tail percentiles such as p95 and p99.</span></div></div>
+  </section>
+
+  <section class="paper-section tinted" id="training">
+    <div class="section-heading"><span class="section-number">04</span><div><p class="section-kicker">Training for latency robustness</p><h2>Broader exposure helps, but task sensitivity sets the ceiling.</h2><p>Mixed-latency training lifts delayed evaluation on medium-sensitivity tasks. On Flappy Bird, the same intervention flattens the curve but cannot restore the zero-latency peak.</p></div></div>
+    <div class="figure-pair"><figure class="paper-figure"><img src={asset("figures/multilatency-training.png")} alt="Train-evaluation latency matrices across Flappy Bird, Demon Attack, and Deadly Corridor" loading="lazy" /><figcaption><strong>Multi-latency training.</strong> Robustness is task-dependent rather than a universal gain.</figcaption></figure><figure class="paper-figure"><img src={asset("figures/latency-conditioning.png")} alt="OpenVLA performance with and without explicit latency information" loading="lazy" /><figcaption><strong>Explicit conditioning.</strong> A latency channel helps where the task leaves room to adapt.</figcaption></figure></div>
+  </section>
+
+  <section class="paper-section" id="context">
+    <div class="section-heading"><span class="section-number">05</span><div><p class="section-kicker">Temporal context and representation</p><h2>More history is not automatically better.</h2><p>Memory interfaces have task-dependent value. The experiments show that simply retaining more frames does not reliably compensate for stale observations; the useful temporal resolution and span depend on the environment.</p></div></div>
+    <figure class="paper-figure"><img src={asset("figures/temporal-memory.png")} alt="Temporal memory input comparisons and final post-train reward" loading="lazy" /><figcaption><strong>Temporal memory.</strong> KV memory is competitive in this study, while plain frame stacks and stitched inputs are not uniformly useful.</figcaption></figure>
+  </section>
+
+  <section class="paper-section tinted" id="replay">
+    <div class="section-heading"><span class="section-number">06</span><div><p class="section-kicker">Deployment profiling and replay</p><h2>Measure the clock once, then replay it.</h2><p>Hardware changes the shape and scale of end-to-end delay. A measured profile can be replayed on a faster host for same-device calibration and controlled policy comparisons. Cross-device prediction remains an active experiment in the current draft.</p></div></div>
+    <figure class="paper-figure"><img src={asset("figures/profile-calibration.png")} alt="Latency profiles across hardware and same-device calibration results" loading="lazy" /><figcaption><strong>Profiling and calibration.</strong> Distinct hardware produces distinct latency distributions; replay preserves the deployment condition without repeated target-device training.</figcaption></figure>
+    <figure class="paper-figure"><img src={asset("figures/profile-replay-status.png")} alt="Cross-device replay draft status" loading="lazy" /><figcaption><strong>Draft status.</strong> Same-device calibration is populated; the cross-device prediction panel is explicitly marked pending in the supplied artifact.</figcaption></figure>
+    <div class="status-note"><span class="status-dot"></span><b>Evidence status</b><span>The cross-device panel is retained as a transparent draft artifact; entries marked “sim-cross pending” are not presented as completed results.</span></div>
+  </section>
+
+  <section class="conclusion-section">
+    <p class="section-kicker">Conclusion</p><h2>The deployment clock belongs inside the agent.</h2>
+    <div class="takeaway-grid"><div><span>01</span><p>Latency changes which state receives an otherwise valid action.</p></div><div><span>02</span><p>Mean delay alone cannot reproduce destructive temporal tails.</p></div><div><span>03</span><p>Timing-aware training and explicit conditioning make deployment latency a controllable variable.</p></div></div>
+  </section>
+
+  <section class="citation-section" id="citation">
+    <div><p class="section-kicker">Citation</p><h2>Cite the anonymous research draft</h2><p class="citation-intro">The author list and affiliations will be updated when the review period ends.</p></div>
+    <div class="citation-box"><button id="copy-citation" type="button" aria-label="Copy citation">Copy</button><pre><code id="citation-text">{citation}</code></pre></div>
+  </section>
+</LagenLayout>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>("#copy-citation");
+  const code = document.querySelector<HTMLElement>("#citation-text");
+  button?.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(code?.textContent ?? "");
+    button.textContent = "Copied";
+    window.setTimeout(() => { button.textContent = "Copy"; }, 1600);
+  });
+</script>
