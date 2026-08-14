@@ -109,36 +109,97 @@ const citation = `@misc{latencyawareagents2026,
   <section id="results" class="content-section lagen-section">
     <div class="section-container">
       <h2 class="section-title">Experiments</h2>
-      <p class="section-subtitle">Six questions about how deployment timing changes agent behavior.</p>
+      <p class="section-subtitle">Nine views of how the deployment clock changes agent behavior.</p>
 
       <div class="rq-block" id="rq1">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq1-body"><span class="rq-badge">RQ1</span><h3>Does inference latency change policy performance?</h3><span class="rq-summary">A small train-evaluation mismatch can erase a policy's advantage.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq1-body"><h4 class="rq-subheading">Performance collapses under delayed action arrival</h4><img src={asset('figures/vla-degradation.png')} alt="VLA performance under increasing evaluation latency" class="rq-fig" loading="lazy" /><p class="rq-caption">The same visual policy can move from a strong zero-latency score to near-zero return after a small execution delay.</p><img src={asset('figures/flappy-heatmap.png')} alt="Train-evaluation latency heatmaps for Flappy Bird" class="rq-fig" loading="lazy" /><p class="rq-caption">Performance concentrates near matched latency conditions rather than forming a latency-invariant policy.</p></div>
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq1-body"><span class="rq-badge">01</span><h3>Deployment profiling and replay calibration</h3><span class="rq-summary">A temporal replay preserves the behavior of a measured execution clock.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq1-body">
+          <h4 class="rq-subheading">Measure the clock, then replay its shape</h4>
+          <div class="rq-fig-grid">
+            <figure><img src={asset('figures/latency-profile-consecutive.png')} alt="Consecutive cross-device latency profiles" class="rq-fig" loading="lazy" /><figcaption>Measured consecutive latency distributions across five GPU classes.</figcaption></figure>
+            <figure><img src={asset('figures/latency-modeling-consecutive.png')} alt="Real versus replay-predicted return under consecutive latency profiles" class="rq-fig" loading="lazy" /><figcaption>Replay calibration by sampling method; lower return gap is better.</figcaption></figure>
+          </div>
+          <p class="rq-caption">Temporal replay has the smallest average real-to-sim return gap (10.8), compared with IID (18.1), Normal (44.1), and Fixed (87.4). The result supports replaying the measured temporal process rather than replacing it with a mean-only approximation.</p>
+        </div>
       </div>
 
       <div class="rq-block" id="rq2">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq2-body"><span class="rq-badge">RQ2</span><h3>Why is jitter worse than a fixed delay with the same mean?</h3><span class="rq-summary">Temporal tails matter when a late action misses the control window.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq2-body"><h4 class="rq-subheading">Same mean, different fate</h4><img src={asset('figures/jitter-destructiveness.png')} alt="Policy performance under fixed and stochastic latency profiles" class="rq-fig" loading="lazy" /><p class="rq-caption">Holding mean delay fixed, stochastic profiles reduce return beyond a fixed delay. Report the profile, not only mean inference time.</p><video src={asset('demos/jitter-replay.mp4')} controls muted playsinline preload="metadata" class="rq-video" aria-label="Fixed and sampled latency replay"></video></div>
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq2-body"><span class="rq-badge">02</span><h3>Cross-model latency degradation</h3><span class="rq-summary">Non-zero execution delay destabilizes existing VLA policies across tasks.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq2-body">
+          <h4 class="rq-subheading">The same brittleness appears across VLA families</h4>
+          <img src={asset('figures/vla-degradation.png')} alt="OpenVLA, pi0.5, and GR00T scores under increasing evaluation latency" class="rq-fig" loading="lazy" />
+          <p class="rq-caption">OpenVLA, π<sub>0.5</sub>, and GR00T are trained at zero latency and evaluated with increasing fixed delay. Flappy Bird and Demon Attack show the sharpest collapse; Deadly Corridor declines more gradually but does not remain latency-invariant.</p>
+        </div>
       </div>
 
       <div class="rq-block" id="rq3">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq3-body"><span class="rq-badge">RQ3</span><h3>Can broader latency exposure improve robustness?</h3><span class="rq-summary">Mixed-latency training lifts delayed evaluation, but task sensitivity sets the ceiling.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq3-body"><img src={asset('figures/multilatency-training.png')} alt="Train-evaluation latency matrices across three environments" class="rq-fig" loading="lazy" /><p class="rq-caption">Robustness is task-dependent: broader exposure flattens degradation without always restoring the zero-latency peak.</p></div>
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq3-body"><span class="rq-badge">03</span><h3>Train–evaluation latency matrices</h3><span class="rq-summary">Policies specialize near the latency they experience during training.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq3-body">
+          <h4 class="rq-subheading">Small agents and VLAs show the same local structure</h4>
+          <div class="rq-fig-grid">
+            <figure><img src={asset('figures/train-eval-small-uncapped.png')} alt="Small-policy train and evaluation latency matrices" class="rq-fig" loading="lazy" /><figcaption>Small-policy robustness across fixed, stochastic, and mixed profiles.</figcaption></figure>
+            <figure><img src={asset('figures/train-eval-vla.png')} alt="OpenVLA train and evaluation latency matrices" class="rq-fig" loading="lazy" /><figcaption>OpenVLA fixed-latency specialization across three environments.</figcaption></figure>
+          </div>
+          <p class="rq-caption">Performance is usually strongest on or near the training latency. Higher-latency specialists can sometimes transfer to shorter delays, while low-latency specialists degrade more sharply at longer delays. Mixed and stochastic training expand coverage, but no profile dominates every task.</p>
+        </div>
       </div>
 
       <div class="rq-block" id="rq4">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq4-body"><span class="rq-badge">RQ4</span><h3>Does explicit latency conditioning help?</h3><span class="rq-summary">A timing channel helps where the task leaves room to adapt.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq4-body"><img src={asset('figures/latency-conditioning.png')} alt="OpenVLA performance with and without explicit latency information" class="rq-fig" loading="lazy" /><p class="rq-caption">Explicit latency information gives the policy a chance to adapt its control to the deployment regime.</p></div>
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq4-body"><span class="rq-badge">04</span><h3>Matched-mean latency jitter</h3><span class="rq-summary">Mean latency alone misses the destructive effect of temporal variance and tails.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq4-body">
+          <h4 class="rq-subheading">Same mean, different control difficulty</h4>
+          <img src={asset('figures/jitter-destructiveness.png')} alt="Relative small-model and VLA scores under matched-mean latency profiles" class="rq-fig" loading="lazy" />
+          <p class="rq-caption">The fixed profile is normalized to 1.0 in each environment. Matched-mean stochastic profiles reduce both small-model and VLA return, while the latency density shows the variance and tail that a single mean hides.</p>
+        </div>
       </div>
 
       <div class="rq-block" id="rq5">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq5-body"><span class="rq-badge">RQ5</span><h3>Can temporal context compensate for stale observations?</h3><span class="rq-summary">More history is not automatically better; useful temporal resolution is task-dependent.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq5-body"><img src={asset('figures/temporal-memory.png')} alt="Temporal memory input comparisons and final post-train reward" class="rq-fig" loading="lazy" /><p class="rq-caption">KV memory is competitive in this study, while frame stacks and stitched inputs are not uniformly useful.</p></div>
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq5-body"><span class="rq-badge">05</span><h3>Observation cadence</h3><span class="rq-summary">Temporal resolution is task- and profile-dependent.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq5-body">
+          <h4 class="rq-subheading">More frequent updates are not universally better</h4>
+          <img src={asset('figures/observation-stride-uncapped.png')} alt="Return as a function of observation stride across three environments" class="rq-fig" loading="lazy" />
+          <p class="rq-caption">The best observation stride changes with the environment and with the fixed or stochastic latency profile. Dense updates preserve fine-grained dynamics, while wider spacing can expose change over a longer physical interval.</p>
+        </div>
       </div>
 
       <div class="rq-block" id="rq6">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq6-body"><span class="rq-badge">RQ6</span><h3>Can measured hardware profiles be replayed?</h3><span class="rq-summary">Hardware changes the shape and scale of end-to-end delay.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq6-body"><img src={asset('figures/profile-calibration.png')} alt="Latency profiles across hardware and same-device calibration results" class="rq-fig" loading="lazy" /><p class="rq-caption">Distinct hardware produces distinct latency distributions; replay preserves the deployment condition for controlled comparisons.</p><img src={asset('figures/profile-replay-status.png')} alt="Cross-device replay draft status" class="rq-fig" loading="lazy" /><p class="rq-caption"><strong>Draft status.</strong> Same-device calibration is populated. Entries marked “sim-cross pending” are not completed cross-device results.</p><div class="evidence-grid"><div class="evidence-item"><span class="evidence-num">!</span><span>Cross-device prediction remains an open experiment in the supplied draft artifact.</span></div></div></div>
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq6-body"><span class="rq-badge">06</span><h3>Context-window span</h3><span class="rq-summary">Longer history helps selectively, not monotonically.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq6-body">
+          <h4 class="rq-subheading">History length is another task condition</h4>
+          <img src={asset('figures/context-window-uncapped.png')} alt="Return as a function of context-window size across three environments" class="rq-fig" loading="lazy" />
+          <p class="rq-caption">Additional frames substantially help Demon Attack over part of the sweep, but produce limited or non-monotonic gains in Flappy Bird and Deadly Corridor. Temporal context should be tuned along both resolution and span.</p>
+        </div>
+      </div>
+
+      <div class="rq-block" id="rq7">
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq7-body"><span class="rq-badge">07</span><h3>VLA temporal-memory interfaces</h3><span class="rq-summary">The representation of history matters as much as the amount of history.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq7-body">
+          <h4 class="rq-subheading">Compare the interfaces at their final checkpoints</h4>
+          <img src={asset('figures/memory-methods.svg')} alt="Single-frame, ghost-trail, streaming KV, four-frame prompt, and mosaic memory interfaces" class="rq-fig" loading="lazy" />
+          <div class="rq-table-wrap"><img src={asset('figures/memory-comparison.png')} alt="Final memory-method comparison table across Flappy Bird, Demon Attack, and Deadly Corridor" class="rq-table" loading="lazy" /></div>
+          <p class="rq-caption">There is no universal best interface: Ghost trail and WanOFT lead on Flappy Bird, KV Flex is highest on Demon Attack, and the 2×2 mosaic is highest on Deadly Corridor.</p>
+        </div>
+      </div>
+
+      <div class="rq-block" id="rq8">
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq8-body"><span class="rq-badge">08</span><h3>Timing representation probing</h3><span class="rq-summary">Ordered visual history carries timing information that can be decoded linearly.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq8-body">
+          <h4 class="rq-subheading">Decodable timing is not automatically robust control</h4>
+          <div class="rq-fig-grid">
+            <figure><img src={asset('figures/timing-controls.png')} alt="Timing and action decodability under ordered and controlled inputs" class="rq-fig" loading="lazy" /><figcaption>Macro-F1 under ordered, shuffled, repeated-frame, and prompt-control inputs.</figcaption></figure>
+            <figure><img src={asset('figures/timing-buckets.png')} alt="Timing decodability by decision-step distance" class="rq-fig" loading="lazy" /><figcaption>Per-class timing F1 by distance from the relevant action.</figcaption></figure>
+          </div>
+          <p class="rq-caption">Shuffling or repeating the current frame removes much of the signal. DiT temporal-delta features generally decode timing better than action-query features, but representation decodability alone does not prove causal use by the policy.</p>
+        </div>
+      </div>
+
+      <div class="rq-block" id="rq9">
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq9-body"><span class="rq-badge">09</span><h3>Is language latency representation in the prompt useful?</h3><span class="rq-summary">Explicit timing language can be essential when one policy spans mixed deployment clocks.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq9-body">
+          <h4 class="rq-subheading">A timing token changes action selection</h4>
+          <img src={asset('figures/latency-prompt-ablation.png')} alt="OpenVLA mixed-latency Flappy Bird performance with and without a latency prompt" class="rq-fig" loading="lazy" />
+          <p class="rq-caption">With explicit latency information, returns remain around 433.8, 434.0, 341.3, 290.3, and 267.6 across latencies 0–4; removing the prompt reduces them to roughly 18.8, 14.3, 9.4, 6.5, and 4.5. This establishes the importance of the prompt in this mixed-latency Flappy Bird setting, not a universal sufficiency claim.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -152,16 +213,31 @@ const citation = `@misc{latencyawareagents2026,
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll<HTMLButtonElement>('.rq-header[data-target]').forEach((header) => {
+    const headers = [...document.querySelectorAll<HTMLButtonElement>('.rq-header[data-target]')];
+    const updateHeight = (header: HTMLButtonElement) => {
+      const targetId = header.dataset.target!;
+      const body = document.getElementById(targetId);
+      if (body && header.getAttribute('aria-expanded') === 'true') body.style.maxHeight = `${body.scrollHeight}px`;
+    };
+
+    headers.forEach((header) => {
       header.addEventListener('click', () => {
         const targetId = header.dataset.target!;
         const body = document.getElementById(targetId)!;
         const open = header.getAttribute('aria-expanded') === 'true';
-        document.querySelectorAll<HTMLButtonElement>('.rq-header[data-target]').forEach((other) => {
+        headers.forEach((other) => {
           const otherBody = document.getElementById(other.dataset.target!);
           other.setAttribute('aria-expanded', other === header && !open ? 'true' : 'false');
           if (otherBody) otherBody.style.maxHeight = other === header && !open ? `${otherBody.scrollHeight}px` : '0px';
         });
+      });
+    });
+
+    document.querySelectorAll<HTMLImageElement>('.rq-body img').forEach((image) => {
+      image.addEventListener('load', () => {
+        const body = image.closest<HTMLElement>('.rq-body');
+        const header = body ? headers.find((candidate) => candidate.dataset.target === body.id) : undefined;
+        if (header) updateHeight(header);
       });
     });
   });
