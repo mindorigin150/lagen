@@ -1,5 +1,9 @@
 ---
-// AuthorsCitation.astro - Citation section
+interface Props {
+  citation: string;
+}
+
+const { citation } = Astro.props as Props;
 ---
 <section id="citation" class="content-section alt-background">
   <div class="section-container">
@@ -18,15 +22,7 @@
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
           </button>
-          <pre><code>{`@misc{wang2026ragen2reasoningcollapseagentic,
-  title={RAGEN-2: Reasoning Collapse in Agentic RL},
-  author={Zenus Wang and Chi Gui and Xing Jin and Qineng Wang and Licheng Liu and Kangrui Wang and Shiqi Chen and Linjie Li and Zhengyuan Yang and Pingyue Zhang and Yiping Lu and Jiajun Wu and Li Fei-Fei and Lijuan Wang and Yejin Choi and Manling Li},
-  year={2026},
-  eprint={2604.06268},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG},
-  url={https://arxiv.org/abs/2604.06268},
-}`}</code></pre>
+          <pre><code>{citation}</code></pre>
         </div>
       </div>
     </div>
@@ -34,22 +30,6 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const copyButton = document.getElementById('copy-button');
-    const codeElement = document.querySelector('.citation-block pre code');
-
-    if (copyButton && codeElement) {
-      copyButton.addEventListener('click', async () => {
-        const citationText = codeElement.textContent || '';
-        try {
-          await navigator.clipboard.writeText(citationText);
-          copyButton.classList.add('copied');
-          setTimeout(() => copyButton.classList.remove('copied'), 2000);
-        } catch (err) {
-          copyButton.classList.add('copy-error');
-          setTimeout(() => copyButton.classList.remove('copy-error'), 2000);
-        }
-      });
-    }
-  });
+  import { initCitationCopy } from '../scripts/citation';
+  initCitationCopy();
 </script>

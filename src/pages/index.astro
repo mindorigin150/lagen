@@ -18,7 +18,7 @@ import '../styles/resources.css';
 
 const pageTitle = "RAGEN-2: Reasoning Collapse in Agentic RL";
 ---
-<Layout title={pageTitle}>
+<Layout title={pageTitle} project="ragen">
   <!-- 1. Teaser Section -->
   <Hero />
   
@@ -32,18 +32,21 @@ const pageTitle = "RAGEN-2: Reasoning Collapse in Agentic RL";
   <!-- <TrajectoryViewer /> -->
   
   <!-- 5. Citation Section -->
-  <AuthorsCitation />
+  <AuthorsCitation citation={`@misc{wang2026ragen2reasoningcollapseagentic,
+  title={RAGEN-2: Reasoning Collapse in Agentic RL},
+  author={Zenus Wang and Chi Gui and Xing Jin and Qineng Wang and Licheng Liu and Kangrui Wang and Shiqi Chen and Linjie Li and Zhengyuan Yang and Pingyue Zhang and Yiping Lu and Jiajun Wu and Li Fei-Fei and Lijuan Wang and Yejin Choi and Manling Li},
+  year={2026},
+  eprint={2604.06268},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2604.06268},
+}`} />
 </Layout>
 
 <script>
   // import { initTrajectoryViewer } from '../scripts/trajectoryViewer';  // Hidden but preserved
 
-  import { initCitationCopy } from '../scripts/citation';
-
   document.addEventListener('DOMContentLoaded', () => {
-    // Initialize citation copy functionality
-    initCitationCopy();
-    
     // Initialize trajectory viewer - Hidden but preserved
     // initTrajectoryViewer();
     

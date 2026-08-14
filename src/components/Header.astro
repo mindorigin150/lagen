@@ -1,20 +1,28 @@
 ---
 // src/components/Header.astro
 
+interface Props {
+  project: 'ragen' | 'lagen';
+  home: string;
+  logo: string;
+}
+
+const { project, home, logo } = Astro.props as Props;
+const isLagen = project === 'lagen';
 const basePath = import.meta.env.BASE_URL;
 ---
 
-<header>
+<header class:list={{ 'site-header': true, 'lagen-header': isLagen }}>
   <div class="container">
-      <a href={basePath} class="info-badge">
-          <img src={`${basePath}icon.png`} alt="RV-Filter Logo" class="badge-icon">
-          <span class="badge-text"><strong>RAGEN-2</strong></span>
+      <a href={home} class="info-badge">
+          <img src={logo} alt={isLagen ? 'LAGEN Logo' : 'RAGEN-2 Logo'} class="badge-icon">
+          <span class="badge-text"><strong>{isLagen ? 'LAGEN' : 'RAGEN-2'}</strong></span>
       </a>
 
       <div class="nav-wrapper">
           <nav class="main-nav">
                               <ul>
-                    <li class="nav-method"><a href="#method">Method</a></li>
+                    <li class="nav-method"><a href={isLagen ? '#method' : '#method'}>Method</a></li>
                     <li><a href="#results">Experiments</a></li>
                     <li class="nav-citation"><a href="#citation">Citation</a></li>
                     <li class="dropdown">
