@@ -15,7 +15,15 @@ body.lagen-site .authors-list a:hover { color: var(--lagen-coral); border-color:
 body.lagen-site .resource-button { color: var(--lagen-plum); border-color: var(--lagen-rule); background: var(--lagen-paper-raised); }
 body.lagen-site .resource-button:hover { background: #f1e8e0; border-color: var(--lagen-plum); }
 body.lagen-site .teaser-figure { background: var(--lagen-paper-raised); border: 1px solid var(--lagen-rule); }
-body.lagen-site .teaser-video { height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+body.lagen-site .flappy-demo { width: 100%; }
+body.lagen-site .teaser-video { width: 100%; height: auto; aspect-ratio: 9 / 8; object-fit: contain; display: block; background: #241f1c; }
+body.lagen-site .flappy-action-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--lagen-rule); background: var(--lagen-paper-raised); }
+body.lagen-site .flappy-action-pane { min-width: 0; padding: .8rem .9rem .9rem; }
+body.lagen-site .flappy-action-pane + .flappy-action-pane { border-left: 1px solid var(--lagen-rule); }
+body.lagen-site .flappy-pane-label { display: block; margin-bottom: .5rem; color: var(--lagen-plum); font: 700 .68rem/1 ui-monospace, SFMono-Regular, monospace; letter-spacing: .08em; }
+body.lagen-site .flappy-keycaps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+body.lagen-site .flappy-keycap { display: grid; min-height: 2.35rem; place-items: center; border: 1px solid var(--lagen-rule); border-radius: 4px; color: var(--lagen-muted); background: var(--lagen-paper); font: 700 .68rem/1 ui-monospace, SFMono-Regular, monospace; letter-spacing: .04em; transition: color .12s ease, background-color .12s ease, border-color .12s ease, box-shadow .12s ease; }
+body.lagen-site .flappy-keycap.is-active { border-color: var(--lagen-plum); color: var(--lagen-paper-raised); background: var(--lagen-plum); box-shadow: 0 0 0 2px rgba(125,52,85,.16); }
 body.lagen-site .lagen-figcaption, body.lagen-site .lagen-figcaption a { color: var(--lagen-soft); }
 body.lagen-site .lagen-figcaption a { color: var(--lagen-plum); }
 body.lagen-site .method-block, body.lagen-site .rq-block { border-color: var(--lagen-rule); }
@@ -68,5 +76,5 @@ body.lagen-site .rq-subheading:first-child { margin-top: 0; }
 body.lagen-site .evidence-grid { display: flex; flex-direction: column; gap: .7rem; margin: 1.1rem 0; }
 body.lagen-site .evidence-item { display: flex; gap: .8rem; padding: .9rem 1rem; border-radius: 10px; line-height: 1.5; font-size: .93rem; }
 body.lagen-site .evidence-num { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
-@media (max-width: 768px) { body.lagen-site .method-block { padding: 1.5rem; } body.lagen-site .method-block-header { align-items: flex-start; flex-wrap: wrap; } body.lagen-site .method-block-header h3 { font-size: 1.15rem; } body.lagen-site .rq-header { padding: 1.2rem 1.5rem; } body.lagen-site .rq-body { padding: 0 1.5rem; } body.lagen-site .rq-header[aria-expanded="true"] + .rq-body { padding: 0 1.5rem 1.5rem; } body.lagen-site .rq-summary { padding-left: 0; } }
+@media (max-width: 768px) { body.lagen-site .method-block { padding: 1.5rem; } body.lagen-site .method-block-header { align-items: flex-start; flex-wrap: wrap; } body.lagen-site .method-block-header h3 { font-size: 1.15rem; } body.lagen-site .rq-header { padding: 1.2rem 1.5rem; } body.lagen-site .rq-body { padding: 0 1.5rem; } body.lagen-site .rq-header[aria-expanded="true"] + .rq-body { padding: 0 1.5rem 1.5rem; } body.lagen-site .rq-summary { padding-left: 0; } body.lagen-site .flappy-action-pane { padding-inline: .55rem; } body.lagen-site .flappy-keycaps { gap: .35rem; } }
 @media (max-width: 768px) { body.lagen-site .lagen-takeaways { grid-template-columns: 1fr; } body.lagen-site .lagen-takeaways > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--lagen-rule); } }
