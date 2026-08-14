@@ -6,7 +6,6 @@ import '../../styles/hero.css';
 import '../../styles/authors.css';
 import '../../styles/resources.css';
 import '../../styles/lagen.css';
-import flappyActionEvents from '../../data/flappy-action-events.json';
 
 const basePath = import.meta.env.BASE_URL;
 const asset = (name: string) => `${basePath}lagen/${name}`;
@@ -81,24 +80,8 @@ const citation = `@misc{latencyawareagents2026,
     </div>
 
     <figure class="teaser-figure">
-      <div class="flappy-demo" data-flappy-demo>
-        <video id="flappy-demo-video" class="teaser-image teaser-video" src={asset('demos/causal-fork.mp4')} poster={asset('demos/hero-teaser.webp')} muted autoplay loop playsinline preload="metadata" aria-label="L0 and L2 Flappy Bird rollouts shown side by side"></video>
-        <div class="flappy-action-grid" aria-label="Actions applied in each Flappy Bird rollout">
-          <div class="flappy-action-pane" data-pane="l0">
-            <span class="flappy-pane-label">L0</span>
-            <div class="flappy-keycaps">
-              <span class="flappy-keycap" data-action="FLAP">FLAP</span>
-              <span class="flappy-keycap" data-action="NOOP">NOOP</span>
-            </div>
-          </div>
-          <div class="flappy-action-pane" data-pane="l2">
-            <span class="flappy-pane-label">L2</span>
-            <div class="flappy-keycaps">
-              <span class="flappy-keycap" data-action="FLAP">FLAP</span>
-              <span class="flappy-keycap" data-action="NOOP">NOOP</span>
-            </div>
-          </div>
-        </div>
+      <div class="flappy-demo">
+        <video class="teaser-image teaser-video" src={asset('demos/causal-fork.mp4')} poster={asset('demos/hero-teaser.webp')} muted autoplay loop playsinline preload="metadata" aria-label="L0 and L2 Flappy Bird rollouts shown side by side"></video>
       </div>
       <figcaption class="lagen-figcaption"><span>Same observation, different execution clocks</span><a href="#results">Inspect the evidence &darr;</a></figcaption>
     </figure>
@@ -166,29 +149,6 @@ const citation = `@misc{latencyawareagents2026,
 
   <AuthorsCitation citation={citation} />
 </Layout>
-
-<script define:vars={{ flappyActionEvents }}>
-  const flappyDemo = document.querySelector('[data-flappy-demo]');
-  const flappyVideo = flappyDemo.querySelector('#flappy-demo-video');
-  const flashDuration = 0.12;
-
-  const updateFlappyKeys = () => {
-    const currentTime = flappyVideo.currentTime;
-    flappyDemo.querySelectorAll('[data-pane]').forEach((pane) => {
-      const paneName = pane.dataset.pane;
-      const events = flappyActionEvents[paneName];
-      const flapActive = events.some((event) => event.action === 'FLAP' && currentTime >= event.time && currentTime < event.time + flashDuration);
-      pane.querySelectorAll('[data-action]').forEach((keycap) => {
-        const action = keycap.dataset.action;
-        const active = action === 'FLAP' ? flapActive : !flapActive;
-        keycap.classList.toggle('is-active', active);
-      });
-    });
-    window.requestAnimationFrame(updateFlappyKeys);
-  };
-
-  window.requestAnimationFrame(updateFlappyKeys);
-</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
