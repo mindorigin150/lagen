@@ -109,14 +109,14 @@ const citation = `@misc{latencyawareagents2026,
   <section id="results" class="content-section lagen-section">
     <div class="section-container">
       <h2 class="section-title">Experiments</h2>
-      <p class="section-subtitle">Nine views of how the deployment clock changes agent behavior.</p>
+      <p class="section-subtitle">Eight views of how the deployment clock changes agent behavior.</p>
 
       <div class="rq-block" id="rq1">
         <button class="rq-header" type="button" aria-expanded="false" data-target="rq1-body"><span class="rq-badge">01</span><h3>Deployment profiling and replay calibration</h3><span class="rq-summary">A temporal replay preserves the behavior of a measured execution clock.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
         <div class="rq-body" id="rq1-body">
           <h4 class="rq-subheading">Measure the clock, then replay its shape</h4>
-          <div class="rq-fig-grid">
-            <figure><img src={asset('figures/latency-profile-consecutive.png')} alt="Consecutive cross-device latency profiles" class="rq-fig" loading="lazy" /><figcaption>Measured consecutive latency distributions across five GPU classes.</figcaption></figure>
+          <div class="rq-figure-stack">
+            <figure class="rq-profile-figure"><img src={asset('figures/latency-profile-consecutive.png')} alt="Consecutive cross-device latency profiles" class="rq-fig" loading="lazy" /><figcaption>Measured consecutive latency distributions across five GPU classes.</figcaption></figure>
             <figure><img src={asset('figures/latency-modeling-consecutive.png')} alt="Real versus replay-predicted return under consecutive latency profiles" class="rq-fig" loading="lazy" /><figcaption>Replay calibration by sampling method; lower return gap is better.</figcaption></figure>
           </div>
           <p class="rq-caption">Temporal replay has the smallest average real-to-sim return gap (10.8), compared with IID (18.1), Normal (44.1), and Fixed (87.4). The result supports replaying the measured temporal process rather than replacing it with a mean-only approximation.</p>
@@ -136,7 +136,7 @@ const citation = `@misc{latencyawareagents2026,
         <button class="rq-header" type="button" aria-expanded="false" data-target="rq3-body"><span class="rq-badge">03</span><h3>Train–evaluation latency matrices</h3><span class="rq-summary">Policies specialize near the latency they experience during training.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
         <div class="rq-body" id="rq3-body">
           <h4 class="rq-subheading">Small agents and VLAs show the same local structure</h4>
-          <div class="rq-fig-grid">
+          <div class="rq-figure-stack">
             <figure><img src={asset('figures/train-eval-small-uncapped.png')} alt="Small-policy train and evaluation latency matrices" class="rq-fig" loading="lazy" /><figcaption>Small-policy robustness across fixed, stochastic, and mixed profiles.</figcaption></figure>
             <figure><img src={asset('figures/train-eval-vla.png')} alt="OpenVLA train and evaluation latency matrices" class="rq-fig" loading="lazy" /><figcaption>OpenVLA fixed-latency specialization across three environments.</figcaption></figure>
           </div>
@@ -154,26 +154,20 @@ const citation = `@misc{latencyawareagents2026,
       </div>
 
       <div class="rq-block" id="rq5">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq5-body"><span class="rq-badge">05</span><h3>Observation cadence</h3><span class="rq-summary">Temporal resolution is task- and profile-dependent.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq5-body"><span class="rq-badge">05</span><h3>Temporal resolution and span</h3><span class="rq-summary">Observation cadence and history length are both task- and profile-dependent.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
         <div class="rq-body" id="rq5-body">
-          <h4 class="rq-subheading">More frequent updates are not universally better</h4>
+          <h4 class="rq-subheading">Observation cadence: more frequent updates are not universally better</h4>
           <img src={asset('figures/observation-stride-uncapped.png')} alt="Return as a function of observation stride across three environments" class="rq-fig" loading="lazy" />
           <p class="rq-caption">The best observation stride changes with the environment and with the fixed or stochastic latency profile. Dense updates preserve fine-grained dynamics, while wider spacing can expose change over a longer physical interval.</p>
-        </div>
-      </div>
-
-      <div class="rq-block" id="rq6">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq6-body"><span class="rq-badge">06</span><h3>Context-window span</h3><span class="rq-summary">Longer history helps selectively, not monotonically.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq6-body">
-          <h4 class="rq-subheading">History length is another task condition</h4>
+          <h4 class="rq-subheading">Context-window span: longer history helps selectively</h4>
           <img src={asset('figures/context-window-uncapped.png')} alt="Return as a function of context-window size across three environments" class="rq-fig" loading="lazy" />
           <p class="rq-caption">Additional frames substantially help Demon Attack over part of the sweep, but produce limited or non-monotonic gains in Flappy Bird and Deadly Corridor. Temporal context should be tuned along both resolution and span.</p>
         </div>
       </div>
 
-      <div class="rq-block" id="rq7">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq7-body"><span class="rq-badge">07</span><h3>VLA temporal-memory interfaces</h3><span class="rq-summary">The representation of history matters as much as the amount of history.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq7-body">
+      <div class="rq-block" id="rq6">
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq6-body"><span class="rq-badge">06</span><h3>VLA temporal-memory interfaces</h3><span class="rq-summary">The representation of history matters as much as the amount of history.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq6-body">
           <h4 class="rq-subheading">Compare the interfaces at their final checkpoints</h4>
           <img src={asset('figures/memory-methods.svg')} alt="Single-frame, ghost-trail, streaming KV, four-frame prompt, and mosaic memory interfaces" class="rq-fig" loading="lazy" />
           <div class="rq-table-wrap"><img src={asset('figures/memory-comparison.png')} alt="Final memory-method comparison table across Flappy Bird, Demon Attack, and Deadly Corridor" class="rq-table" loading="lazy" /></div>
@@ -181,11 +175,11 @@ const citation = `@misc{latencyawareagents2026,
         </div>
       </div>
 
-      <div class="rq-block" id="rq8">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq8-body"><span class="rq-badge">08</span><h3>Timing representation probing</h3><span class="rq-summary">Ordered visual history carries timing information that can be decoded linearly.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq8-body">
+      <div class="rq-block" id="rq7">
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq7-body"><span class="rq-badge">07</span><h3>Timing representation probing</h3><span class="rq-summary">Ordered visual history carries timing information that can be decoded linearly.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq7-body">
           <h4 class="rq-subheading">Decodable timing is not automatically robust control</h4>
-          <div class="rq-fig-grid">
+          <div class="rq-figure-stack">
             <figure><img src={asset('figures/timing-controls.png')} alt="Timing and action decodability under ordered and controlled inputs" class="rq-fig" loading="lazy" /><figcaption>Macro-F1 under ordered, shuffled, repeated-frame, and prompt-control inputs.</figcaption></figure>
             <figure><img src={asset('figures/timing-buckets.png')} alt="Timing decodability by decision-step distance" class="rq-fig" loading="lazy" /><figcaption>Per-class timing F1 by distance from the relevant action.</figcaption></figure>
           </div>
@@ -193,9 +187,9 @@ const citation = `@misc{latencyawareagents2026,
         </div>
       </div>
 
-      <div class="rq-block" id="rq9">
-        <button class="rq-header" type="button" aria-expanded="false" data-target="rq9-body"><span class="rq-badge">09</span><h3>Is language latency representation in the prompt useful?</h3><span class="rq-summary">Explicit timing language can be essential when one policy spans mixed deployment clocks.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
-        <div class="rq-body" id="rq9-body">
+      <div class="rq-block" id="rq8">
+        <button class="rq-header" type="button" aria-expanded="false" data-target="rq8-body"><span class="rq-badge">08</span><h3>Is language latency representation in the prompt useful?</h3><span class="rq-summary">Explicit timing language can be essential when one policy spans mixed deployment clocks.</span><span class="rq-chevron" aria-hidden="true">&#8964;</span></button>
+        <div class="rq-body" id="rq8-body">
           <h4 class="rq-subheading">A timing token changes action selection</h4>
           <img src={asset('figures/latency-prompt-ablation.png')} alt="OpenVLA mixed-latency Flappy Bird performance with and without a latency prompt" class="rq-fig" loading="lazy" />
           <p class="rq-caption">With explicit latency information, returns remain around 433.8, 434.0, 341.3, 290.3, and 267.6 across latencies 0–4; removing the prompt reduces them to roughly 18.8, 14.3, 9.4, 6.5, and 4.5. This establishes the importance of the prompt in this mixed-latency Flappy Bird setting, not a universal sufficiency claim.</p>
