@@ -16,7 +16,7 @@ body.lagen-site .resource-button { color: var(--lagen-plum); border-color: var(-
 body.lagen-site .resource-button:hover { background: #f1e8e0; border-color: var(--lagen-plum); }
 body.lagen-site .teaser-figure { background: var(--lagen-paper-raised); border: 1px solid var(--lagen-rule); }
 body.lagen-site .flappy-demo { width: 100%; }
-body.lagen-site .teaser-video { width: 100%; height: auto; aspect-ratio: 9 / 8; object-fit: contain; display: block; background: #241f1c; }
+body.lagen-site .teaser-video { width: 100%; height: auto; aspect-ratio: 72 / 53; object-fit: contain; display: block; background: #241f1c; }
 body.lagen-site .lagen-figcaption, body.lagen-site .lagen-figcaption a { color: var(--lagen-soft); }
 body.lagen-site .lagen-figcaption a { color: var(--lagen-plum); }
 body.lagen-site .method-block, body.lagen-site .rq-block { border-color: var(--lagen-rule); }

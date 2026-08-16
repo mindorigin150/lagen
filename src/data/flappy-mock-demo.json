@@ -1,0 +1,21 @@
+{
+  "seed": 92,
+  "hidden_setup_actions": [
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    1, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0
+  ],
+  "visible_input": {
+    "tick": 5,
+    "action": "FLAP"
+  },
+  "lanes": {
+    "l0": {
+      "latency_raw_frames": 0
+    },
+    "l3": {
+      "latency_raw_frames": 3
+    }
+  }
+}

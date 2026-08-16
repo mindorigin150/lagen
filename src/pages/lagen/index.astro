@@ -9,6 +9,7 @@ import '../../styles/lagen.css';
 
 const basePath = import.meta.env.BASE_URL;
 const asset = (name: string) => `${basePath}lagen/${name}`;
+const heroMediaVersion = 'mock-flappy-l3-v8';
 const pageTitle = 'LAGEN: Latency-Aware Agents';
 const citation = `@misc{latencyawareagents2026,
   title={The Cost of Thinking: Evaluating Latency Sensitivity in Real-Time Foundation Model Agents},
@@ -81,9 +82,9 @@ const citation = `@misc{latencyawareagents2026,
 
     <figure class="teaser-figure">
       <div class="flappy-demo">
-        <video class="teaser-image teaser-video" src={asset('demos/causal-fork.mp4')} poster={asset('demos/hero-teaser.webp')} muted autoplay loop playsinline preload="metadata" aria-label="L0 and L2 Flappy Bird rollouts shown side by side"></video>
+        <video class="teaser-image teaser-video" src={`${asset('demos/causal-fork.mp4')}?v=${heroMediaVersion}`} poster={`${asset('demos/hero-teaser.webp')}?v=${heroMediaVersion}`} muted autoplay loop playsinline preload="metadata" aria-label="Hand-mocked Flappy Bird demonstration comparing Latency 0 and Latency 3, with one synchronized FLAP input after five free-fall frames"></video>
       </div>
-      <figcaption class="lagen-figcaption"><span>Same observation, different execution clocks</span><a href="#results">Inspect the evidence &darr;</a></figcaption>
+      <figcaption class="lagen-figcaption"><span>One hand-mocked FLAP, two execution clocks: Latency 0 vs Latency 3</span><a href="#results">See the experiments &darr;</a></figcaption>
     </figure>
   </section>
 
