@@ -1,11 +1,24 @@
+type CarouselRequest = {
+  tick: number;
+  action: string;
+};
+
 type CarouselVideo = {
   src: string;
   poster: string;
   label: string;
+  requests: CarouselRequest[];
+  stateFps: number;
+  encodedFps: number;
 };
 
 type CarouselGroup = {
+  id: string;
   comparison: string;
+  mediaWidth: number;
+  mediaHeight: number;
+  requestDisplayFrames: number;
+  actionKeys: Record<string, string[]>;
   videos: CarouselVideo[];
 };
 
@@ -18,6 +31,11 @@ const initLatencyCarousel = () => {
   const tabs = [...root.querySelectorAll<HTMLButtonElement>('[data-carousel-tab]')];
   const slides = [...root.querySelectorAll<HTMLElement>('[data-carousel-slide]')];
   const videos = slides.map((slide) => slide.querySelector<HTMLVideoElement>('[data-carousel-video]')!);
+  const media = slides.map((slide) => slide.querySelector<HTMLElement>('[data-carousel-media]')!);
+  const actionKeys = slides.map((slide) => [
+    ...slide.querySelectorAll<HTMLElement>('[data-action-key]'),
+  ]);
+  const stage = root.querySelector<HTMLElement>('.latency-carousel-stage')!;
   const viewport = root.querySelector<HTMLElement>('[data-carousel-viewport]')!;
   const track = root.querySelector<HTMLElement>('[data-carousel-track]')!;
   const previous = root.querySelector<HTMLButtonElement>('[data-carousel-prev]')!;
@@ -30,11 +48,95 @@ const initLatencyCarousel = () => {
   let activeGroupIndex = 0;
   let transitionLocked = false;
   let transitionTimer: number | null = null;
+  let actionAnimationFrame: number | null = null;
+  let geometryAnimationFrame: number | null = null;
 
-  const playVideo = (video: HTMLVideoElement) => {
-    void video.play().catch((error: DOMException) => {
+  const setActionKeys = (slideIndex: number, active: Set<string>) => {
+    actionKeys[slideIndex].forEach((key) => {
+      key.classList.toggle('is-active', active.has(key.dataset.actionKey!));
+    });
+  };
+
+  const clearActionKeys = () => {
+    const idle = new Set<string>();
+    slides.forEach((_, index) => setActionKeys(index, idle));
+  };
+
+  const updateActionKeys = (slideIndex: number) => {
+    const group = groups[activeGroupIndex];
+    const item = group.videos[slideIndex];
+    const frame = Math.floor(videos[slideIndex].currentTime * item.encodedFps);
+    const active = new Set<string>();
+
+    for (const request of item.requests) {
+      const startFrame = request.tick * item.encodedFps / item.stateFps;
+      if (frame < startFrame || frame >= startFrame + group.requestDisplayFrames) continue;
+      if (request.action !== 'NOOP') {
+        group.actionKeys[request.action].forEach((key) => active.add(key));
+      }
+      break;
+    }
+
+    setActionKeys(slideIndex, active);
+  };
+
+  const stopActionSync = () => {
+    if (actionAnimationFrame !== null) window.cancelAnimationFrame(actionAnimationFrame);
+    actionAnimationFrame = null;
+  };
+
+  const startActionSync = (slideIndex: number) => {
+    stopActionSync();
+    const video = videos[slideIndex];
+    const sync = () => {
+      if (slideIndex !== activeIndex || video.paused) {
+        actionAnimationFrame = null;
+        return;
+      }
+      updateActionKeys(slideIndex);
+      actionAnimationFrame = window.requestAnimationFrame(sync);
+    };
+    sync();
+  };
+
+  const playVideo = (video: HTMLVideoElement, slideIndex: number) => {
+    void video.play().then(() => startActionSync(slideIndex)).catch((error: DOMException) => {
       if (error.name !== 'AbortError') throw error;
     });
+  };
+
+  const updateGeometry = () => {
+    geometryAnimationFrame = null;
+    const stageRect = stage.getBoundingClientRect();
+    const viewportRect = viewport.getBoundingClientRect();
+    const activeMedia = media[activeIndex];
+    const activeSlide = slides[activeIndex];
+    const trackStyles = window.getComputedStyle(track);
+    const sideScale = Number.parseFloat(trackStyles.getPropertyValue('--latency-carousel-side-scale'));
+    const sidePeek = Number.parseFloat(trackStyles.getPropertyValue('--latency-carousel-side-peek'));
+    const sideOffset = (viewport.clientWidth + activeSlide.offsetWidth * sideScale) / 2 - sidePeek;
+    const mediaLeft = viewportRect.left - stageRect.left + (viewport.clientWidth - activeMedia.offsetWidth) / 2;
+    const mediaTop = viewportRect.top - stageRect.top + (track.offsetHeight - activeSlide.offsetHeight) / 2;
+
+    track.style.setProperty('--latency-carousel-side-offset', `${sideOffset}px`);
+    stage.style.setProperty(
+      '--latency-carousel-arrow-y',
+      `${mediaTop + activeMedia.offsetHeight / 2}px`,
+    );
+    stage.style.setProperty(
+      '--latency-carousel-media-left',
+      `${mediaLeft}px`,
+    );
+    stage.style.setProperty(
+      '--latency-carousel-media-right',
+      `${stageRect.width - mediaLeft - activeMedia.offsetWidth}px`,
+    );
+    viewport.style.height = `${track.offsetHeight}px`;
+  };
+
+  const scheduleGeometry = () => {
+    if (geometryAnimationFrame !== null) window.cancelAnimationFrame(geometryAnimationFrame);
+    geometryAnimationFrame = window.requestAnimationFrame(updateGeometry);
   };
 
   const positionFor = (index: number, centerIndex: number) => {
@@ -52,6 +154,8 @@ const initLatencyCarousel = () => {
     const wrapIndex = wrapIndexFor(index, direction);
     const moveSlideFocus = slides.includes(document.activeElement as HTMLElement);
     activeIndex = index;
+    stopActionSync();
+    clearActionKeys();
 
     slides.forEach((slide, slideIndex) => {
       const isCenter = slideIndex === activeIndex;
@@ -70,7 +174,7 @@ const initLatencyCarousel = () => {
         video.preload = 'metadata';
         video.pause();
         video.load();
-        playVideo(video);
+        playVideo(video, slideIndex);
       } else {
         video.pause();
         video.removeAttribute('autoplay');
@@ -81,6 +185,7 @@ const initLatencyCarousel = () => {
 
     current.textContent = String(activeIndex + 1).padStart(2, '0');
     if (moveSlideFocus) slides[activeIndex].focus();
+    scheduleGeometry();
   };
 
   const selectSlide = (targetIndex: number) => {
@@ -111,8 +216,12 @@ const initLatencyCarousel = () => {
     activeGroupIndex = groupIndex;
     activeIndex = -1;
     transitionLocked = false;
+    stopActionSync();
+    clearActionKeys();
     if (transitionTimer !== null) window.clearTimeout(transitionTimer);
     transitionTimer = null;
+    viewport.style.height = `${viewport.offsetHeight}px`;
+    root.dataset.carouselEnvironment = group.id;
 
     tabs.forEach((tab, index) => {
       const isSelected = index === activeGroupIndex;
@@ -129,6 +238,8 @@ const initLatencyCarousel = () => {
       clearVideo(video);
       video.src = item.src;
       video.poster = item.poster;
+      video.width = group.mediaWidth;
+      video.height = group.mediaHeight;
       video.muted = true;
       video.loop = true;
       video.playsInline = true;
@@ -208,6 +319,7 @@ const initLatencyCarousel = () => {
 
   track.addEventListener('pointerup', finishPointer);
   track.addEventListener('pointercancel', cancelPointer);
+  window.addEventListener('resize', scheduleGeometry);
 
   loadGroup(0);
 };
