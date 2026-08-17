@@ -9,13 +9,13 @@ import '../../styles/lagen.css';
 
 const basePath = import.meta.env.BASE_URL;
 const asset = (name: string) => `${basePath}lagen/${name}`;
-const mediaVersion = '20260817';
+const mediaVersion = '20260817b';
 const mediaAsset = (name: string) => `${asset(name)}?v=${mediaVersion}`;
 const demoGroups = [
   {
     id: 'flappy-bird',
     title: 'Flappy Bird',
-    comparison: 'Latency 0 vs Latency 5',
+    comparison: 'Left: No Latency · Right: Latency 5',
     videos: [
       ['demo-candidates/flappy/F01-l5.mp4', 'demo-candidates/flappy/F01-l5.webp'],
       ['demo-candidates/flappy/F06-l5.mp4', 'demo-candidates/flappy/F06-l5.webp'],
@@ -25,7 +25,7 @@ const demoGroups = [
   {
     id: 'demon-attack',
     title: 'Demon Attack',
-    comparison: 'Latency 0 vs Latency 6',
+    comparison: 'Left: No Latency · Right: Latency 6',
     videos: [
       ['demo-candidates/demon_attack/D03.mp4', 'demo-candidates/demon_attack/D03.webp'],
       ['demo-candidates/demon_attack/D07.mp4', 'demo-candidates/demon_attack/D07.webp'],
@@ -35,7 +35,7 @@ const demoGroups = [
   {
     id: 'deadly-corridor',
     title: 'Deadly Corridor',
-    comparison: 'Latency 0 vs Latency 6',
+    comparison: 'Left: No Latency · Right: Latency 6',
     videos: [
       ['demo-candidates/deadly_corridor/videos/C03-l6.mp4', 'demo-candidates/deadly_corridor/posters/C03-l6.webp'],
       ['demo-candidates/deadly_corridor/videos/C04-l6.mp4', 'demo-candidates/deadly_corridor/posters/C04-l6.webp'],
@@ -44,7 +44,6 @@ const demoGroups = [
   },
 ];
 const carouselData = demoGroups.map((group) => ({
-  title: group.title,
   comparison: group.comparison,
   videos: group.videos.map(([video, poster], index) => ({
     src: mediaAsset(video),
@@ -168,7 +167,7 @@ const citation = `@misc{latencyawareagents2026,
                 class="latency-carousel-slide"
                 data-carousel-slide={index}
                 aria-hidden={index !== 1}
-                aria-label={`${initialCarouselGroup.title} comparison ${index + 1} of 3`}
+                aria-label={item.label}
                 role="group"
                 tabindex={index === 1 ? 0 : -1}
                 data-carousel-position={initialCarouselPositions[index]}

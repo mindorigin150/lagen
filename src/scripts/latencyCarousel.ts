@@ -5,7 +5,6 @@ type CarouselVideo = {
 };
 
 type CarouselGroup = {
-  title: string;
   comparison: string;
   videos: CarouselVideo[];
 };
@@ -25,15 +24,12 @@ const initLatencyCarousel = () => {
   const next = root.querySelector<HTMLButtonElement>('[data-carousel-next]')!;
   const current = root.querySelector<HTMLElement>('[data-carousel-current]')!;
   const context = root.querySelector<HTMLElement>('[data-carousel-context]')!;
-  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const animationDuration = 460;
 
   let activeIndex = -1;
   let activeGroupIndex = 0;
   let transitionLocked = false;
   let transitionTimer: number | null = null;
-
-  const reducedMotion = () => motionQuery.matches;
 
   const playVideo = (video: HTMLVideoElement) => {
     void video.play().catch((error: DOMException) => {
@@ -52,7 +48,7 @@ const initLatencyCarousel = () => {
     return undefined;
   };
 
-  const updateSlideState = (index: number, direction: CarouselDirection | undefined, animate: boolean) => {
+  const updateSlideState = (index: number, direction: CarouselDirection | undefined) => {
     const wrapIndex = wrapIndexFor(index, direction);
     const moveSlideFocus = slides.includes(document.activeElement as HTMLElement);
     activeIndex = index;
@@ -67,7 +63,7 @@ const initLatencyCarousel = () => {
       slide.setAttribute('aria-hidden', String(!isCenter));
       slide.tabIndex = isCenter ? 0 : -1;
       slide.removeAttribute('data-carousel-wrap');
-      if (animate && slideIndex === wrapIndex) slide.dataset.carouselWrap = direction!;
+      if (slideIndex === wrapIndex) slide.dataset.carouselWrap = direction!;
 
       if (isCenter) {
         video.autoplay = true;
@@ -93,17 +89,13 @@ const initLatencyCarousel = () => {
 
     const distance = (index - activeIndex + slides.length) % slides.length;
     const direction: CarouselDirection = distance === 1 ? 'next' : 'previous';
-    const animate = !reducedMotion();
-
-    transitionLocked = animate;
-    updateSlideState(index, direction, animate);
-    if (animate) {
-      transitionTimer = window.setTimeout(() => {
-        slides.forEach((slide) => slide.removeAttribute('data-carousel-wrap'));
-        transitionLocked = false;
-        transitionTimer = null;
-      }, animationDuration);
-    }
+    transitionLocked = true;
+    updateSlideState(index, direction);
+    transitionTimer = window.setTimeout(() => {
+      slides.forEach((slide) => slide.removeAttribute('data-carousel-wrap'));
+      transitionLocked = false;
+      transitionTimer = null;
+    }, animationDuration);
   };
 
   const clearVideo = (video: HTMLVideoElement) => {
@@ -142,10 +134,10 @@ const initLatencyCarousel = () => {
       video.playsInline = true;
       video.preload = index === 1 ? 'metadata' : 'none';
       video.setAttribute('aria-label', item.label);
-      slide.setAttribute('aria-label', `${group.title} comparison ${index + 1} of ${slides.length}`);
+      slide.setAttribute('aria-label', item.label);
     });
 
-    updateSlideState(1, undefined, false);
+    updateSlideState(1, undefined);
   };
 
   tabs.forEach((tab, index) => {
