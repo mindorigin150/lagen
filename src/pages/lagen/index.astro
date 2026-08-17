@@ -53,6 +53,7 @@ const carouselData = demoGroups.map((group) => ({
   })),
 }));
 const initialCarouselGroup = carouselData[0];
+const initialCarouselPositions = ['left', 'center', 'right'];
 const pageTitle = 'LAGEN: Latency-Aware Agents';
 const citation = `@misc{latencyawareagents2026,
   title={The Cost of Thinking: Evaluating Latency Sensitivity in Real-Time Foundation Model Agents},
@@ -151,8 +152,8 @@ const citation = `@misc{latencyawareagents2026,
       <p class="latency-carousel-context" data-carousel-context>{initialCarouselGroup.comparison}</p>
 
       <div class="latency-carousel-stage">
-        <button class="latency-carousel-arrow latency-carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous comparison" disabled>
-          <span aria-hidden="true">&larr;</span>
+        <button class="latency-carousel-arrow latency-carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous comparison">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
         </button>
         <div
           class="latency-carousel-viewport"
@@ -166,10 +167,12 @@ const citation = `@misc{latencyawareagents2026,
               <article
                 class="latency-carousel-slide"
                 data-carousel-slide={index}
-                aria-hidden={index !== 0}
+                aria-hidden={index !== 1}
                 aria-label={`${initialCarouselGroup.title} comparison ${index + 1} of 3`}
                 role="group"
-                tabindex={index === 0 ? 0 : -1}
+                tabindex={index === 1 ? 0 : -1}
+                data-carousel-position={initialCarouselPositions[index]}
+                class:list={{ 'is-active': index === 1 }}
               >
                 <div class="latency-carousel-media-well">
                   <figure class="curated-demo-card">
@@ -180,7 +183,8 @@ const citation = `@misc{latencyawareagents2026,
                       muted
                       loop
                       playsinline
-                      preload={index === 0 ? 'metadata' : 'none'}
+                      autoplay={index === 1}
+                      preload={index === 1 ? 'metadata' : 'none'}
                       aria-label={item.label}
                       tabindex="-1"
                       data-carousel-video
@@ -191,9 +195,9 @@ const citation = `@misc{latencyawareagents2026,
             ))}
           </div>
         </div>
-        <span class="latency-carousel-count" aria-live="polite"><span data-carousel-current>01</span><span aria-hidden="true"> / 03</span></span>
+        <span class="latency-carousel-count" aria-live="polite"><span data-carousel-current>02</span><span aria-hidden="true"> / 03</span></span>
         <button class="latency-carousel-arrow latency-carousel-arrow-next" type="button" data-carousel-next aria-label="Next comparison">
-          <span aria-hidden="true">&rarr;</span>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
         </button>
       </div>
     </div>

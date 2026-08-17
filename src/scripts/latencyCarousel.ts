@@ -10,6 +10,8 @@ type CarouselGroup = {
   videos: CarouselVideo[];
 };
 
+type CarouselDirection = 'next' | 'previous';
+
 const initLatencyCarousel = () => {
   const root = document.querySelector<HTMLElement>('[data-latency-carousel]')!;
 
@@ -17,76 +19,91 @@ const initLatencyCarousel = () => {
   const tabs = [...root.querySelectorAll<HTMLButtonElement>('[data-carousel-tab]')];
   const slides = [...root.querySelectorAll<HTMLElement>('[data-carousel-slide]')];
   const videos = slides.map((slide) => slide.querySelector<HTMLVideoElement>('[data-carousel-video]')!);
-  const track = root.querySelector<HTMLElement>('[data-carousel-track]')!;
   const viewport = root.querySelector<HTMLElement>('[data-carousel-viewport]')!;
+  const track = root.querySelector<HTMLElement>('[data-carousel-track]')!;
   const previous = root.querySelector<HTMLButtonElement>('[data-carousel-prev]')!;
   const next = root.querySelector<HTMLButtonElement>('[data-carousel-next]')!;
   const current = root.querySelector<HTMLElement>('[data-carousel-current]')!;
   const context = root.querySelector<HTMLElement>('[data-carousel-context]')!;
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const animationDuration = 460;
 
   let activeIndex = -1;
   let activeGroupIndex = 0;
-  let scrollFrame: number | null = null;
+  let transitionLocked = false;
+  let transitionTimer: number | null = null;
 
   const reducedMotion = () => motionQuery.matches;
+
   const playVideo = (video: HTMLVideoElement) => {
     void video.play().catch((error: DOMException) => {
       if (error.name !== 'AbortError') throw error;
     });
   };
 
-  const updateControls = () => {
-    previous.disabled = activeIndex === 0;
-    next.disabled = activeIndex === slides.length - 1;
-    current.textContent = String(activeIndex + 1).padStart(2, '0');
+  const positionFor = (index: number, centerIndex: number) => {
+    if (index === centerIndex) return 'center';
+    return index === (centerIndex + 1) % slides.length ? 'right' : 'left';
   };
 
-  const nearestSlide = () => {
-    const trackBounds = track.getBoundingClientRect();
-    const trackCenter = trackBounds.left + track.clientWidth / 2;
-    return slides.reduce((nearest, slide, index) => {
-      const bounds = slide.getBoundingClientRect();
-      const distance = Math.abs(bounds.left + bounds.width / 2 - trackCenter);
-      return distance < nearest.distance ? { index, distance } : nearest;
-    }, { index: 0, distance: Number.POSITIVE_INFINITY }).index;
+  const wrapIndexFor = (centerIndex: number, direction: CarouselDirection | undefined) => {
+    if (direction === 'next') return (centerIndex + 1) % slides.length;
+    if (direction === 'previous') return (centerIndex + 2) % slides.length;
+    return undefined;
   };
 
-  const scrollToSlide = (index: number, animate = true) => {
-    const slide = slides[index];
-    const left = slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2;
-    track.scrollTo({ left, behavior: animate && !reducedMotion() ? 'smooth' : 'auto' });
-  };
-
-  const updateSlideState = (index: number, shouldScroll: boolean) => {
-    if (index === activeIndex) {
-      if (shouldScroll) scrollToSlide(index);
-      return;
-    }
-
+  const updateSlideState = (index: number, direction: CarouselDirection | undefined, animate: boolean) => {
+    const wrapIndex = wrapIndexFor(index, direction);
+    const moveSlideFocus = slides.includes(document.activeElement as HTMLElement);
     activeIndex = index;
-    slides.forEach((slide, slideIndex) => {
-      const isActive = slideIndex === activeIndex;
-      slide.setAttribute('aria-hidden', String(!isActive));
-      slide.tabIndex = isActive ? 0 : -1;
-      slide.classList.toggle('is-active', isActive);
 
+    slides.forEach((slide, slideIndex) => {
+      const isCenter = slideIndex === activeIndex;
+      const position = positionFor(slideIndex, activeIndex);
       const video = videos[slideIndex];
-      if (isActive) {
-        const shouldPlay = !reducedMotion();
-        video.autoplay = shouldPlay;
+
+      slide.dataset.carouselPosition = position;
+      slide.classList.toggle('is-active', isCenter);
+      slide.setAttribute('aria-hidden', String(!isCenter));
+      slide.tabIndex = isCenter ? 0 : -1;
+      slide.removeAttribute('data-carousel-wrap');
+      if (animate && slideIndex === wrapIndex) slide.dataset.carouselWrap = direction!;
+
+      if (isCenter) {
+        video.autoplay = true;
         video.preload = 'metadata';
+        video.pause();
         video.load();
-        if (shouldPlay) playVideo(video);
+        playVideo(video);
       } else {
         video.pause();
-        if (document.activeElement === slide) slide.blur();
         video.removeAttribute('autoplay');
+        video.preload = 'none';
+        if (document.activeElement === slide) slide.blur();
       }
     });
 
-    updateControls();
-    if (shouldScroll) scrollToSlide(index);
+    current.textContent = String(activeIndex + 1).padStart(2, '0');
+    if (moveSlideFocus) slides[activeIndex].focus();
+  };
+
+  const selectSlide = (targetIndex: number) => {
+    const index = (targetIndex + slides.length) % slides.length;
+    if (index === activeIndex || transitionLocked) return;
+
+    const distance = (index - activeIndex + slides.length) % slides.length;
+    const direction: CarouselDirection = distance === 1 ? 'next' : 'previous';
+    const animate = !reducedMotion();
+
+    transitionLocked = animate;
+    updateSlideState(index, direction, animate);
+    if (animate) {
+      transitionTimer = window.setTimeout(() => {
+        slides.forEach((slide) => slide.removeAttribute('data-carousel-wrap'));
+        transitionLocked = false;
+        transitionTimer = null;
+      }, animationDuration);
+    }
   };
 
   const clearVideo = (video: HTMLVideoElement) => {
@@ -101,6 +118,9 @@ const initLatencyCarousel = () => {
     const group = groups[groupIndex];
     activeGroupIndex = groupIndex;
     activeIndex = -1;
+    transitionLocked = false;
+    if (transitionTimer !== null) window.clearTimeout(transitionTimer);
+    transitionTimer = null;
 
     tabs.forEach((tab, index) => {
       const isSelected = index === activeGroupIndex;
@@ -120,17 +140,12 @@ const initLatencyCarousel = () => {
       video.muted = true;
       video.loop = true;
       video.playsInline = true;
-      video.preload = index === 0 ? 'metadata' : 'none';
+      video.preload = index === 1 ? 'metadata' : 'none';
       video.setAttribute('aria-label', item.label);
       slide.setAttribute('aria-label', `${group.title} comparison ${index + 1} of ${slides.length}`);
     });
 
-    scrollToSlide(0, false);
-    updateSlideState(0, false);
-  };
-
-  const selectSlide = (index: number) => {
-    updateSlideState(index, true);
+    updateSlideState(1, undefined, false);
   };
 
   tabs.forEach((tab, index) => {
@@ -155,8 +170,8 @@ const initLatencyCarousel = () => {
 
   viewport.addEventListener('keydown', (event) => {
     let targetIndex: number | undefined;
-    if (event.key === 'ArrowLeft' && activeIndex > 0) targetIndex = activeIndex - 1;
-    if (event.key === 'ArrowRight' && activeIndex < slides.length - 1) targetIndex = activeIndex + 1;
+    if (event.key === 'ArrowLeft') targetIndex = activeIndex - 1;
+    if (event.key === 'ArrowRight') targetIndex = activeIndex + 1;
     if (event.key === 'Home') targetIndex = 0;
     if (event.key === 'End') targetIndex = slides.length - 1;
     if (targetIndex === undefined) return;
@@ -164,61 +179,44 @@ const initLatencyCarousel = () => {
     selectSlide(targetIndex);
   });
 
-  track.addEventListener('scroll', () => {
-    if (scrollFrame !== null) cancelAnimationFrame(scrollFrame);
-    scrollFrame = requestAnimationFrame(() => {
-      scrollFrame = null;
-      updateSlideState(nearestSlide(), false);
-    });
-  }, { passive: true });
-
   let pointerId = -1;
   let pointerStartX = 0;
-  let pointerStartScroll = 0;
 
   track.addEventListener('pointerdown', (event) => {
     if (event.pointerType === 'mouse' && event.button !== 0) return;
     pointerId = event.pointerId;
     pointerStartX = event.clientX;
-    pointerStartScroll = track.scrollLeft;
-    track.style.scrollBehavior = 'auto';
     track.classList.add('is-dragging');
     track.setPointerCapture(pointerId);
   });
 
   track.addEventListener('pointermove', (event) => {
     if (event.pointerId !== pointerId) return;
-    const distance = event.clientX - pointerStartX;
-    if (Math.abs(distance) > 4) event.preventDefault();
-    track.scrollLeft = pointerStartScroll - distance;
+    if (Math.abs(event.clientX - pointerStartX) > 4) event.preventDefault();
   });
+
+  const releasePointer = (event: PointerEvent) => {
+    pointerId = -1;
+    track.classList.remove('is-dragging');
+    if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
+  };
 
   const finishPointer = (event: PointerEvent) => {
     if (event.pointerId !== pointerId) return;
-    pointerId = -1;
-    track.classList.remove('is-dragging');
-    track.style.scrollBehavior = '';
-    if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
-    selectSlide(nearestSlide());
+    const distance = event.clientX - pointerStartX;
+    releasePointer(event);
+    if (Math.abs(distance) < 40) return;
+    selectSlide(distance < 0 ? activeIndex + 1 : activeIndex - 1);
+  };
+
+  const cancelPointer = (event: PointerEvent) => {
+    if (event.pointerId !== pointerId) return;
+    releasePointer(event);
   };
 
   track.addEventListener('pointerup', finishPointer);
-  track.addEventListener('pointercancel', finishPointer);
+  track.addEventListener('pointercancel', cancelPointer);
 
-  const handleMotionChange = () => {
-    const video = videos[activeIndex];
-    if (reducedMotion()) {
-      video.pause();
-      video.removeAttribute('autoplay');
-      return;
-    }
-    video.autoplay = true;
-    video.load();
-    playVideo(video);
-  };
-
-  motionQuery.addEventListener('change', handleMotionChange);
-  window.addEventListener('resize', () => scrollToSlide(activeIndex, false));
   loadGroup(0);
 };
 
