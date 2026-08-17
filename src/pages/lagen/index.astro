@@ -9,8 +9,11 @@ import '../../styles/lagen.css';
 
 const basePath = import.meta.env.BASE_URL;
 const asset = (name: string) => `${basePath}lagen/${name}`;
+const mediaVersion = '20260817';
+const mediaAsset = (name: string) => `${asset(name)}?v=${mediaVersion}`;
 const demoGroups = [
   {
+    id: 'flappy-bird',
     title: 'Flappy Bird',
     comparison: 'Latency 0 vs Latency 5',
     videos: [
@@ -20,6 +23,7 @@ const demoGroups = [
     ],
   },
   {
+    id: 'demon-attack',
     title: 'Demon Attack',
     comparison: 'Latency 0 vs Latency 6',
     videos: [
@@ -29,6 +33,7 @@ const demoGroups = [
     ],
   },
   {
+    id: 'deadly-corridor',
     title: 'Deadly Corridor',
     comparison: 'Latency 0 vs Latency 6',
     videos: [
@@ -38,6 +43,16 @@ const demoGroups = [
     ],
   },
 ];
+const carouselData = demoGroups.map((group) => ({
+  title: group.title,
+  comparison: group.comparison,
+  videos: group.videos.map(([video, poster], index) => ({
+    src: mediaAsset(video),
+    poster: mediaAsset(poster),
+    label: `${group.title} example ${index + 1}: ${group.comparison}`,
+  })),
+}));
+const initialCarouselGroup = carouselData[0];
 const pageTitle = 'LAGEN: Latency-Aware Agents';
 const citation = `@misc{latencyawareagents2026,
   title={The Cost of Thinking: Evaluating Latency Sensitivity in Real-Time Foundation Model Agents},
@@ -108,34 +123,79 @@ const citation = `@misc{latencyawareagents2026,
       </div>
     </div>
 
-    <div class="curated-demo-showcase" aria-labelledby="latency-in-action">
+    <div
+      class="curated-demo-showcase latency-carousel"
+      data-latency-carousel
+      data-carousel-data={JSON.stringify(carouselData)}
+      aria-labelledby="latency-in-action"
+    >
       <h2 id="latency-in-action" class="curated-demo-title">Latency in Action</h2>
       <p class="curated-demo-intro">The same requested action follows two execution clocks: immediate on the left, delayed on the right.</p>
-      {demoGroups.map((group) => (
-        <section class="curated-demo-group">
-          <div class="curated-demo-heading">
-            <h3>{group.title}</h3>
-            <span>{group.comparison}</span>
-          </div>
-          <div class="curated-demo-grid">
-            {group.videos.map(([video, poster], index) => (
-              <figure class="curated-demo-card">
-                <video
-                  class="curated-demo-video"
-                  src={asset(video)}
-                  poster={asset(poster)}
-                  muted
-                  autoplay
-                  loop
-                  playsinline
-                  preload="metadata"
-                  aria-label={`${group.title} example ${index + 1}: ${group.comparison}`}
-                ></video>
-              </figure>
+      <div class="latency-carousel-tabs" role="tablist" aria-label="Choose an environment">
+        {demoGroups.map((group, index) => (
+          <button
+            class="latency-carousel-tab"
+            id={`latency-tab-${group.id}`}
+            type="button"
+            role="tab"
+            aria-controls="latency-carousel-panel"
+            aria-selected={index === 0}
+            tabindex={index === 0 ? 0 : -1}
+            data-carousel-tab={index}
+          >
+            <span>{group.title}</span>
+          </button>
+        ))}
+      </div>
+
+      <p class="latency-carousel-context" data-carousel-context>{initialCarouselGroup.comparison}</p>
+
+      <div class="latency-carousel-stage">
+        <button class="latency-carousel-arrow latency-carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous comparison" disabled>
+          <span aria-hidden="true">&larr;</span>
+        </button>
+        <div
+          class="latency-carousel-viewport"
+          id="latency-carousel-panel"
+          role="tabpanel"
+          aria-labelledby="latency-tab-flappy-bird"
+          data-carousel-viewport
+        >
+          <div class="latency-carousel-track" data-carousel-track>
+            {initialCarouselGroup.videos.map((item, index) => (
+              <article
+                class="latency-carousel-slide"
+                data-carousel-slide={index}
+                aria-hidden={index !== 0}
+                aria-label={`${initialCarouselGroup.title} comparison ${index + 1} of 3`}
+                role="group"
+                tabindex={index === 0 ? 0 : -1}
+              >
+                <div class="latency-carousel-media-well">
+                  <figure class="curated-demo-card">
+                    <video
+                      class="curated-demo-video"
+                      src={item.src}
+                      poster={item.poster}
+                      muted
+                      loop
+                      playsinline
+                      preload={index === 0 ? 'metadata' : 'none'}
+                      aria-label={item.label}
+                      tabindex="-1"
+                      data-carousel-video
+                    ></video>
+                  </figure>
+                </div>
+              </article>
             ))}
           </div>
-        </section>
-      ))}
+        </div>
+        <span class="latency-carousel-count" aria-live="polite"><span data-carousel-current>01</span><span aria-hidden="true"> / 03</span></span>
+        <button class="latency-carousel-arrow latency-carousel-arrow-next" type="button" data-carousel-next aria-label="Next comparison">
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -256,6 +316,8 @@ const citation = `@misc{latencyawareagents2026,
 
   <AuthorsCitation citation={citation} />
 </Layout>
+
+<script src="../../scripts/latencyCarousel.ts"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {

@@ -14,15 +14,34 @@ body.lagen-site .authors-list a { color: var(--lagen-plum); }
 body.lagen-site .authors-list a:hover { color: var(--lagen-coral); border-color: var(--lagen-coral); }
 body.lagen-site .resource-button { color: var(--lagen-plum); border-color: var(--lagen-rule); background: var(--lagen-paper-raised); }
 body.lagen-site .resource-button:hover { background: #f1e8e0; border-color: var(--lagen-plum); }
-body.lagen-site .curated-demo-showcase { width: 100%; margin: 3.5rem auto 0; text-align: left; }
+body.lagen-site .curated-demo-showcase { width: 100%; max-width: 1080px; margin: 3.5rem auto 0; text-align: left; overflow: hidden; }
 body.lagen-site .curated-demo-title { margin: 0; color: var(--lagen-plum); font-size: 2rem; text-align: center; }
-body.lagen-site .curated-demo-intro { max-width: 720px; margin: .7rem auto 2.5rem; color: var(--lagen-soft); font-size: 1rem; line-height: 1.6; text-align: center; }
-body.lagen-site .curated-demo-group + .curated-demo-group { margin-top: 2.5rem; }
-body.lagen-site .curated-demo-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .85rem; padding-bottom: .55rem; border-bottom: 1px solid var(--lagen-rule); }
-body.lagen-site .curated-demo-heading h3 { margin: 0; color: var(--lagen-ink); font-size: 1.25rem; }
-body.lagen-site .curated-demo-heading span { color: var(--lagen-plum); font-size: .88rem; font-weight: 700; }
-body.lagen-site .curated-demo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
-body.lagen-site .curated-demo-card { margin: 0; overflow: hidden; border: 1px solid var(--lagen-rule); border-radius: 10px; background: #241f1c; box-shadow: 0 4px 16px rgba(36,31,28,.08); }
+body.lagen-site .curated-demo-intro { max-width: 720px; margin: .7rem auto 2rem; color: var(--lagen-soft); font-size: 1rem; line-height: 1.6; text-align: center; }
+body.lagen-site .latency-carousel-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; width: min(100%, 620px); margin: 0 auto 1.2rem; padding: 3px; border: 1px solid var(--lagen-rule); border-radius: 12px; background: var(--lagen-paper-raised); }
+body.lagen-site .latency-carousel-tab { min-width: 0; padding: .65rem .8rem; border: 0; border-radius: 8px; background: transparent; color: var(--lagen-ink); cursor: pointer; font: inherit; font-size: .9rem; font-weight: 700; text-align: center; transition: background-color .35s ease, color .35s ease; }
+body.lagen-site .latency-carousel-tab span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.lagen-site .latency-carousel-tab:hover { background: #f1e8e0; }
+body.lagen-site .latency-carousel-tab:focus-visible { outline: 2px solid var(--lagen-plum); outline-offset: 2px; }
+body.lagen-site .latency-carousel-tab[aria-selected="true"] { border-color: var(--lagen-plum); background: var(--lagen-plum); color: var(--lagen-paper-raised); }
+body.lagen-site .latency-carousel-context { margin: 0 0 .55rem; color: var(--lagen-plum); font-size: .82rem; font-weight: 700; text-align: center; }
+body.lagen-site .latency-carousel-stage { position: relative; margin-bottom: 2.1rem; }
+body.lagen-site .latency-carousel-arrow { position: absolute; z-index: 2; top: 50%; display: inline-grid; width: 2.1rem; height: 2.1rem; place-items: center; border: 1px solid var(--lagen-rule); border-radius: 50%; background: var(--lagen-paper-raised); color: var(--lagen-plum); cursor: pointer; font: inherit; font-size: 1.05rem; line-height: 1; transform: translateY(-50%); }
+body.lagen-site .latency-carousel-arrow-prev { left: 2.25rem; }
+body.lagen-site .latency-carousel-arrow-next { right: 2.25rem; }
+body.lagen-site .latency-carousel-arrow:hover:not(:disabled), body.lagen-site .latency-carousel-arrow:focus-visible:not(:disabled) { border-color: var(--lagen-plum); outline: none; }
+body.lagen-site .latency-carousel-arrow:disabled { cursor: not-allowed; opacity: .35; }
+body.lagen-site .latency-carousel-count { position: absolute; top: calc(100% + .45rem); left: 50%; min-width: 3.6rem; color: var(--lagen-plum); font-size: .83rem; font-variant-numeric: tabular-nums; text-align: center; transform: translateX(-50%); }
+body.lagen-site .latency-carousel-viewport { min-width: 0; overflow: hidden; }
+body.lagen-site .latency-carousel-track { display: flex; gap: 0; width: 100%; overflow-x: auto; padding: .65rem 0; scroll-snap-type: x mandatory; scroll-padding-inline: 13%; scrollbar-width: none; touch-action: pan-y; cursor: grab; }
+body.lagen-site .latency-carousel-track::-webkit-scrollbar { display: none; }
+body.lagen-site .latency-carousel-track::before, body.lagen-site .latency-carousel-track::after { content: ''; flex: 0 0 13%; }
+body.lagen-site .latency-carousel-track.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+body.lagen-site .latency-carousel-slide { flex: 0 0 74%; min-width: 0; scroll-snap-align: center; scroll-snap-stop: always; opacity: .45; transform: scale(.92); transition: opacity .35s ease, transform .35s ease; }
+body.lagen-site .latency-carousel-slide[aria-hidden="true"] { pointer-events: none; }
+body.lagen-site .latency-carousel-slide.is-active, body.lagen-site .latency-carousel-slide[aria-hidden="false"] { opacity: 1; transform: scale(1); }
+body.lagen-site .latency-carousel-slide:focus-visible { border-radius: 14px; outline: 3px solid rgba(125,52,85,.22); outline-offset: 2px; }
+body.lagen-site .latency-carousel-media-well { display: flex; aspect-ratio: 72 / 53; align-items: center; }
+body.lagen-site .curated-demo-card { width: 100%; margin: 0; overflow: hidden; border: 1px solid var(--lagen-rule); border-radius: 14px; background: #241f1c; box-shadow: 0 4px 14px rgba(36,31,28,.08); }
 body.lagen-site .curated-demo-video { display: block; width: 100%; height: auto; background: #241f1c; }
 body.lagen-site .method-block, body.lagen-site .rq-block { border-color: var(--lagen-rule); }
 body.lagen-site .method-block { border-left: 5px solid var(--lagen-plum); }
@@ -81,5 +100,7 @@ body.lagen-site .evidence-grid { display: flex; flex-direction: column; gap: .7r
 body.lagen-site .evidence-item { display: flex; gap: .8rem; padding: .9rem 1rem; border-radius: 10px; line-height: 1.5; font-size: .93rem; }
 body.lagen-site .evidence-num { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
 @media (max-width: 768px) { body.lagen-site .method-block { padding: 1.5rem; } body.lagen-site .method-block-header { align-items: flex-start; flex-wrap: wrap; } body.lagen-site .method-block-header h3 { font-size: 1.15rem; } body.lagen-site .rq-header { padding: 1.2rem 1.5rem; } body.lagen-site .rq-body { padding: 0 1.5rem; } body.lagen-site .rq-header[aria-expanded="true"] + .rq-body { padding: 0 1.5rem 1.5rem; } body.lagen-site .rq-summary { padding-left: 0; } body.lagen-site .rq-table { min-width: 560px; } }
-@media (max-width: 768px) { body.lagen-site .curated-demo-showcase { margin-top: 2.5rem; } body.lagen-site .curated-demo-title { font-size: 1.7rem; } body.lagen-site .curated-demo-group + .curated-demo-group { margin-top: 2rem; } body.lagen-site .curated-demo-heading { align-items: flex-start; flex-direction: column; gap: .25rem; } body.lagen-site .curated-demo-grid { grid-template-columns: 1fr; gap: 1rem; } }
+@media (min-width: 641px) and (max-width: 900px) { body.lagen-site .latency-carousel-track { scroll-padding-inline: 9%; } body.lagen-site .latency-carousel-track::before, body.lagen-site .latency-carousel-track::after { flex-basis: 9%; } body.lagen-site .latency-carousel-slide { flex-basis: 82%; } body.lagen-site .latency-carousel-arrow-prev { left: 1rem; } body.lagen-site .latency-carousel-arrow-next { right: 1rem; } }
+@media (max-width: 640px) { body.lagen-site .curated-demo-showcase { margin-top: 2.5rem; } body.lagen-site .curated-demo-title { font-size: 1.7rem; } body.lagen-site .latency-carousel-tabs { gap: 2px; padding: 2px; } body.lagen-site .latency-carousel-tab { padding: .6rem .35rem; font-size: .75rem; } body.lagen-site .latency-carousel-stage { display: grid; grid-template-columns: 2.1rem 1fr 2.1rem; gap: .65rem; margin-bottom: 0; } body.lagen-site .latency-carousel-viewport { grid-column: 1 / -1; grid-row: 1; } body.lagen-site .latency-carousel-track { gap: 0; scroll-padding-inline: 0; } body.lagen-site .latency-carousel-track::before, body.lagen-site .latency-carousel-track::after { flex-basis: 0; } body.lagen-site .latency-carousel-slide { flex-basis: 100%; } body.lagen-site .latency-carousel-arrow, body.lagen-site .latency-carousel-count { position: static; transform: none; } body.lagen-site .latency-carousel-arrow { grid-row: 2; } body.lagen-site .latency-carousel-arrow-prev { grid-column: 1; } body.lagen-site .latency-carousel-arrow-next { grid-column: 3; } body.lagen-site .latency-carousel-count { grid-column: 2; grid-row: 2; align-self: center; justify-self: center; } }
+@media (prefers-reduced-motion: reduce) { body.lagen-site .latency-carousel-track { scroll-behavior: auto; } body.lagen-site .latency-carousel-tab, body.lagen-site .latency-carousel-slide { transition: none; } }
 @media (max-width: 768px) { body.lagen-site .lagen-takeaways { grid-template-columns: 1fr; } body.lagen-site .lagen-takeaways > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--lagen-rule); } }

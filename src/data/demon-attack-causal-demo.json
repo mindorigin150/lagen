@@ -1,4 +1,5 @@
 {
+  "terminal_on_life_loss": true,
   "source": {
     "condition": "fixed_l6",
     "episode_id": 79,
