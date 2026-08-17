@@ -1,0 +1,255 @@
+body.lagen-site main {
+  padding-top: 0;
+}
+
+.review-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem 2.25rem;
+  text-align: left;
+}
+
+.review-kicker,
+.group-index {
+  color: var(--lagen-coral);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.review-hero h1 {
+  color: var(--lagen-plum);
+  font-family: Georgia, serif;
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
+  font-weight: 500;
+  letter-spacing: -.04em;
+  line-height: .98;
+  margin: .55rem 0 1.2rem;
+}
+
+.review-hero > p:last-of-type {
+  color: var(--lagen-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 780px;
+}
+
+.review-summary {
+  border-block: 1px solid var(--lagen-rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 2rem;
+}
+
+.review-summary span {
+  color: var(--lagen-soft);
+  padding: .9rem 1.6rem .9rem 0;
+}
+
+.review-summary span + span {
+  border-left: 1px solid var(--lagen-rule);
+  padding-left: 1.6rem;
+}
+
+.review-summary strong {
+  color: var(--lagen-coral);
+  font-size: 1.35rem;
+  margin-right: .25rem;
+}
+
+.review-tabs {
+  align-items: center;
+  background: color-mix(in srgb, var(--lagen-paper) 94%, transparent);
+  border-block: 1px solid var(--lagen-rule);
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  padding: .8rem 1rem;
+  position: sticky;
+  top: var(--header-height);
+  z-index: 5;
+}
+
+.review-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--lagen-soft);
+  font-family: inherit;
+  font-size: .85rem;
+  padding: .55rem 1rem;
+}
+
+.review-tab.active {
+  background: var(--lagen-plum);
+  color: var(--lagen-paper-raised);
+}
+
+.review-content {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 2.5rem 1.25rem 5rem;
+}
+
+.candidate-group {
+  display: none;
+}
+
+.candidate-group.active {
+  display: block;
+}
+
+.group-heading {
+  align-items: end;
+  border-bottom: 1px solid var(--lagen-rule);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.group-heading h2 {
+  color: var(--lagen-ink);
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: .2rem;
+}
+
+.group-heading > p {
+  color: var(--lagen-muted);
+  font-size: .82rem;
+}
+
+.candidate-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.candidate-card {
+  background: var(--lagen-paper-raised);
+  border: 1px solid var(--lagen-rule);
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(36, 31, 28, .06);
+  overflow: hidden;
+}
+
+.candidate-title {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  padding: .9rem 1rem .7rem;
+}
+
+.candidate-title h3 {
+  color: var(--lagen-plum);
+  font-size: 1.05rem;
+}
+
+.candidate-title > div {
+  align-items: baseline;
+  display: flex;
+  gap: .55rem;
+}
+
+.candidate-title > span {
+  color: var(--lagen-muted);
+  font-size: .72rem;
+}
+
+.variant-badge {
+  color: var(--lagen-coral);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+.candidate-card video {
+  background: #000;
+  display: block;
+  height: auto;
+  max-height: 460px;
+  width: 100%;
+}
+
+.candidate-card dl {
+  display: grid;
+  gap: .55rem;
+  padding: 1rem;
+}
+
+.candidate-card dl div {
+  display: grid;
+  gap: .7rem;
+  grid-template-columns: 6.8rem minmax(0, 1fr);
+}
+
+.candidate-card dt {
+  color: var(--lagen-muted);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.candidate-card dd {
+  color: var(--lagen-soft);
+  font-size: .78rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.candidate-outcome {
+  color: var(--lagen-plum) !important;
+  font-weight: 700;
+}
+
+.pair-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.candidate-pair {
+  border: 1px solid var(--lagen-rule);
+  border-radius: 14px;
+  padding: .85rem;
+}
+
+.pair-title {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  padding: .1rem .15rem .8rem;
+}
+
+.pair-title h3 {
+  color: var(--lagen-plum);
+  font-size: 1rem;
+}
+
+.pair-title span {
+  color: var(--lagen-muted);
+  font-size: .7rem;
+}
+
+.pair-candidates {
+  display: grid;
+  gap: .85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 760px) {
+  .review-hero { padding-top: 3rem; }
+  .review-summary { display: grid; }
+  .review-summary span + span { border-left: 0; border-top: 1px solid var(--lagen-rule); padding-left: 0; }
+  .review-tabs { justify-content: flex-start; overflow-x: auto; }
+  .candidate-grid { grid-template-columns: 1fr; }
+  .pair-candidates { grid-template-columns: 1fr; }
+  .group-heading { align-items: flex-start; flex-direction: column; gap: .5rem; }
+  .pair-title { align-items: flex-start; flex-direction: column; gap: .2rem; }
+  .candidate-card dl div { grid-template-columns: 1fr; gap: .2rem; }
+}

@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import candidates from '../../data/demo-candidate-gallery.json';
+import '../../styles/demo-review.css';
+
+interface Request {
+  tick: number;
+  action: string;
+}
+
+interface Candidate {
+  id: string;
+  pairId: string;
+  variant: 'mock' | 'recorded_policy';
+  requestSource: 'hand_authored' | 'actions.jsonl';
+  game: 'flappy' | 'demon_attack' | 'deadly_corridor';
+  sourceEpisode: number;
+  seed: number;
+  clipStartRawFrame: number;
+  forkRawFrame: number;
+  requests: Request[];
+  latencyRawFrames: number;
+  stateFps: number;
+  encodedFps: number;
+  outcome: string;
+  video: string;
+  poster: string;
+  duration: number;
+  frames: number;
+}
+
+const typedCandidates = candidates as Candidate[];
+const basePath = import.meta.env.BASE_URL;
+const asset = (path: string) => `${basePath}lagen/${path}`;
+const games = [
+  { id: 'flappy', label: 'Flappy Bird', latency: 5 },
+  { id: 'demon_attack', label: 'Demon Attack', latency: 6 },
+  { id: 'deadly_corridor', label: 'Deadly Corridor', latency: 6 },
+] as const;
+const variantLabel = (variant: Candidate['variant']) => variant === 'mock' ? 'Hand-authored fork' : 'Recorded policy replay';
+const sourceLabel = (source: Candidate['requestSource']) => source === 'hand_authored' ? 'hand-authored' : 'actions.jsonl';
+const requestsLabel = (requests: Request[]) => {
+  const shown = requests.slice(0, 8).map((request) => `t${request.tick} ${request.action}`).join(' · ');
+  return requests.length > 8 ? `${shown} · +${requests.length - 8} more` : shown;
+};
+const gameCandidates = (game: Candidate['game']) => typedCandidates.filter((candidate) => candidate.game === game);
+const pairIds = (game: Candidate['game']) => [...new Set(gameCandidates(game).map((candidate) => candidate.pairId))];
+const pairCandidates = (game: Candidate['game'], pairId: string) => gameCandidates(game)
+  .filter((candidate) => candidate.pairId === pairId)
+  .sort((left, right) => left.variant === right.variant ? 0 : left.variant === 'mock' ? -1 : 1);
+---
+
+<Layout title="LAGEN Demo Candidate Review" description="Review simulator-generated latency demo candidates" project="lagen">
+  <section class="review-hero">
+    <p class="review-kicker">Internal candidate review</p>
+    <h1>Simulator trace gallery</h1>
+    <p>
+      Every visible game state comes from the simulator. Flappy Bird reconstructs a real fixed-L3 rollout state,
+      then uses one hand-authored request to compare Latency 0 with Latency 5. Demon Attack places each mock fork
+      beside a recorded-policy replay from the same episode, seed, fork, and time window;
+      Deadly Corridor shows only the mock forks where Latency 0 survives and Latency 6 dies.
+    </p>
+    <div class="review-summary" aria-label="Candidate counts">
+      {games.map((game) => (
+        <span><strong>{gameCandidates(game.id).length}</strong> {game.label}</span>
+      ))}
+    </div>
+  </section>
+
+  <nav class="review-tabs" aria-label="Filter candidates by game">
+    {games.map((game, index) => (
+      <button
+        type="button"
+        class:list={{ 'review-tab': true, active: index === 0 }}
+        data-review-tab={game.id}
+        aria-pressed={index === 0 ? 'true' : 'false'}
+      >
+        {game.label}
+      </button>
+    ))}
+  </nav>
+
+  <div class="review-content">
+    {games.map((game, gameIndex) => (
+      <section class:list={{ 'candidate-group': true, active: gameIndex === 0 }} data-candidate-group={game.id}>
+        <div class="group-heading">
+          <div>
+            <p class="group-index">{game.id === 'flappy' ? 'F' : game.id === 'demon_attack' ? 'D / DR' : 'C'} SERIES</p>
+            <h2>{game.label}</h2>
+          </div>
+          <p>Latency 0 vs Latency {game.latency}</p>
+        </div>
+
+        {game.id === 'flappy' || game.id === 'deadly_corridor' ? (
+          <div class="candidate-grid">
+            {gameCandidates(game.id).map((candidate) => (
+              <article class="candidate-card">
+                <div class="candidate-title">
+                  <div><h3>{candidate.id}</h3><span class="variant-badge">{variantLabel(candidate.variant)}</span></div>
+                  <span>{candidate.duration.toFixed(1)} s · {candidate.frames} frames</span>
+                </div>
+                <video
+                  src={asset(candidate.video)}
+                  poster={asset(candidate.poster)}
+                  controls
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label={`${game.label} candidate ${candidate.id}: ${candidate.outcome}`}
+                ></video>
+                <dl>
+                  <div><dt>Source</dt><dd>episode {candidate.sourceEpisode}, seed {candidate.seed}</dd></div>
+                  <div><dt>Frames</dt><dd>start {candidate.clipStartRawFrame}, fork {candidate.forkRawFrame}</dd></div>
+                  <div><dt>Requests</dt><dd>{requestsLabel(candidate.requests)}</dd></div>
+                  <div><dt>Request source</dt><dd>{sourceLabel(candidate.requestSource)}</dd></div>
+                  <div><dt>Playback</dt><dd>{candidate.stateFps} state FPS · {candidate.encodedFps} FPS encoded</dd></div>
+                  <div><dt>Outcome</dt><dd class="candidate-outcome">{candidate.outcome}</dd></div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div class="pair-grid">
+            {pairIds(game.id).map((pairId) => (
+              <section class="candidate-pair">
+                <header class="pair-title">
+                  <h3>{pairId}</h3>
+                  <span>same source · same fork · same window</span>
+                </header>
+                <div class="pair-candidates">
+                  {pairCandidates(game.id, pairId).map((candidate) => (
+                    <article class="candidate-card">
+                      <div class="candidate-title">
+                        <div><h3>{candidate.id}</h3><span class="variant-badge">{variantLabel(candidate.variant)}</span></div>
+                        <span>{candidate.duration.toFixed(1)} s · {candidate.frames} frames</span>
+                      </div>
+                      <video
+                        src={asset(candidate.video)}
+                        poster={asset(candidate.poster)}
+                        controls
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                        aria-label={`${game.label} candidate ${candidate.id}: ${candidate.outcome}`}
+                      ></video>
+                      <dl>
+                        <div><dt>Source</dt><dd>episode {candidate.sourceEpisode}, seed {candidate.seed}</dd></div>
+                        <div><dt>Frames</dt><dd>start {candidate.clipStartRawFrame}, fork {candidate.forkRawFrame}</dd></div>
+                        <div><dt>Requests</dt><dd>{requestsLabel(candidate.requests)}</dd></div>
+                        <div><dt>Request source</dt><dd>{sourceLabel(candidate.requestSource)}</dd></div>
+                        <div><dt>Playback</dt><dd>{candidate.stateFps} state FPS · {candidate.encodedFps} FPS encoded</dd></div>
+                        <div><dt>Outcome</dt><dd class="candidate-outcome">{candidate.outcome}</dd></div>
+                      </dl>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        )}
+      </section>
+    ))}
+  </div>
+</Layout>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('[data-review-tab]');
+  const groups = document.querySelectorAll<HTMLElement>('[data-candidate-group]');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const selectedGame = tab.dataset.reviewTab;
+      tabs.forEach((candidateTab) => {
+        const active = candidateTab === tab;
+        candidateTab.classList.toggle('active', active);
+        candidateTab.setAttribute('aria-pressed', String(active));
+      });
+      groups.forEach((group) => {
+        const active = group.dataset.candidateGroup === selectedGame;
+        group.classList.toggle('active', active);
+        if (!active) {
+          group.querySelectorAll('video').forEach((video) => video.pause());
+        }
+      });
+    });
+  });
+</script>

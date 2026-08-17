@@ -9,7 +9,35 @@ import '../../styles/lagen.css';
 
 const basePath = import.meta.env.BASE_URL;
 const asset = (name: string) => `${basePath}lagen/${name}`;
-const heroMediaVersion = 'mock-flappy-l3-v8';
+const demoGroups = [
+  {
+    title: 'Flappy Bird',
+    comparison: 'Latency 0 vs Latency 5',
+    videos: [
+      ['demo-candidates/flappy/F01-l5.mp4', 'demo-candidates/flappy/F01-l5.webp'],
+      ['demo-candidates/flappy/F06-l5.mp4', 'demo-candidates/flappy/F06-l5.webp'],
+      ['demo-candidates/flappy/F07-l5.mp4', 'demo-candidates/flappy/F07-l5.webp'],
+    ],
+  },
+  {
+    title: 'Demon Attack',
+    comparison: 'Latency 0 vs Latency 6',
+    videos: [
+      ['demo-candidates/demon_attack/D03.mp4', 'demo-candidates/demon_attack/D03.webp'],
+      ['demo-candidates/demon_attack/D07.mp4', 'demo-candidates/demon_attack/D07.webp'],
+      ['demo-candidates/demon_attack/D08.mp4', 'demo-candidates/demon_attack/D08.webp'],
+    ],
+  },
+  {
+    title: 'Deadly Corridor',
+    comparison: 'Latency 0 vs Latency 6',
+    videos: [
+      ['demo-candidates/deadly_corridor/videos/C03-l6.mp4', 'demo-candidates/deadly_corridor/posters/C03-l6.webp'],
+      ['demo-candidates/deadly_corridor/videos/C04-l6.mp4', 'demo-candidates/deadly_corridor/posters/C04-l6.webp'],
+      ['demo-candidates/deadly_corridor/videos/C05-l6.mp4', 'demo-candidates/deadly_corridor/posters/C05-l6.webp'],
+    ],
+  },
+];
 const pageTitle = 'LAGEN: Latency-Aware Agents';
 const citation = `@misc{latencyawareagents2026,
   title={The Cost of Thinking: Evaluating Latency Sensitivity in Real-Time Foundation Model Agents},
@@ -80,12 +108,35 @@ const citation = `@misc{latencyawareagents2026,
       </div>
     </div>
 
-    <figure class="teaser-figure">
-      <div class="flappy-demo">
-        <video class="teaser-image teaser-video" src={`${asset('demos/causal-fork.mp4')}?v=${heroMediaVersion}`} poster={`${asset('demos/hero-teaser.webp')}?v=${heroMediaVersion}`} muted autoplay loop playsinline preload="metadata" aria-label="Hand-mocked Flappy Bird demonstration comparing Latency 0 and Latency 3, with one synchronized FLAP input after five free-fall frames"></video>
-      </div>
-      <figcaption class="lagen-figcaption"><span>One hand-mocked FLAP, two execution clocks: Latency 0 vs Latency 3</span><a href="#results">See the experiments &darr;</a></figcaption>
-    </figure>
+    <div class="curated-demo-showcase" aria-labelledby="latency-in-action">
+      <h2 id="latency-in-action" class="curated-demo-title">Latency in Action</h2>
+      <p class="curated-demo-intro">The same requested action follows two execution clocks: immediate on the left, delayed on the right.</p>
+      {demoGroups.map((group) => (
+        <section class="curated-demo-group">
+          <div class="curated-demo-heading">
+            <h3>{group.title}</h3>
+            <span>{group.comparison}</span>
+          </div>
+          <div class="curated-demo-grid">
+            {group.videos.map(([video, poster], index) => (
+              <figure class="curated-demo-card">
+                <video
+                  class="curated-demo-video"
+                  src={asset(video)}
+                  poster={asset(poster)}
+                  muted
+                  autoplay
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label={`${group.title} example ${index + 1}: ${group.comparison}`}
+                ></video>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
   </section>
 
   <section id="method" class="content-section alt-background lagen-section">

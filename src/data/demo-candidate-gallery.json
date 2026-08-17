@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "F01",
+    "pairId": "F01",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 1,
+    "seed": 43,
+    "clipStartRawFrame": 118,
+    "forkRawFrame": 123,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 126 before its FLAP scheduled for raw frame 128 can be applied.",
+    "video": "demo-candidates/flappy/F01-l5.mp4",
+    "poster": "demo-candidates/flappy/F01-l5.webp",
+    "duration": 2.8,
+    "frames": 84
+  },
+  {
+    "id": "F02",
+    "pairId": "F02",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 3,
+    "seed": 45,
+    "clipStartRawFrame": 612,
+    "forkRawFrame": 617,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 621 before its FLAP scheduled for raw frame 622 can be applied.",
+    "video": "demo-candidates/flappy/F02-l5.mp4",
+    "poster": "demo-candidates/flappy/F02-l5.webp",
+    "duration": 3.0,
+    "frames": 90
+  },
+  {
+    "id": "F03",
+    "pairId": "F03",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 4,
+    "seed": 46,
+    "clipStartRawFrame": 422,
+    "forkRawFrame": 427,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 430 before its FLAP scheduled for raw frame 432 can be applied.",
+    "video": "demo-candidates/flappy/F03-l5.mp4",
+    "poster": "demo-candidates/flappy/F03-l5.webp",
+    "duration": 2.8,
+    "frames": 84
+  },
+  {
+    "id": "F04",
+    "pairId": "F04",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 5,
+    "seed": 47,
+    "clipStartRawFrame": 158,
+    "forkRawFrame": 163,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 166 before its FLAP scheduled for raw frame 168 can be applied.",
+    "video": "demo-candidates/flappy/F04-l5.mp4",
+    "poster": "demo-candidates/flappy/F04-l5.webp",
+    "duration": 2.8,
+    "frames": 84
+  },
+  {
+    "id": "F05",
+    "pairId": "F05",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 7,
+    "seed": 49,
+    "clipStartRawFrame": 160,
+    "forkRawFrame": 165,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 168 before its FLAP scheduled for raw frame 170 can be applied.",
+    "video": "demo-candidates/flappy/F05-l5.mp4",
+    "poster": "demo-candidates/flappy/F05-l5.webp",
+    "duration": 2.8,
+    "frames": 84
+  },
+  {
+    "id": "F06",
+    "pairId": "F06",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 8,
+    "seed": 50,
+    "clipStartRawFrame": 118,
+    "forkRawFrame": 123,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 126 before its FLAP scheduled for raw frame 128 can be applied.",
+    "video": "demo-candidates/flappy/F06-l5.mp4",
+    "poster": "demo-candidates/flappy/F06-l5.webp",
+    "duration": 2.8,
+    "frames": 84
+  },
+  {
+    "id": "F07",
+    "pairId": "F07",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 9,
+    "seed": 51,
+    "clipStartRawFrame": 159,
+    "forkRawFrame": 164,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 167 before its FLAP scheduled for raw frame 169 can be applied.",
+    "video": "demo-candidates/flappy/F07-l5.mp4",
+    "poster": "demo-candidates/flappy/F07-l5.webp",
+    "duration": 2.8,
+    "frames": 84
+  },
+  {
+    "id": "F08",
+    "pairId": "F08",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 10,
+    "seed": 52,
+    "clipStartRawFrame": 86,
+    "forkRawFrame": 91,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 94 before its FLAP scheduled for raw frame 96 can be applied.",
+    "video": "demo-candidates/flappy/F08-l5.mp4",
+    "poster": "demo-candidates/flappy/F08-l5.webp",
+    "duration": 2.8,
+    "frames": 84
+  },
+  {
+    "id": "F09",
+    "pairId": "F09",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 13,
+    "seed": 55,
+    "clipStartRawFrame": 225,
+    "forkRawFrame": 230,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 235 before its FLAP scheduled for raw frame 235 can be applied.",
+    "video": "demo-candidates/flappy/F09-l5.mp4",
+    "poster": "demo-candidates/flappy/F09-l5.webp",
+    "duration": 3.2,
+    "frames": 96
+  },
+  {
+    "id": "F10",
+    "pairId": "F10",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "flappy",
+    "sourceEpisode": 16,
+    "seed": 58,
+    "clipStartRawFrame": 2264,
+    "forkRawFrame": 2269,
+    "requests": [
+      {
+        "tick": 5,
+        "action": "FLAP"
+      }
+    ],
+    "latencyRawFrames": 5,
+    "stateFps": 5,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 5 hits the lower pipe at raw frame 2272 before its FLAP scheduled for raw frame 2274 can be applied.",
+    "video": "demo-candidates/flappy/F10-l5.mp4",
+    "poster": "demo-candidates/flappy/F10-l5.webp",
+    "duration": 2.8,
+    "frames": 84
+  },
+  {
+    "id": "D01",
+    "pairId": "D01",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 79,
+    "seed": 121,
+    "clipStartRawFrame": 14252,
+    "forkRawFrame": 14272,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 24,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 28,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 89.",
+    "video": "demo-candidates/demon_attack/D01.mp4",
+    "poster": "demo-candidates/demon_attack/D01.webp",
+    "duration": 6.3,
+    "frames": 189
+  },
+  {
+    "id": "D02",
+    "pairId": "D02",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7181,
+    "forkRawFrame": 7201,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 24,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 28,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 120.",
+    "video": "demo-candidates/demon_attack/D02.mp4",
+    "poster": "demo-candidates/demon_attack/D02.webp",
+    "duration": 9.4,
+    "frames": 282
+  },
+  {
+    "id": "D03",
+    "pairId": "D03",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7213,
+    "forkRawFrame": 7233,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 24,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 28,
+        "action": "LEFT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 96.",
+    "video": "demo-candidates/demon_attack/D03.mp4",
+    "poster": "demo-candidates/demon_attack/D03.webp",
+    "duration": 7.0,
+    "frames": 210
+  },
+  {
+    "id": "D04",
+    "pairId": "D04",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7236,
+    "forkRawFrame": 7256,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "LEFT"
+      },
+      {
+        "tick": 24,
+        "action": "LEFT"
+      },
+      {
+        "tick": 28,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 119.",
+    "video": "demo-candidates/demon_attack/D04.mp4",
+    "poster": "demo-candidates/demon_attack/D04.webp",
+    "duration": 9.3,
+    "frames": 279
+  },
+  {
+    "id": "D05",
+    "pairId": "D05",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7288,
+    "forkRawFrame": 7308,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "LEFT"
+      },
+      {
+        "tick": 24,
+        "action": "LEFT"
+      },
+      {
+        "tick": 28,
+        "action": "LEFT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 114.",
+    "video": "demo-candidates/demon_attack/D05.mp4",
+    "poster": "demo-candidates/demon_attack/D05.webp",
+    "duration": 8.8,
+    "frames": 264
+  },
+  {
+    "id": "D06",
+    "pairId": "D06",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7319,
+    "forkRawFrame": 7339,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 24,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 28,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 123.",
+    "video": "demo-candidates/demon_attack/D06.mp4",
+    "poster": "demo-candidates/demon_attack/D06.webp",
+    "duration": 9.7,
+    "frames": 291
+  },
+  {
+    "id": "D07",
+    "pairId": "D07",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7348,
+    "forkRawFrame": 7368,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 24,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 28,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 96.",
+    "video": "demo-candidates/demon_attack/D07.mp4",
+    "poster": "demo-candidates/demon_attack/D07.webp",
+    "duration": 7.0,
+    "frames": 210
+  },
+  {
+    "id": "D08",
+    "pairId": "D08",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7404,
+    "forkRawFrame": 7424,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "LEFT"
+      },
+      {
+        "tick": 24,
+        "action": "LEFT"
+      },
+      {
+        "tick": 28,
+        "action": "LEFT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 87.",
+    "video": "demo-candidates/demon_attack/D08.mp4",
+    "poster": "demo-candidates/demon_attack/D08.webp",
+    "duration": 6.1,
+    "frames": 183
+  },
+  {
+    "id": "D09",
+    "pairId": "D09",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7444,
+    "forkRawFrame": 7464,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 24,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 28,
+        "action": "LEFT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 98.",
+    "video": "demo-candidates/demon_attack/D09.mp4",
+    "poster": "demo-candidates/demon_attack/D09.webp",
+    "duration": 7.2,
+    "frames": 216
+  },
+  {
+    "id": "D10",
+    "pairId": "D10",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7460,
+    "forkRawFrame": 7480,
+    "requests": [
+      {
+        "tick": 20,
+        "action": "LEFT"
+      },
+      {
+        "tick": 24,
+        "action": "LEFT"
+      },
+      {
+        "tick": 28,
+        "action": "LEFT"
+      },
+      {
+        "tick": 32,
+        "action": "NOOP"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 loses a life at replay tick 86.",
+    "video": "demo-candidates/demon_attack/D10.mp4",
+    "poster": "demo-candidates/demon_attack/D10.webp",
+    "duration": 6.0,
+    "frames": 180
+  },
+  {
+    "id": "DR01",
+    "pairId": "D01",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 79,
+    "seed": 121,
+    "clipStartRawFrame": 14252,
+    "forkRawFrame": 14272,
+    "requests": [
+      {
+        "tick": 0,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 4,
+        "action": "LEFT"
+      },
+      {
+        "tick": 8,
+        "action": "LEFT"
+      },
+      {
+        "tick": 12,
+        "action": "LEFT"
+      },
+      {
+        "tick": 16,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 20,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 24,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 28,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 32,
+        "action": "FIRE"
+      },
+      {
+        "tick": 36,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 40,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 44,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 48,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 52,
+        "action": "LEFT"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR01.mp4",
+    "poster": "demo-candidates/demon_attack/DR01.webp",
+    "duration": 6.3,
+    "frames": 189
+  },
+  {
+    "id": "DR02",
+    "pairId": "D02",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7181,
+    "forkRawFrame": 7201,
+    "requests": [
+      {
+        "tick": 3,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 7,
+        "action": "FIRE"
+      },
+      {
+        "tick": 11,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 15,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 19,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 23,
+        "action": "FIRE"
+      },
+      {
+        "tick": 27,
+        "action": "FIRE"
+      },
+      {
+        "tick": 31,
+        "action": "FIRE"
+      },
+      {
+        "tick": 35,
+        "action": "FIRE"
+      },
+      {
+        "tick": 39,
+        "action": "FIRE"
+      },
+      {
+        "tick": 43,
+        "action": "FIRE"
+      },
+      {
+        "tick": 47,
+        "action": "FIRE"
+      },
+      {
+        "tick": 51,
+        "action": "FIRE"
+      },
+      {
+        "tick": 55,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 59,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 63,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 67,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 71,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 75,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 79,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 83,
+        "action": "RIGHTFIRE"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR02.mp4",
+    "poster": "demo-candidates/demon_attack/DR02.webp",
+    "duration": 9.4,
+    "frames": 282
+  },
+  {
+    "id": "DR03",
+    "pairId": "D03",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7213,
+    "forkRawFrame": 7233,
+    "requests": [
+      {
+        "tick": 3,
+        "action": "FIRE"
+      },
+      {
+        "tick": 7,
+        "action": "FIRE"
+      },
+      {
+        "tick": 11,
+        "action": "FIRE"
+      },
+      {
+        "tick": 15,
+        "action": "FIRE"
+      },
+      {
+        "tick": 19,
+        "action": "FIRE"
+      },
+      {
+        "tick": 23,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 27,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 31,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 35,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 39,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 43,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 47,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 51,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 55,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 59,
+        "action": "RIGHTFIRE"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR03.mp4",
+    "poster": "demo-candidates/demon_attack/DR03.webp",
+    "duration": 7.0,
+    "frames": 210
+  },
+  {
+    "id": "DR04",
+    "pairId": "D04",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7236,
+    "forkRawFrame": 7256,
+    "requests": [
+      {
+        "tick": 0,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 4,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 8,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 12,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 16,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 20,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 24,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 28,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 32,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 36,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 40,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 44,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 48,
+        "action": "NOOP"
+      },
+      {
+        "tick": 52,
+        "action": "LEFT"
+      },
+      {
+        "tick": 56,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 60,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 64,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 68,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 72,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 76,
+        "action": "LEFT"
+      },
+      {
+        "tick": 80,
+        "action": "RIGHTFIRE"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR04.mp4",
+    "poster": "demo-candidates/demon_attack/DR04.webp",
+    "duration": 9.3,
+    "frames": 279
+  },
+  {
+    "id": "DR05",
+    "pairId": "D05",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7288,
+    "forkRawFrame": 7308,
+    "requests": [
+      {
+        "tick": 0,
+        "action": "LEFT"
+      },
+      {
+        "tick": 4,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 8,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 12,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 16,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 20,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 24,
+        "action": "LEFT"
+      },
+      {
+        "tick": 28,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 32,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 36,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 40,
+        "action": "FIRE"
+      },
+      {
+        "tick": 44,
+        "action": "NOOP"
+      },
+      {
+        "tick": 48,
+        "action": "NOOP"
+      },
+      {
+        "tick": 52,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 56,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 60,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 64,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 68,
+        "action": "FIRE"
+      },
+      {
+        "tick": 72,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 76,
+        "action": "LEFTFIRE"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR05.mp4",
+    "poster": "demo-candidates/demon_attack/DR05.webp",
+    "duration": 8.8,
+    "frames": 264
+  },
+  {
+    "id": "DR06",
+    "pairId": "D06",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7319,
+    "forkRawFrame": 7339,
+    "requests": [
+      {
+        "tick": 1,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 5,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 9,
+        "action": "FIRE"
+      },
+      {
+        "tick": 13,
+        "action": "NOOP"
+      },
+      {
+        "tick": 17,
+        "action": "NOOP"
+      },
+      {
+        "tick": 21,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 25,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 29,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 33,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 37,
+        "action": "FIRE"
+      },
+      {
+        "tick": 41,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 45,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 49,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 53,
+        "action": "FIRE"
+      },
+      {
+        "tick": 57,
+        "action": "FIRE"
+      },
+      {
+        "tick": 61,
+        "action": "FIRE"
+      },
+      {
+        "tick": 65,
+        "action": "FIRE"
+      },
+      {
+        "tick": 69,
+        "action": "FIRE"
+      },
+      {
+        "tick": 73,
+        "action": "FIRE"
+      },
+      {
+        "tick": 77,
+        "action": "FIRE"
+      },
+      {
+        "tick": 81,
+        "action": "FIRE"
+      },
+      {
+        "tick": 85,
+        "action": "FIRE"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR06.mp4",
+    "poster": "demo-candidates/demon_attack/DR06.webp",
+    "duration": 9.7,
+    "frames": 291
+  },
+  {
+    "id": "DR07",
+    "pairId": "D07",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7348,
+    "forkRawFrame": 7368,
+    "requests": [
+      {
+        "tick": 0,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 4,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 8,
+        "action": "FIRE"
+      },
+      {
+        "tick": 12,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 16,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 20,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 24,
+        "action": "FIRE"
+      },
+      {
+        "tick": 28,
+        "action": "FIRE"
+      },
+      {
+        "tick": 32,
+        "action": "FIRE"
+      },
+      {
+        "tick": 36,
+        "action": "FIRE"
+      },
+      {
+        "tick": 40,
+        "action": "FIRE"
+      },
+      {
+        "tick": 44,
+        "action": "FIRE"
+      },
+      {
+        "tick": 48,
+        "action": "FIRE"
+      },
+      {
+        "tick": 52,
+        "action": "FIRE"
+      },
+      {
+        "tick": 56,
+        "action": "FIRE"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR07.mp4",
+    "poster": "demo-candidates/demon_attack/DR07.webp",
+    "duration": 7.0,
+    "frames": 210
+  },
+  {
+    "id": "DR08",
+    "pairId": "D08",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7404,
+    "forkRawFrame": 7424,
+    "requests": [
+      {
+        "tick": 0,
+        "action": "FIRE"
+      },
+      {
+        "tick": 4,
+        "action": "FIRE"
+      },
+      {
+        "tick": 8,
+        "action": "LEFT"
+      },
+      {
+        "tick": 12,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 16,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 20,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 24,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 28,
+        "action": "LEFT"
+      },
+      {
+        "tick": 32,
+        "action": "FIRE"
+      },
+      {
+        "tick": 36,
+        "action": "FIRE"
+      },
+      {
+        "tick": 40,
+        "action": "FIRE"
+      },
+      {
+        "tick": 44,
+        "action": "FIRE"
+      },
+      {
+        "tick": 48,
+        "action": "RIGHTFIRE"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR08.mp4",
+    "poster": "demo-candidates/demon_attack/DR08.webp",
+    "duration": 6.1,
+    "frames": 183
+  },
+  {
+    "id": "DR09",
+    "pairId": "D09",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7444,
+    "forkRawFrame": 7464,
+    "requests": [
+      {
+        "tick": 0,
+        "action": "FIRE"
+      },
+      {
+        "tick": 4,
+        "action": "FIRE"
+      },
+      {
+        "tick": 8,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 12,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 16,
+        "action": "FIRE"
+      },
+      {
+        "tick": 20,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 24,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 28,
+        "action": "FIRE"
+      },
+      {
+        "tick": 32,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 36,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 40,
+        "action": "FIRE"
+      },
+      {
+        "tick": 44,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 48,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 52,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 56,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 60,
+        "action": "LEFT"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR09.mp4",
+    "poster": "demo-candidates/demon_attack/DR09.webp",
+    "duration": 7.2,
+    "frames": 216
+  },
+  {
+    "id": "DR10",
+    "pairId": "D10",
+    "variant": "recorded_policy",
+    "requestSource": "actions.jsonl",
+    "game": "demon_attack",
+    "sourceEpisode": 57,
+    "seed": 99,
+    "clipStartRawFrame": 7460,
+    "forkRawFrame": 7480,
+    "requests": [
+      {
+        "tick": 0,
+        "action": "FIRE"
+      },
+      {
+        "tick": 4,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 8,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 12,
+        "action": "FIRE"
+      },
+      {
+        "tick": 16,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 20,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 24,
+        "action": "FIRE"
+      },
+      {
+        "tick": 28,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 32,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 36,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 40,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 44,
+        "action": "LEFT"
+      },
+      {
+        "tick": 48,
+        "action": "RIGHTFIRE"
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 loses no life; Latency 6 loses no life.",
+    "video": "demo-candidates/demon_attack/DR10.mp4",
+    "poster": "demo-candidates/demon_attack/DR10.webp",
+    "duration": 6.0,
+    "frames": 180
+  },
+  {
+    "id": "C01",
+    "pairId": "C01",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 19,
+    "seed": 61,
+    "clipStartRawFrame": 13,
+    "forkRawFrame": 33,
+    "requests": [
+      {
+        "action": "MOVE_RIGHT",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 44.",
+    "video": "demo-candidates/deadly_corridor/videos/C01-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C01-l6.webp",
+    "duration": 5.2,
+    "frames": 156
+  },
+  {
+    "id": "C02",
+    "pairId": "C02",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 30,
+    "seed": 72,
+    "clipStartRawFrame": 13,
+    "forkRawFrame": 33,
+    "requests": [
+      {
+        "action": "MOVE_RIGHT",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 44.",
+    "video": "demo-candidates/deadly_corridor/videos/C02-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C02-l6.webp",
+    "duration": 5.2,
+    "frames": 156
+  },
+  {
+    "id": "C03",
+    "pairId": "C03",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 34,
+    "seed": 76,
+    "clipStartRawFrame": 8,
+    "forkRawFrame": 28,
+    "requests": [
+      {
+        "action": "MOVE_LEFT",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 43.",
+    "video": "demo-candidates/deadly_corridor/videos/C03-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C03-l6.webp",
+    "duration": 5.6,
+    "frames": 168
+  },
+  {
+    "id": "C04",
+    "pairId": "C04",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 2,
+    "seed": 44,
+    "clipStartRawFrame": 49,
+    "forkRawFrame": 69,
+    "requests": [
+      {
+        "action": "MOVE_RIGHT",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 82.",
+    "video": "demo-candidates/deadly_corridor/videos/C04-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C04-l6.webp",
+    "duration": 5.4,
+    "frames": 162
+  },
+  {
+    "id": "C05",
+    "pairId": "C05",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 5,
+    "seed": 47,
+    "clipStartRawFrame": 40,
+    "forkRawFrame": 60,
+    "requests": [
+      {
+        "action": "MOVE_RIGHT",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 75.",
+    "video": "demo-candidates/deadly_corridor/videos/C05-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C05-l6.webp",
+    "duration": 5.6,
+    "frames": 168
+  },
+  {
+    "id": "C06",
+    "pairId": "C06",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 24,
+    "seed": 66,
+    "clipStartRawFrame": 14,
+    "forkRawFrame": 34,
+    "requests": [
+      {
+        "action": "ATTACK",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 49.",
+    "video": "demo-candidates/deadly_corridor/videos/C06-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C06-l6.webp",
+    "duration": 5.6,
+    "frames": 168
+  },
+  {
+    "id": "C07",
+    "pairId": "C07",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 26,
+    "seed": 68,
+    "clipStartRawFrame": 17,
+    "forkRawFrame": 37,
+    "requests": [
+      {
+        "action": "ATTACK",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 51.",
+    "video": "demo-candidates/deadly_corridor/videos/C07-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C07-l6.webp",
+    "duration": 5.5,
+    "frames": 165
+  },
+  {
+    "id": "C08",
+    "pairId": "C08",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 35,
+    "seed": 77,
+    "clipStartRawFrame": 14,
+    "forkRawFrame": 34,
+    "requests": [
+      {
+        "action": "MOVE_RIGHT+ATTACK",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 47.",
+    "video": "demo-candidates/deadly_corridor/videos/C08-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C08-l6.webp",
+    "duration": 5.4,
+    "frames": 162
+  },
+  {
+    "id": "C09",
+    "pairId": "C09",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 38,
+    "seed": 80,
+    "clipStartRawFrame": 7,
+    "forkRawFrame": 27,
+    "requests": [
+      {
+        "action": "ATTACK",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 44.",
+    "video": "demo-candidates/deadly_corridor/videos/C09-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C09-l6.webp",
+    "duration": 5.8,
+    "frames": 174
+  },
+  {
+    "id": "C10",
+    "pairId": "C10",
+    "variant": "mock",
+    "requestSource": "hand_authored",
+    "game": "deadly_corridor",
+    "sourceEpisode": 39,
+    "seed": 81,
+    "clipStartRawFrame": 29,
+    "forkRawFrame": 49,
+    "requests": [
+      {
+        "action": "ATTACK",
+        "tick": 20
+      },
+      {
+        "action": "NOOP",
+        "tick": 28
+      }
+    ],
+    "latencyRawFrames": 6,
+    "stateFps": 10,
+    "encodedFps": 30,
+    "outcome": "Latency 0 survives; Latency 6 terminal at raw frame 63.",
+    "video": "demo-candidates/deadly_corridor/videos/C10-l6.mp4",
+    "poster": "demo-candidates/deadly_corridor/posters/C10-l6.webp",
+    "duration": 5.5,
+    "frames": 165
+  }
+]
