@@ -1,17 +1,9 @@
 [
   {
-    "id": "flappy-real-01",
     "game": "flappy",
-    "sourceEpisode": 1,
-    "seed": 43,
-    "clipStartRawFrame": 325,
-    "forkRawFrame": 330,
     "envFps": 30.0,
-    "stateFps": 5,
-    "encodedFps": 30,
+    "fps": 10.0,
     "poster": "demo-showcase-real/flappy/flappy-real-01.webp",
-    "duration": 8.2,
-    "frames": 246,
     "requests": [
       {
         "tick": 0,
@@ -176,59 +168,480 @@
       {
         "tick": 40,
         "action": "noop"
+      },
+      {
+        "tick": 41,
+        "action": "noop"
+      },
+      {
+        "tick": 42,
+        "action": "noop"
+      },
+      {
+        "tick": 43,
+        "action": "noop"
+      },
+      {
+        "tick": 44,
+        "action": "noop"
+      },
+      {
+        "tick": 45,
+        "action": "noop"
+      },
+      {
+        "tick": 46,
+        "action": "noop"
+      },
+      {
+        "tick": 47,
+        "action": "noop"
+      },
+      {
+        "tick": 48,
+        "action": "noop"
+      },
+      {
+        "tick": 49,
+        "action": "noop"
+      },
+      {
+        "tick": 50,
+        "action": "noop"
+      },
+      {
+        "tick": 51,
+        "action": "noop"
+      },
+      {
+        "tick": 52,
+        "action": "flap"
+      },
+      {
+        "tick": 53,
+        "action": "flap"
+      },
+      {
+        "tick": 54,
+        "action": "flap"
+      },
+      {
+        "tick": 55,
+        "action": "flap"
+      },
+      {
+        "tick": 56,
+        "action": "noop"
+      },
+      {
+        "tick": 57,
+        "action": "noop"
+      },
+      {
+        "tick": 58,
+        "action": "flap"
+      },
+      {
+        "tick": 59,
+        "action": "flap"
+      },
+      {
+        "tick": 60,
+        "action": "flap"
+      },
+      {
+        "tick": 61,
+        "action": "flap"
+      },
+      {
+        "tick": 62,
+        "action": "noop"
+      },
+      {
+        "tick": 63,
+        "action": "noop"
+      },
+      {
+        "tick": 64,
+        "action": "noop"
+      },
+      {
+        "tick": 65,
+        "action": "noop"
+      },
+      {
+        "tick": 66,
+        "action": "noop"
+      },
+      {
+        "tick": 67,
+        "action": "noop"
+      },
+      {
+        "tick": 68,
+        "action": "noop"
+      },
+      {
+        "tick": 69,
+        "action": "noop"
+      },
+      {
+        "tick": 70,
+        "action": "noop"
+      },
+      {
+        "tick": 71,
+        "action": "noop"
+      },
+      {
+        "tick": 72,
+        "action": "noop"
+      },
+      {
+        "tick": 73,
+        "action": "noop"
+      },
+      {
+        "tick": 74,
+        "action": "noop"
+      },
+      {
+        "tick": 75,
+        "action": "noop"
+      },
+      {
+        "tick": 76,
+        "action": "noop"
+      },
+      {
+        "tick": 77,
+        "action": "noop"
+      },
+      {
+        "tick": 78,
+        "action": "noop"
+      },
+      {
+        "tick": 79,
+        "action": "noop"
+      },
+      {
+        "tick": 80,
+        "action": "noop"
+      },
+      {
+        "tick": 81,
+        "action": "noop"
+      },
+      {
+        "tick": 82,
+        "action": "noop"
+      },
+      {
+        "tick": 83,
+        "action": "noop"
+      },
+      {
+        "tick": 84,
+        "action": "noop"
+      },
+      {
+        "tick": 85,
+        "action": "noop"
+      },
+      {
+        "tick": 86,
+        "action": "noop"
+      },
+      {
+        "tick": 87,
+        "action": "noop"
+      },
+      {
+        "tick": 88,
+        "action": "noop"
+      },
+      {
+        "tick": 89,
+        "action": "noop"
+      },
+      {
+        "tick": 90,
+        "action": "flap"
+      },
+      {
+        "tick": 91,
+        "action": "flap"
+      },
+      {
+        "tick": 92,
+        "action": "noop"
+      },
+      {
+        "tick": 93,
+        "action": "flap"
+      },
+      {
+        "tick": 94,
+        "action": "flap"
+      },
+      {
+        "tick": 95,
+        "action": "flap"
+      },
+      {
+        "tick": 96,
+        "action": "flap"
+      },
+      {
+        "tick": 97,
+        "action": "flap"
+      },
+      {
+        "tick": 98,
+        "action": "noop"
+      },
+      {
+        "tick": 99,
+        "action": "noop"
+      },
+      {
+        "tick": 100,
+        "action": "noop"
+      },
+      {
+        "tick": 101,
+        "action": "noop"
+      },
+      {
+        "tick": 102,
+        "action": "noop"
+      },
+      {
+        "tick": 103,
+        "action": "noop"
+      },
+      {
+        "tick": 104,
+        "action": "noop"
+      },
+      {
+        "tick": 105,
+        "action": "noop"
+      },
+      {
+        "tick": 106,
+        "action": "noop"
+      },
+      {
+        "tick": 107,
+        "action": "noop"
+      },
+      {
+        "tick": 108,
+        "action": "noop"
+      },
+      {
+        "tick": 109,
+        "action": "noop"
+      },
+      {
+        "tick": 110,
+        "action": "noop"
+      },
+      {
+        "tick": 111,
+        "action": "noop"
+      },
+      {
+        "tick": 112,
+        "action": "noop"
+      },
+      {
+        "tick": 113,
+        "action": "noop"
+      },
+      {
+        "tick": 114,
+        "action": "flap"
+      },
+      {
+        "tick": 115,
+        "action": "flap"
+      },
+      {
+        "tick": 116,
+        "action": "flap"
+      },
+      {
+        "tick": 117,
+        "action": "flap"
+      },
+      {
+        "tick": 118,
+        "action": "flap"
+      },
+      {
+        "tick": 119,
+        "action": "flap"
+      },
+      {
+        "tick": 120,
+        "action": "noop"
+      },
+      {
+        "tick": 121,
+        "action": "noop"
+      },
+      {
+        "tick": 122,
+        "action": "noop"
+      },
+      {
+        "tick": 123,
+        "action": "noop"
+      },
+      {
+        "tick": 124,
+        "action": "noop"
+      },
+      {
+        "tick": 125,
+        "action": "noop"
+      },
+      {
+        "tick": 126,
+        "action": "noop"
+      },
+      {
+        "tick": 127,
+        "action": "noop"
+      },
+      {
+        "tick": 128,
+        "action": "noop"
+      },
+      {
+        "tick": 129,
+        "action": "noop"
+      },
+      {
+        "tick": 130,
+        "action": "noop"
+      },
+      {
+        "tick": 131,
+        "action": "noop"
+      },
+      {
+        "tick": 132,
+        "action": "noop"
+      },
+      {
+        "tick": 133,
+        "action": "noop"
+      },
+      {
+        "tick": 134,
+        "action": "noop"
+      },
+      {
+        "tick": 135,
+        "action": "noop"
+      },
+      {
+        "tick": 136,
+        "action": "noop"
+      },
+      {
+        "tick": 137,
+        "action": "noop"
+      },
+      {
+        "tick": 138,
+        "action": "noop"
+      },
+      {
+        "tick": 139,
+        "action": "flap"
+      },
+      {
+        "tick": 140,
+        "action": "noop"
+      },
+      {
+        "tick": 141,
+        "action": "noop"
+      },
+      {
+        "tick": 142,
+        "action": "noop"
+      },
+      {
+        "tick": 143,
+        "action": "noop"
+      },
+      {
+        "tick": 144,
+        "action": "noop"
+      },
+      {
+        "tick": 145,
+        "action": "noop"
+      },
+      {
+        "tick": 146,
+        "action": "noop"
+      },
+      {
+        "tick": 147,
+        "action": "noop"
+      },
+      {
+        "tick": 148,
+        "action": "noop"
+      },
+      {
+        "tick": 149,
+        "action": "noop"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/flappy/flappy-real-01-l0.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-01-l0.mp4"
       },
       {
         "latencyRawFrames": 1,
-        "video": "demo-showcase-real/flappy/flappy-real-01-l1.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-01-l1.mp4"
       },
       {
         "latencyRawFrames": 2,
-        "video": "demo-showcase-real/flappy/flappy-real-01-l2.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-01-l2.mp4"
       },
       {
         "latencyRawFrames": 3,
-        "video": "demo-showcase-real/flappy/flappy-real-01-l3.mp4",
-        "rightDeathEncodedFrame": 156
+        "video": "demo-showcase-real/flappy/flappy-real-01-l3.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/flappy/flappy-real-01-l4.mp4",
-        "rightDeathEncodedFrame": 156
+        "video": "demo-showcase-real/flappy/flappy-real-01-l4.mp4"
       },
       {
         "latencyRawFrames": 5,
-        "video": "demo-showcase-real/flappy/flappy-real-01-l5.mp4",
-        "rightDeathEncodedFrame": 156
+        "video": "demo-showcase-real/flappy/flappy-real-01-l5.mp4"
       },
       {
         "latencyRawFrames": 6,
-        "video": "demo-showcase-real/flappy/flappy-real-01-l6.mp4",
-        "rightDeathEncodedFrame": 156
+        "video": "demo-showcase-real/flappy/flappy-real-01-l6.mp4"
       }
     ]
   },
   {
-    "id": "flappy-real-02",
     "game": "flappy",
-    "sourceEpisode": 8,
-    "seed": 50,
-    "clipStartRawFrame": 305,
-    "forkRawFrame": 310,
     "envFps": 30.0,
-    "stateFps": 5,
-    "encodedFps": 30,
+    "fps": 10.0,
     "poster": "demo-showcase-real/flappy/flappy-real-02.webp",
-    "duration": 8.2,
-    "frames": 246,
     "requests": [
       {
         "tick": 0,
@@ -393,59 +806,480 @@
       {
         "tick": 40,
         "action": "noop"
+      },
+      {
+        "tick": 41,
+        "action": "noop"
+      },
+      {
+        "tick": 42,
+        "action": "flap"
+      },
+      {
+        "tick": 43,
+        "action": "flap"
+      },
+      {
+        "tick": 44,
+        "action": "noop"
+      },
+      {
+        "tick": 45,
+        "action": "noop"
+      },
+      {
+        "tick": 46,
+        "action": "noop"
+      },
+      {
+        "tick": 47,
+        "action": "noop"
+      },
+      {
+        "tick": 48,
+        "action": "noop"
+      },
+      {
+        "tick": 49,
+        "action": "noop"
+      },
+      {
+        "tick": 50,
+        "action": "noop"
+      },
+      {
+        "tick": 51,
+        "action": "noop"
+      },
+      {
+        "tick": 52,
+        "action": "noop"
+      },
+      {
+        "tick": 53,
+        "action": "noop"
+      },
+      {
+        "tick": 54,
+        "action": "noop"
+      },
+      {
+        "tick": 55,
+        "action": "noop"
+      },
+      {
+        "tick": 56,
+        "action": "noop"
+      },
+      {
+        "tick": 57,
+        "action": "noop"
+      },
+      {
+        "tick": 58,
+        "action": "noop"
+      },
+      {
+        "tick": 59,
+        "action": "flap"
+      },
+      {
+        "tick": 60,
+        "action": "flap"
+      },
+      {
+        "tick": 61,
+        "action": "flap"
+      },
+      {
+        "tick": 62,
+        "action": "flap"
+      },
+      {
+        "tick": 63,
+        "action": "flap"
+      },
+      {
+        "tick": 64,
+        "action": "noop"
+      },
+      {
+        "tick": 65,
+        "action": "noop"
+      },
+      {
+        "tick": 66,
+        "action": "noop"
+      },
+      {
+        "tick": 67,
+        "action": "noop"
+      },
+      {
+        "tick": 68,
+        "action": "noop"
+      },
+      {
+        "tick": 69,
+        "action": "noop"
+      },
+      {
+        "tick": 70,
+        "action": "noop"
+      },
+      {
+        "tick": 71,
+        "action": "noop"
+      },
+      {
+        "tick": 72,
+        "action": "noop"
+      },
+      {
+        "tick": 73,
+        "action": "noop"
+      },
+      {
+        "tick": 74,
+        "action": "noop"
+      },
+      {
+        "tick": 75,
+        "action": "noop"
+      },
+      {
+        "tick": 76,
+        "action": "noop"
+      },
+      {
+        "tick": 77,
+        "action": "noop"
+      },
+      {
+        "tick": 78,
+        "action": "noop"
+      },
+      {
+        "tick": 79,
+        "action": "noop"
+      },
+      {
+        "tick": 80,
+        "action": "noop"
+      },
+      {
+        "tick": 81,
+        "action": "noop"
+      },
+      {
+        "tick": 82,
+        "action": "noop"
+      },
+      {
+        "tick": 83,
+        "action": "noop"
+      },
+      {
+        "tick": 84,
+        "action": "noop"
+      },
+      {
+        "tick": 85,
+        "action": "flap"
+      },
+      {
+        "tick": 86,
+        "action": "noop"
+      },
+      {
+        "tick": 87,
+        "action": "noop"
+      },
+      {
+        "tick": 88,
+        "action": "noop"
+      },
+      {
+        "tick": 89,
+        "action": "noop"
+      },
+      {
+        "tick": 90,
+        "action": "noop"
+      },
+      {
+        "tick": 91,
+        "action": "noop"
+      },
+      {
+        "tick": 92,
+        "action": "noop"
+      },
+      {
+        "tick": 93,
+        "action": "noop"
+      },
+      {
+        "tick": 94,
+        "action": "noop"
+      },
+      {
+        "tick": 95,
+        "action": "noop"
+      },
+      {
+        "tick": 96,
+        "action": "noop"
+      },
+      {
+        "tick": 97,
+        "action": "noop"
+      },
+      {
+        "tick": 98,
+        "action": "noop"
+      },
+      {
+        "tick": 99,
+        "action": "noop"
+      },
+      {
+        "tick": 100,
+        "action": "noop"
+      },
+      {
+        "tick": 101,
+        "action": "noop"
+      },
+      {
+        "tick": 102,
+        "action": "noop"
+      },
+      {
+        "tick": 103,
+        "action": "noop"
+      },
+      {
+        "tick": 104,
+        "action": "noop"
+      },
+      {
+        "tick": 105,
+        "action": "noop"
+      },
+      {
+        "tick": 106,
+        "action": "noop"
+      },
+      {
+        "tick": 107,
+        "action": "noop"
+      },
+      {
+        "tick": 108,
+        "action": "noop"
+      },
+      {
+        "tick": 109,
+        "action": "noop"
+      },
+      {
+        "tick": 110,
+        "action": "flap"
+      },
+      {
+        "tick": 111,
+        "action": "flap"
+      },
+      {
+        "tick": 112,
+        "action": "flap"
+      },
+      {
+        "tick": 113,
+        "action": "flap"
+      },
+      {
+        "tick": 114,
+        "action": "flap"
+      },
+      {
+        "tick": 115,
+        "action": "flap"
+      },
+      {
+        "tick": 116,
+        "action": "flap"
+      },
+      {
+        "tick": 117,
+        "action": "flap"
+      },
+      {
+        "tick": 118,
+        "action": "flap"
+      },
+      {
+        "tick": 119,
+        "action": "noop"
+      },
+      {
+        "tick": 120,
+        "action": "noop"
+      },
+      {
+        "tick": 121,
+        "action": "noop"
+      },
+      {
+        "tick": 122,
+        "action": "noop"
+      },
+      {
+        "tick": 123,
+        "action": "noop"
+      },
+      {
+        "tick": 124,
+        "action": "noop"
+      },
+      {
+        "tick": 125,
+        "action": "noop"
+      },
+      {
+        "tick": 126,
+        "action": "noop"
+      },
+      {
+        "tick": 127,
+        "action": "noop"
+      },
+      {
+        "tick": 128,
+        "action": "noop"
+      },
+      {
+        "tick": 129,
+        "action": "noop"
+      },
+      {
+        "tick": 130,
+        "action": "noop"
+      },
+      {
+        "tick": 131,
+        "action": "noop"
+      },
+      {
+        "tick": 132,
+        "action": "noop"
+      },
+      {
+        "tick": 133,
+        "action": "noop"
+      },
+      {
+        "tick": 134,
+        "action": "noop"
+      },
+      {
+        "tick": 135,
+        "action": "noop"
+      },
+      {
+        "tick": 136,
+        "action": "noop"
+      },
+      {
+        "tick": 137,
+        "action": "noop"
+      },
+      {
+        "tick": 138,
+        "action": "noop"
+      },
+      {
+        "tick": 139,
+        "action": "noop"
+      },
+      {
+        "tick": 140,
+        "action": "noop"
+      },
+      {
+        "tick": 141,
+        "action": "noop"
+      },
+      {
+        "tick": 142,
+        "action": "noop"
+      },
+      {
+        "tick": 143,
+        "action": "noop"
+      },
+      {
+        "tick": 144,
+        "action": "noop"
+      },
+      {
+        "tick": 145,
+        "action": "noop"
+      },
+      {
+        "tick": 146,
+        "action": "noop"
+      },
+      {
+        "tick": 147,
+        "action": "flap"
+      },
+      {
+        "tick": 148,
+        "action": "noop"
+      },
+      {
+        "tick": 149,
+        "action": "flap"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/flappy/flappy-real-02-l0.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-02-l0.mp4"
       },
       {
         "latencyRawFrames": 1,
-        "video": "demo-showcase-real/flappy/flappy-real-02-l1.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-02-l1.mp4"
       },
       {
         "latencyRawFrames": 2,
-        "video": "demo-showcase-real/flappy/flappy-real-02-l2.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-02-l2.mp4"
       },
       {
         "latencyRawFrames": 3,
-        "video": "demo-showcase-real/flappy/flappy-real-02-l3.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-02-l3.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/flappy/flappy-real-02-l4.mp4",
-        "rightDeathEncodedFrame": 150
+        "video": "demo-showcase-real/flappy/flappy-real-02-l4.mp4"
       },
       {
         "latencyRawFrames": 5,
-        "video": "demo-showcase-real/flappy/flappy-real-02-l5.mp4",
-        "rightDeathEncodedFrame": 150
+        "video": "demo-showcase-real/flappy/flappy-real-02-l5.mp4"
       },
       {
         "latencyRawFrames": 6,
-        "video": "demo-showcase-real/flappy/flappy-real-02-l6.mp4",
-        "rightDeathEncodedFrame": 150
+        "video": "demo-showcase-real/flappy/flappy-real-02-l6.mp4"
       }
     ]
   },
   {
-    "id": "flappy-real-03",
     "game": "flappy",
-    "sourceEpisode": 9,
-    "seed": 51,
-    "clipStartRawFrame": 835,
-    "forkRawFrame": 840,
     "envFps": 30.0,
-    "stateFps": 5,
-    "encodedFps": 30,
+    "fps": 10.0,
     "poster": "demo-showcase-real/flappy/flappy-real-03.webp",
-    "duration": 8.2,
-    "frames": 246,
     "requests": [
       {
         "tick": 0,
@@ -610,59 +1444,480 @@
       {
         "tick": 40,
         "action": "noop"
+      },
+      {
+        "tick": 41,
+        "action": "flap"
+      },
+      {
+        "tick": 42,
+        "action": "flap"
+      },
+      {
+        "tick": 43,
+        "action": "noop"
+      },
+      {
+        "tick": 44,
+        "action": "noop"
+      },
+      {
+        "tick": 45,
+        "action": "noop"
+      },
+      {
+        "tick": 46,
+        "action": "noop"
+      },
+      {
+        "tick": 47,
+        "action": "noop"
+      },
+      {
+        "tick": 48,
+        "action": "noop"
+      },
+      {
+        "tick": 49,
+        "action": "noop"
+      },
+      {
+        "tick": 50,
+        "action": "noop"
+      },
+      {
+        "tick": 51,
+        "action": "noop"
+      },
+      {
+        "tick": 52,
+        "action": "noop"
+      },
+      {
+        "tick": 53,
+        "action": "noop"
+      },
+      {
+        "tick": 54,
+        "action": "noop"
+      },
+      {
+        "tick": 55,
+        "action": "noop"
+      },
+      {
+        "tick": 56,
+        "action": "noop"
+      },
+      {
+        "tick": 57,
+        "action": "noop"
+      },
+      {
+        "tick": 58,
+        "action": "noop"
+      },
+      {
+        "tick": 59,
+        "action": "noop"
+      },
+      {
+        "tick": 60,
+        "action": "noop"
+      },
+      {
+        "tick": 61,
+        "action": "noop"
+      },
+      {
+        "tick": 62,
+        "action": "noop"
+      },
+      {
+        "tick": 63,
+        "action": "noop"
+      },
+      {
+        "tick": 64,
+        "action": "noop"
+      },
+      {
+        "tick": 65,
+        "action": "noop"
+      },
+      {
+        "tick": 66,
+        "action": "noop"
+      },
+      {
+        "tick": 67,
+        "action": "noop"
+      },
+      {
+        "tick": 68,
+        "action": "noop"
+      },
+      {
+        "tick": 69,
+        "action": "flap"
+      },
+      {
+        "tick": 70,
+        "action": "flap"
+      },
+      {
+        "tick": 71,
+        "action": "flap"
+      },
+      {
+        "tick": 72,
+        "action": "flap"
+      },
+      {
+        "tick": 73,
+        "action": "flap"
+      },
+      {
+        "tick": 74,
+        "action": "flap"
+      },
+      {
+        "tick": 75,
+        "action": "noop"
+      },
+      {
+        "tick": 76,
+        "action": "noop"
+      },
+      {
+        "tick": 77,
+        "action": "noop"
+      },
+      {
+        "tick": 78,
+        "action": "noop"
+      },
+      {
+        "tick": 79,
+        "action": "noop"
+      },
+      {
+        "tick": 80,
+        "action": "noop"
+      },
+      {
+        "tick": 81,
+        "action": "noop"
+      },
+      {
+        "tick": 82,
+        "action": "noop"
+      },
+      {
+        "tick": 83,
+        "action": "noop"
+      },
+      {
+        "tick": 84,
+        "action": "noop"
+      },
+      {
+        "tick": 85,
+        "action": "noop"
+      },
+      {
+        "tick": 86,
+        "action": "noop"
+      },
+      {
+        "tick": 87,
+        "action": "noop"
+      },
+      {
+        "tick": 88,
+        "action": "noop"
+      },
+      {
+        "tick": 89,
+        "action": "noop"
+      },
+      {
+        "tick": 90,
+        "action": "noop"
+      },
+      {
+        "tick": 91,
+        "action": "noop"
+      },
+      {
+        "tick": 92,
+        "action": "noop"
+      },
+      {
+        "tick": 93,
+        "action": "flap"
+      },
+      {
+        "tick": 94,
+        "action": "flap"
+      },
+      {
+        "tick": 95,
+        "action": "noop"
+      },
+      {
+        "tick": 96,
+        "action": "noop"
+      },
+      {
+        "tick": 97,
+        "action": "flap"
+      },
+      {
+        "tick": 98,
+        "action": "flap"
+      },
+      {
+        "tick": 99,
+        "action": "flap"
+      },
+      {
+        "tick": 100,
+        "action": "flap"
+      },
+      {
+        "tick": 101,
+        "action": "noop"
+      },
+      {
+        "tick": 102,
+        "action": "noop"
+      },
+      {
+        "tick": 103,
+        "action": "noop"
+      },
+      {
+        "tick": 104,
+        "action": "noop"
+      },
+      {
+        "tick": 105,
+        "action": "noop"
+      },
+      {
+        "tick": 106,
+        "action": "noop"
+      },
+      {
+        "tick": 107,
+        "action": "noop"
+      },
+      {
+        "tick": 108,
+        "action": "noop"
+      },
+      {
+        "tick": 109,
+        "action": "noop"
+      },
+      {
+        "tick": 110,
+        "action": "noop"
+      },
+      {
+        "tick": 111,
+        "action": "noop"
+      },
+      {
+        "tick": 112,
+        "action": "noop"
+      },
+      {
+        "tick": 113,
+        "action": "noop"
+      },
+      {
+        "tick": 114,
+        "action": "noop"
+      },
+      {
+        "tick": 115,
+        "action": "noop"
+      },
+      {
+        "tick": 116,
+        "action": "noop"
+      },
+      {
+        "tick": 117,
+        "action": "noop"
+      },
+      {
+        "tick": 118,
+        "action": "noop"
+      },
+      {
+        "tick": 119,
+        "action": "noop"
+      },
+      {
+        "tick": 120,
+        "action": "flap"
+      },
+      {
+        "tick": 121,
+        "action": "flap"
+      },
+      {
+        "tick": 122,
+        "action": "noop"
+      },
+      {
+        "tick": 123,
+        "action": "noop"
+      },
+      {
+        "tick": 124,
+        "action": "noop"
+      },
+      {
+        "tick": 125,
+        "action": "noop"
+      },
+      {
+        "tick": 126,
+        "action": "noop"
+      },
+      {
+        "tick": 127,
+        "action": "noop"
+      },
+      {
+        "tick": 128,
+        "action": "noop"
+      },
+      {
+        "tick": 129,
+        "action": "noop"
+      },
+      {
+        "tick": 130,
+        "action": "noop"
+      },
+      {
+        "tick": 131,
+        "action": "noop"
+      },
+      {
+        "tick": 132,
+        "action": "noop"
+      },
+      {
+        "tick": 133,
+        "action": "noop"
+      },
+      {
+        "tick": 134,
+        "action": "noop"
+      },
+      {
+        "tick": 135,
+        "action": "noop"
+      },
+      {
+        "tick": 136,
+        "action": "noop"
+      },
+      {
+        "tick": 137,
+        "action": "noop"
+      },
+      {
+        "tick": 138,
+        "action": "noop"
+      },
+      {
+        "tick": 139,
+        "action": "noop"
+      },
+      {
+        "tick": 140,
+        "action": "noop"
+      },
+      {
+        "tick": 141,
+        "action": "noop"
+      },
+      {
+        "tick": 142,
+        "action": "noop"
+      },
+      {
+        "tick": 143,
+        "action": "noop"
+      },
+      {
+        "tick": 144,
+        "action": "noop"
+      },
+      {
+        "tick": 145,
+        "action": "noop"
+      },
+      {
+        "tick": 146,
+        "action": "flap"
+      },
+      {
+        "tick": 147,
+        "action": "flap"
+      },
+      {
+        "tick": 148,
+        "action": "flap"
+      },
+      {
+        "tick": 149,
+        "action": "flap"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/flappy/flappy-real-03-l0.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-03-l0.mp4"
       },
       {
         "latencyRawFrames": 1,
-        "video": "demo-showcase-real/flappy/flappy-real-03-l1.mp4",
-        "rightDeathEncodedFrame": 156
+        "video": "demo-showcase-real/flappy/flappy-real-03-l1.mp4"
       },
       {
         "latencyRawFrames": 2,
-        "video": "demo-showcase-real/flappy/flappy-real-03-l2.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-03-l2.mp4"
       },
       {
         "latencyRawFrames": 3,
-        "video": "demo-showcase-real/flappy/flappy-real-03-l3.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-03-l3.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/flappy/flappy-real-03-l4.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-03-l4.mp4"
       },
       {
         "latencyRawFrames": 5,
-        "video": "demo-showcase-real/flappy/flappy-real-03-l5.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/flappy/flappy-real-03-l5.mp4"
       },
       {
         "latencyRawFrames": 6,
-        "video": "demo-showcase-real/flappy/flappy-real-03-l6.mp4",
-        "rightDeathEncodedFrame": 156
+        "video": "demo-showcase-real/flappy/flappy-real-03-l6.mp4"
       }
     ]
   },
   {
-    "id": "demon_attack-real-01",
     "game": "demon_attack",
-    "sourceEpisode": 57,
-    "seed": 99,
-    "clipStartRawFrame": 7213,
-    "forkRawFrame": 7233,
     "envFps": 60.0,
-    "stateFps": 10,
-    "encodedFps": 30,
+    "fps": 30.0,
     "poster": "demo-showcase-real/demon_attack/demon_attack-real-01.webp",
-    "duration": 9.1,
-    "frames": 273,
     "requests": [
       {
         "tick": 3,
@@ -751,109 +2006,248 @@
       {
         "tick": 87,
         "action": "LEFTFIRE"
+      },
+      {
+        "tick": 91,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 95,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 99,
+        "action": "LEFT"
+      },
+      {
+        "tick": 103,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 107,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 111,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 115,
+        "action": "FIRE"
+      },
+      {
+        "tick": 119,
+        "action": "NOOP"
+      },
+      {
+        "tick": 123,
+        "action": "NOOP"
+      },
+      {
+        "tick": 127,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 131,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 135,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 139,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 143,
+        "action": "FIRE"
+      },
+      {
+        "tick": 147,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 151,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 155,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 159,
+        "action": "FIRE"
+      },
+      {
+        "tick": 163,
+        "action": "FIRE"
+      },
+      {
+        "tick": 167,
+        "action": "FIRE"
+      },
+      {
+        "tick": 171,
+        "action": "FIRE"
+      },
+      {
+        "tick": 175,
+        "action": "FIRE"
+      },
+      {
+        "tick": 179,
+        "action": "FIRE"
+      },
+      {
+        "tick": 183,
+        "action": "FIRE"
+      },
+      {
+        "tick": 187,
+        "action": "FIRE"
+      },
+      {
+        "tick": 191,
+        "action": "FIRE"
+      },
+      {
+        "tick": 195,
+        "action": "FIRE"
+      },
+      {
+        "tick": 199,
+        "action": "LEFT"
+      },
+      {
+        "tick": 203,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 207,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 211,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 215,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 219,
+        "action": "LEFT"
+      },
+      {
+        "tick": 223,
+        "action": "FIRE"
+      },
+      {
+        "tick": 227,
+        "action": "FIRE"
+      },
+      {
+        "tick": 231,
+        "action": "FIRE"
+      },
+      {
+        "tick": 235,
+        "action": "FIRE"
+      },
+      {
+        "tick": 239,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 243,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 247,
+        "action": "FIRE"
+      },
+      {
+        "tick": 251,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 255,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 259,
+        "action": "FIRE"
+      },
+      {
+        "tick": 263,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 267,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 271,
+        "action": "FIRE"
+      },
+      {
+        "tick": 275,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 279,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 283,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 287,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 291,
+        "action": "LEFT"
+      },
+      {
+        "tick": 295,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 299,
+        "action": "LEFT"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l0.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 1,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l1.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 2,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l2.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 3,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l3.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l0.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l4.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 5,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l5.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 6,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l6.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 7,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l7.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l4.mp4"
       },
       {
         "latencyRawFrames": 8,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l8.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 9,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l9.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 10,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l10.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 11,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l11.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l8.mp4"
       },
       {
         "latencyRawFrames": 12,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l12.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 13,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l13.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 14,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l14.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 15,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l15.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l12.mp4"
       },
       {
         "latencyRawFrames": 16,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l16.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-01-l16.mp4"
       }
     ]
   },
   {
-    "id": "demon_attack-real-02",
     "game": "demon_attack",
-    "sourceEpisode": 57,
-    "seed": 99,
-    "clipStartRawFrame": 7348,
-    "forkRawFrame": 7368,
     "envFps": 60.0,
-    "stateFps": 10,
-    "encodedFps": 30,
+    "fps": 30.0,
     "poster": "demo-showcase-real/demon_attack/demon_attack-real-02.webp",
-    "duration": 9.1,
-    "frames": 273,
     "requests": [
       {
         "tick": 0,
@@ -946,109 +2340,244 @@
       {
         "tick": 88,
         "action": "FIRE"
+      },
+      {
+        "tick": 92,
+        "action": "FIRE"
+      },
+      {
+        "tick": 96,
+        "action": "FIRE"
+      },
+      {
+        "tick": 100,
+        "action": "FIRE"
+      },
+      {
+        "tick": 104,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 108,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 112,
+        "action": "FIRE"
+      },
+      {
+        "tick": 116,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 120,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 124,
+        "action": "FIRE"
+      },
+      {
+        "tick": 128,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 132,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 136,
+        "action": "FIRE"
+      },
+      {
+        "tick": 140,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 144,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 148,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 152,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 156,
+        "action": "LEFT"
+      },
+      {
+        "tick": 160,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 164,
+        "action": "LEFT"
+      },
+      {
+        "tick": 168,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 172,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 176,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 180,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 184,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 188,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 192,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 196,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 200,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 204,
+        "action": "LEFT"
+      },
+      {
+        "tick": 208,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 212,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 216,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 220,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 224,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 228,
+        "action": "FIRE"
+      },
+      {
+        "tick": 232,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 236,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 240,
+        "action": "NOOP"
+      },
+      {
+        "tick": 244,
+        "action": "FIRE"
+      },
+      {
+        "tick": 248,
+        "action": "FIRE"
+      },
+      {
+        "tick": 252,
+        "action": "FIRE"
+      },
+      {
+        "tick": 256,
+        "action": "LEFT"
+      },
+      {
+        "tick": 260,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 264,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 268,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 272,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 276,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 280,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 284,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 288,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 292,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 296,
+        "action": "RIGHTFIRE"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l0.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 1,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l1.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 2,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l2.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 3,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l3.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l0.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l4.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 5,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l5.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 6,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l6.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 7,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l7.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l4.mp4"
       },
       {
         "latencyRawFrames": 8,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l8.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 9,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l9.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 10,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l10.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 11,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l11.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l8.mp4"
       },
       {
         "latencyRawFrames": 12,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l12.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 13,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l13.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 14,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l14.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 15,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l15.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l12.mp4"
       },
       {
         "latencyRawFrames": 16,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l16.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-02-l16.mp4"
       }
     ]
   },
   {
-    "id": "demon_attack-real-03",
     "game": "demon_attack",
-    "sourceEpisode": 57,
-    "seed": 99,
-    "clipStartRawFrame": 7404,
-    "forkRawFrame": 7424,
     "envFps": 60.0,
-    "stateFps": 10,
-    "encodedFps": 30,
+    "fps": 30.0,
     "poster": "demo-showcase-real/demon_attack/demon_attack-real-03.webp",
-    "duration": 9.1,
-    "frames": 273,
     "requests": [
       {
         "tick": 0,
@@ -1141,109 +2670,244 @@
       {
         "tick": 88,
         "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 92,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 96,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 100,
+        "action": "LEFT"
+      },
+      {
+        "tick": 104,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 108,
+        "action": "LEFT"
+      },
+      {
+        "tick": 112,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 116,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 120,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 124,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 128,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 132,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 136,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 140,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 144,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 148,
+        "action": "LEFT"
+      },
+      {
+        "tick": 152,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 156,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 160,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 164,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 168,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 172,
+        "action": "FIRE"
+      },
+      {
+        "tick": 176,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 180,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 184,
+        "action": "NOOP"
+      },
+      {
+        "tick": 188,
+        "action": "FIRE"
+      },
+      {
+        "tick": 192,
+        "action": "FIRE"
+      },
+      {
+        "tick": 196,
+        "action": "FIRE"
+      },
+      {
+        "tick": 200,
+        "action": "LEFT"
+      },
+      {
+        "tick": 204,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 208,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 212,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 216,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 220,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 224,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 228,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 232,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 236,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 240,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 244,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 248,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 252,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 256,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 260,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 264,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 268,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 272,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 276,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 280,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 284,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 288,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 292,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 296,
+        "action": "LEFTFIRE"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l0.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 1,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l1.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 2,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l2.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 3,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l3.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l0.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l4.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 5,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l5.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 6,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l6.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 7,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l7.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l4.mp4"
       },
       {
         "latencyRawFrames": 8,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l8.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 9,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l9.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 10,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l10.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 11,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l11.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l8.mp4"
       },
       {
         "latencyRawFrames": 12,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l12.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 13,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l13.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 14,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l14.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 15,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l15.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l12.mp4"
       },
       {
         "latencyRawFrames": 16,
-        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l16.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/demon_attack/demon_attack-real-03-l16.mp4"
       }
     ]
   },
   {
-    "id": "deadly_corridor-real-01",
     "game": "deadly_corridor",
-    "sourceEpisode": 13,
-    "seed": 55,
-    "clipStartRawFrame": 0,
-    "forkRawFrame": 12,
     "envFps": 35.0,
-    "stateFps": 10,
-    "encodedFps": 30,
+    "fps": 17.5,
     "poster": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01.webp",
-    "duration": 8.3,
-    "frames": 249,
     "requests": [
       {
         "tick": 0,
@@ -1328,109 +2992,96 @@
       {
         "tick": 80,
         "action": "MOVE_FORWARD+TURN_RIGHT+ATTACK"
+      },
+      {
+        "tick": 84,
+        "action": "MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 88,
+        "action": "MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 92,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 96,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 100,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 104,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 108,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 112,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 116,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 120,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 124,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 128,
+        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+      },
+      {
+        "tick": 132,
+        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+      },
+      {
+        "tick": 136,
+        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+      },
+      {
+        "tick": 140,
+        "action": "MOVE_FORWARD+ATTACK"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l0.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 1,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l1.mp4",
-        "rightDeathEncodedFrame": 225
-      },
-      {
-        "latencyRawFrames": 2,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l2.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 3,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l3.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l0.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l4.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 5,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l5.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 6,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l6.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 7,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l7.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l4.mp4"
       },
       {
         "latencyRawFrames": 8,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l8.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 9,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l9.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 10,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l10.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 11,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l11.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l8.mp4"
       },
       {
         "latencyRawFrames": 12,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l12.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 13,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l13.mp4",
-        "rightDeathEncodedFrame": 210
-      },
-      {
-        "latencyRawFrames": 14,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l14.mp4",
-        "rightDeathEncodedFrame": 210
-      },
-      {
-        "latencyRawFrames": 15,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l15.mp4",
-        "rightDeathEncodedFrame": 210
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l12.mp4"
       },
       {
         "latencyRawFrames": 16,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l16.mp4",
-        "rightDeathEncodedFrame": 210
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-01-l16.mp4"
       }
     ]
   },
   {
-    "id": "deadly_corridor-real-02",
     "game": "deadly_corridor",
-    "sourceEpisode": 14,
-    "seed": 56,
-    "clipStartRawFrame": 0,
-    "forkRawFrame": 12,
     "envFps": 35.0,
-    "stateFps": 10,
-    "encodedFps": 30,
+    "fps": 17.5,
     "poster": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02.webp",
-    "duration": 8.3,
-    "frames": 249,
     "requests": [
       {
         "tick": 0,
@@ -1515,109 +3166,128 @@
       {
         "tick": 80,
         "action": "MOVE_FORWARD+TURN_RIGHT+ATTACK"
+      },
+      {
+        "tick": 84,
+        "action": "MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 88,
+        "action": "MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 92,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 96,
+        "action": "MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 100,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 104,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 108,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 112,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 116,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 120,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 124,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 128,
+        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+      },
+      {
+        "tick": 132,
+        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+      },
+      {
+        "tick": 136,
+        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+      },
+      {
+        "tick": 140,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+TURN_LEFT"
+      },
+      {
+        "tick": 144,
+        "action": "MOVE_FORWARD+TURN_LEFT"
+      },
+      {
+        "tick": 148,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+TURN_LEFT+ATTACK"
+      },
+      {
+        "tick": 152,
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 156,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+TURN_LEFT+ATTACK"
+      },
+      {
+        "tick": 160,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+      },
+      {
+        "tick": 164,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+      },
+      {
+        "tick": 168,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+      },
+      {
+        "tick": 172,
+        "action": "MOVE_RIGHT"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l0.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 1,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l1.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 2,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l2.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 3,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l3.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l0.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l4.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 5,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l5.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 6,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l6.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 7,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l7.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l4.mp4"
       },
       {
         "latencyRawFrames": 8,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l8.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 9,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l9.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 10,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l10.mp4",
-        "rightDeathEncodedFrame": 225
-      },
-      {
-        "latencyRawFrames": 11,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l11.mp4",
-        "rightDeathEncodedFrame": 213
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l8.mp4"
       },
       {
         "latencyRawFrames": 12,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l12.mp4",
-        "rightDeathEncodedFrame": 225
-      },
-      {
-        "latencyRawFrames": 13,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l13.mp4",
-        "rightDeathEncodedFrame": 225
-      },
-      {
-        "latencyRawFrames": 14,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l14.mp4",
-        "rightDeathEncodedFrame": 225
-      },
-      {
-        "latencyRawFrames": 15,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l15.mp4",
-        "rightDeathEncodedFrame": 225
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l12.mp4"
       },
       {
         "latencyRawFrames": 16,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l16.mp4",
-        "rightDeathEncodedFrame": 225
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-02-l16.mp4"
       }
     ]
   },
   {
-    "id": "deadly_corridor-real-03",
     "game": "deadly_corridor",
-    "sourceEpisode": 40,
-    "seed": 82,
-    "clipStartRawFrame": 0,
-    "forkRawFrame": 12,
     "envFps": 35.0,
-    "stateFps": 10,
-    "encodedFps": 30,
+    "fps": 17.5,
     "poster": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03.webp",
-    "duration": 8.3,
-    "frames": 249,
     "requests": [
       {
         "tick": 0,
@@ -1702,93 +3372,36 @@
       {
         "tick": 80,
         "action": "MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 84,
+        "action": "MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 88,
+        "action": "MOVE_FORWARD+ATTACK"
       }
     ],
     "variants": [
       {
         "latencyRawFrames": 0,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l0.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 1,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l1.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 2,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l2.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 3,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l3.mp4",
-        "rightDeathEncodedFrame": null
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l0.mp4"
       },
       {
         "latencyRawFrames": 4,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l4.mp4",
-        "rightDeathEncodedFrame": null
-      },
-      {
-        "latencyRawFrames": 5,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l5.mp4",
-        "rightDeathEncodedFrame": 138
-      },
-      {
-        "latencyRawFrames": 6,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l6.mp4",
-        "rightDeathEncodedFrame": 138
-      },
-      {
-        "latencyRawFrames": 7,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l7.mp4",
-        "rightDeathEncodedFrame": 138
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l4.mp4"
       },
       {
         "latencyRawFrames": 8,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l8.mp4",
-        "rightDeathEncodedFrame": 138
-      },
-      {
-        "latencyRawFrames": 9,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l9.mp4",
-        "rightDeathEncodedFrame": 138
-      },
-      {
-        "latencyRawFrames": 10,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l10.mp4",
-        "rightDeathEncodedFrame": 138
-      },
-      {
-        "latencyRawFrames": 11,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l11.mp4",
-        "rightDeathEncodedFrame": 138
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l8.mp4"
       },
       {
         "latencyRawFrames": 12,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l12.mp4",
-        "rightDeathEncodedFrame": 138
-      },
-      {
-        "latencyRawFrames": 13,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l13.mp4",
-        "rightDeathEncodedFrame": 138
-      },
-      {
-        "latencyRawFrames": 14,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l14.mp4",
-        "rightDeathEncodedFrame": 138
-      },
-      {
-        "latencyRawFrames": 15,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l15.mp4",
-        "rightDeathEncodedFrame": 138
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l12.mp4"
       },
       {
         "latencyRawFrames": 16,
-        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l16.mp4",
-        "rightDeathEncodedFrame": 138
+        "video": "demo-showcase-real/deadly_corridor/deadly_corridor-real-03-l16.mp4"
       }
     ]
   }

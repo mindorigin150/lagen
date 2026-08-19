@@ -11,7 +11,7 @@ import '../../styles/lagen.css';
 
 const basePath = import.meta.env.BASE_URL;
 const asset = (name: string) => `${basePath}lagen/${name}`;
-const mediaVersion = '20260818a';
+const mediaVersion = '20260819b';
 const mediaAsset = (name: string) => `${asset(name)}?v=${mediaVersion}`;
 const demoGroups = [
   {
@@ -20,7 +20,6 @@ const demoGroups = [
     mediaWidth: 576,
     mediaHeight: 424,
     defaultLatency: 3,
-    maxLatency: 6,
   },
   {
     id: 'demon_attack',
@@ -28,7 +27,6 @@ const demoGroups = [
     mediaWidth: 576,
     mediaHeight: 378,
     defaultLatency: 8,
-    maxLatency: 16,
   },
   {
     id: 'deadly_corridor',
@@ -36,7 +34,6 @@ const demoGroups = [
     mediaWidth: 576,
     mediaHeight: 216,
     defaultLatency: 8,
-    maxLatency: 16,
   },
 ];
 const carouselData = demoGroups.map((group) => ({
@@ -45,17 +42,15 @@ const carouselData = demoGroups.map((group) => ({
   mediaWidth: group.mediaWidth,
   mediaHeight: group.mediaHeight,
   defaultLatency: group.defaultLatency,
-  maxLatency: group.maxLatency,
   videos: showcase.filter((candidate) => candidate.game === group.id).map((candidate, index) => {
     return {
       envFps: candidate.envFps,
       requests: candidate.requests,
-      stateFps: candidate.stateFps,
-      encodedFps: candidate.encodedFps,
+      fps: candidate.fps,
       poster: mediaAsset(candidate.poster),
       variants: candidate.variants.map((variant) => ({
+        latencyRawFrames: variant.latencyRawFrames,
         video: mediaAsset(variant.video),
-        rightDeathEncodedFrame: variant.rightDeathEncodedFrame,
       })),
       label: `${group.title} example ${index + 1}`,
     };
@@ -65,6 +60,7 @@ const initialCarouselGroup = carouselData[0];
 const initialCarouselPositions = ['left', 'center', 'right'];
 const initialLatency = initialCarouselGroup.defaultLatency;
 const initialLatencyMs = Math.round(initialLatency / initialCarouselGroup.videos[0].envFps * 1000);
+const initialVariants = initialCarouselGroup.videos[0].variants;
 const pageTitle = 'LAGEN: Latency-Aware Agents';
 const citation = `@misc{latencyawareagents2026,
   title={The Cost of Thinking: Evaluating Latency Sensitivity in Real-Time Foundation Model Agents},
@@ -174,9 +170,9 @@ const citation = `@misc{latencyawareagents2026,
           id="latency-raw-frames"
           class="latency-control-range"
           type="range"
-          min="0"
-          max={initialCarouselGroup.maxLatency}
-          step="1"
+          min={initialVariants[0].latencyRawFrames}
+          max={initialVariants[initialVariants.length - 1].latencyRawFrames}
+          step={initialVariants[1].latencyRawFrames - initialVariants[0].latencyRawFrames}
           value={initialLatency}
           aria-label={`Right-side inference latency for ${initialCarouselGroup.title}`}
           data-latency-slider
@@ -212,7 +208,7 @@ const citation = `@misc{latencyawareagents2026,
                   <figure class="curated-demo-card" data-carousel-media>
                     <video
                       class="curated-demo-video"
-                      src={item.variants[initialLatency].video}
+                      src={item.variants.find((variant) => variant.latencyRawFrames === initialLatency)!.video}
                       poster={item.poster}
                       width={initialCarouselGroup.mediaWidth}
                       height={initialCarouselGroup.mediaHeight}
@@ -225,8 +221,6 @@ const citation = `@misc{latencyawareagents2026,
                       tabindex="-1"
                       data-carousel-video
                     ></video>
-                    <canvas class="latency-death-canvas" data-death-canvas aria-hidden="true"></canvas>
-                    <span class="latency-death-x" data-death-x aria-hidden="true">&#x2715;</span>
                   </figure>
                   <div class="latency-action-docks">
                     <div class="latency-action-dock-slot"><LatencyActionDock /></div>

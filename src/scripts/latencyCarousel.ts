@@ -4,8 +4,8 @@ type CarouselRequest = {
 };
 
 type CarouselVariant = {
+  latencyRawFrames: number;
   video: string;
-  rightDeathEncodedFrame: number | null;
 };
 
 type CarouselVideo = {
@@ -13,8 +13,7 @@ type CarouselVideo = {
   poster: string;
   requests: CarouselRequest[];
   envFps: number;
-  stateFps: number;
-  encodedFps: number;
+  fps: number;
   variants: CarouselVariant[];
 };
 
@@ -24,16 +23,10 @@ type CarouselGroup = {
   mediaWidth: number;
   mediaHeight: number;
   defaultLatency: number;
-  maxLatency: number;
   videos: CarouselVideo[];
 };
 
 type CarouselDirection = 'next' | 'previous';
-
-type DeathState = {
-  lastTime: number;
-  snapshot: boolean;
-};
 
 const initLatencyCarousel = () => {
   const root = document.querySelector<HTMLElement>('[data-latency-carousel]')!;
@@ -45,8 +38,6 @@ const initLatencyCarousel = () => {
   const actionKeys = slides.map((slide) => [
     ...slide.querySelectorAll<HTMLElement>('[data-action-key]'),
   ]);
-  const canvases = slides.map((slide) => slide.querySelector<HTMLCanvasElement>('[data-death-canvas]')!);
-  const deathXs = slides.map((slide) => slide.querySelector<HTMLElement>('[data-death-x]')!);
   const stage = root.querySelector<HTMLElement>('.latency-carousel-stage')!;
   const viewport = root.querySelector<HTMLElement>('[data-carousel-viewport]')!;
   const track = root.querySelector<HTMLElement>('[data-carousel-track]')!;
@@ -64,19 +55,16 @@ const initLatencyCarousel = () => {
   let transitionLocked = false;
   let transitionTimer: number | null = null;
   let actionAnimationFrame: number | null = null;
-  let deathAnimationFrame: number | null = null;
   let geometryAnimationFrame: number | null = null;
   let mediaGeneration = 0;
   const selectedLatency = groups.map((group) => group.defaultLatency);
-  const deathStates: DeathState[] = slides.map(() => ({
-    lastTime: 0,
-    snapshot: false,
-  }));
 
   const group = () => groups[activeGroupIndex];
   const item = (slideIndex: number) => group().videos[slideIndex];
   const latency = () => selectedLatency[activeGroupIndex];
-  const variantFor = (slideIndex: number, rawFrames = latency()) => item(slideIndex).variants[rawFrames];
+  const variantFor = (slideIndex: number, rawFrames = latency()) => {
+    return item(slideIndex).variants.find((variant) => variant.latencyRawFrames === rawFrames)!;
+  };
 
   const setActionKeys = (slideIndex: number, active: Set<string>) => {
     actionKeys[slideIndex].forEach((key) => {
@@ -114,7 +102,7 @@ const initLatencyCarousel = () => {
 
   const updateActionKeys = (slideIndex: number) => {
     const currentItem = item(slideIndex);
-    const rawFrame = Math.floor(videos[slideIndex].currentTime * currentItem.stateFps);
+    const rawFrame = Math.floor(videos[slideIndex].currentTime * currentItem.envFps);
     const request = currentItem.requests.reduce<CarouselRequest | undefined>((latest, candidate) => {
       return candidate.tick <= rawFrame ? candidate : latest;
     }, undefined);
@@ -142,89 +130,10 @@ const initLatencyCarousel = () => {
     sync();
   };
 
-  const clearDeathCanvas = (slideIndex: number) => {
-    const canvas = canvases[slideIndex];
-    canvas.getContext('2d')!.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.classList.remove('is-visible');
-    deathXs[slideIndex].classList.remove('is-visible');
-    deathXs[slideIndex].style.opacity = '0';
-  };
-
-  const resetDeath = (slideIndex: number) => {
-    const state = deathStates[slideIndex];
-    state.lastTime = 0;
-    state.snapshot = false;
-    clearDeathCanvas(slideIndex);
-  };
-
-  const captureRightHalf = (slideIndex: number) => {
-    const video = videos[slideIndex];
-    const canvas = canvases[slideIndex];
-    const width = video.videoWidth;
-    const height = video.videoHeight;
-    canvas.width = width;
-    canvas.height = height;
-    const context2d = canvas.getContext('2d')!;
-    context2d.clearRect(0, 0, width, height);
-    context2d.save();
-    context2d.filter = 'grayscale(1)';
-    context2d.drawImage(video, width / 2, 0, width / 2, height, width / 2, 0, width / 2, height);
-    context2d.restore();
-  };
-
-  const updateDeath = (slideIndex: number) => {
-    const video = videos[slideIndex];
-    const state = deathStates[slideIndex];
-    const selectedVariant = variantFor(slideIndex);
-    const deathFrame = selectedVariant.rightDeathEncodedFrame;
-    if (deathFrame === null) {
-      if (state.snapshot) resetDeath(slideIndex);
-      return;
-    }
-
-    const deathTime = deathFrame / item(slideIndex).encodedFps;
-    const currentTime = video.currentTime;
-    if (currentTime < state.lastTime || currentTime < deathTime) {
-      if (state.snapshot) resetDeath(slideIndex);
-      state.lastTime = currentTime;
-      return;
-    }
-
-    if (!state.snapshot) {
-      captureRightHalf(slideIndex);
-      state.snapshot = true;
-      canvases[slideIndex].classList.add('is-visible');
-    }
-
-    const age = currentTime - deathTime;
-    deathXs[slideIndex].classList.add('is-visible');
-    deathXs[slideIndex].style.opacity = String(age <= 2 ? 1 : Math.max(0, 1 - (age - 2) / 0.35));
-    state.lastTime = currentTime;
-  };
-
-  const stopDeathSync = () => {
-    if (deathAnimationFrame !== null) window.cancelAnimationFrame(deathAnimationFrame);
-    deathAnimationFrame = null;
-  };
-
-  const startDeathSync = (slideIndex: number) => {
-    stopDeathSync();
-    const sync = () => {
-      if (slideIndex !== activeIndex) {
-        deathAnimationFrame = null;
-        return;
-      }
-      updateDeath(slideIndex);
-      deathAnimationFrame = window.requestAnimationFrame(sync);
-    };
-    sync();
-  };
-
   const playVideo = (video: HTMLVideoElement, slideIndex: number, generation: number) => {
     void video.play().then(() => {
       if (generation !== mediaGeneration || slideIndex !== activeIndex) return;
       startActionSync(slideIndex);
-      startDeathSync(slideIndex);
     }).catch((error: DOMException) => {
       if (error.name !== 'AbortError') throw error;
     });
@@ -234,9 +143,12 @@ const initLatencyCarousel = () => {
     const selectedItem = item(activeIndex);
     const rawFrames = latency();
     const milliseconds = Math.round(rawFrames / selectedItem.envFps * 1000);
+    const variants = selectedItem.variants;
     latencyFrames.textContent = `${rawFrames} raw frames`;
     latencyMs.textContent = `${milliseconds} ms`;
-    slider.max = String(group().maxLatency);
+    slider.min = String(variants[0].latencyRawFrames);
+    slider.max = String(variants[variants.length - 1].latencyRawFrames);
+    slider.step = String(variants[1].latencyRawFrames - variants[0].latencyRawFrames);
     slider.value = String(rawFrames);
     slider.setAttribute('aria-label', `Right-side inference latency for ${group().title}`);
     context.textContent = `Left: No Latency · Right: ${rawFrames} raw frames (${milliseconds} ms)`;
@@ -293,43 +205,16 @@ const initLatencyCarousel = () => {
     video.poster = item(slideIndex).poster;
   };
 
-  const loadVariant = (slideIndex: number, preservedTime: number, shouldPlay: boolean) => {
+  const loadVariant = (slideIndex: number) => {
     const video = videos[slideIndex];
     const source = variantFor(slideIndex);
     const generation = ++mediaGeneration;
     stopActionSync();
-    stopDeathSync();
-    resetDeath(slideIndex);
     video.pause();
     video.src = source.video;
     video.poster = item(slideIndex).poster;
     video.load();
-    const onMetadata = () => {
-      if (generation !== mediaGeneration || slideIndex !== activeIndex) return;
-      let seeked = preservedTime === 0;
-      let canPlay = video.readyState >= 3;
-      const resume = () => {
-        if (!seeked || !canPlay || generation !== mediaGeneration || slideIndex !== activeIndex) return;
-        video.removeEventListener('seeked', onSeeked);
-        video.removeEventListener('canplay', onCanPlay);
-        playVideo(video, slideIndex, generation);
-      };
-      const onSeeked = () => {
-        seeked = true;
-        resume();
-      };
-      const onCanPlay = () => {
-        canPlay = true;
-        resume();
-      };
-      if (shouldPlay) {
-        video.addEventListener('seeked', onSeeked, { once: true });
-        video.addEventListener('canplay', onCanPlay, { once: true });
-      }
-      video.currentTime = preservedTime;
-      if (shouldPlay) resume();
-    };
-    video.addEventListener('loadedmetadata', onMetadata, { once: true });
+    playVideo(video, slideIndex, generation);
   };
 
   const updateSlideState = (index: number, direction: CarouselDirection | undefined) => {
@@ -337,7 +222,6 @@ const initLatencyCarousel = () => {
     const moveSlideFocus = slides.includes(document.activeElement as HTMLElement);
     activeIndex = index;
     stopActionSync();
-    stopDeathSync();
     clearActionKeys();
     slides.forEach((slide, slideIndex) => {
       const isCenter = slideIndex === activeIndex;
@@ -348,11 +232,10 @@ const initLatencyCarousel = () => {
       slide.tabIndex = isCenter ? 0 : -1;
       slide.removeAttribute('data-carousel-wrap');
       if (slideIndex === wrapIndex) slide.dataset.carouselWrap = direction!;
-      resetDeath(slideIndex);
       if (isCenter) {
         video.autoplay = true;
         video.preload = 'metadata';
-        loadVariant(slideIndex, 0, true);
+        loadVariant(slideIndex);
       } else {
         prepareVariant(slideIndex);
         video.pause();
@@ -398,7 +281,6 @@ const initLatencyCarousel = () => {
     activeIndex = -1;
     transitionLocked = false;
     stopActionSync();
-    stopDeathSync();
     clearActionKeys();
     if (transitionTimer !== null) window.clearTimeout(transitionTimer);
     transitionTimer = null;
@@ -415,7 +297,6 @@ const initLatencyCarousel = () => {
     slides.forEach((slide, index) => {
       const nextItem = nextGroup.videos[index];
       const video = videos[index];
-      resetDeath(index);
       clearVideo(video);
       video.width = nextGroup.mediaWidth;
       video.height = nextGroup.mediaHeight;
@@ -432,15 +313,12 @@ const initLatencyCarousel = () => {
   slider.addEventListener('input', () => {
     const rawFrames = Number(slider.value);
     selectedLatency[activeGroupIndex] = rawFrames;
-    const preservedTime = activeIndex >= 0 ? videos[activeIndex].currentTime : 0;
-    const wasPlaying = activeIndex >= 0 && !videos[activeIndex].paused;
     slides.forEach((_, slideIndex) => {
-      resetDeath(slideIndex);
       if (slideIndex !== activeIndex) prepareVariant(slideIndex);
     });
     updateLatencyLabels();
     updateSlideLabels();
-    if (activeIndex >= 0) loadVariant(activeIndex, preservedTime, wasPlaying);
+    if (activeIndex >= 0) loadVariant(activeIndex);
   });
 
   tabs.forEach((tab, index) => {

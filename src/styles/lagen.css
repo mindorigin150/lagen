@@ -53,10 +53,6 @@ body.lagen-site .latency-carousel-slide:focus-visible { border-radius: 14px; out
 body.lagen-site .latency-carousel-media-well { width: 100%; }
 body.lagen-site .curated-demo-card { position: relative; width: 100%; margin: 0; overflow: hidden; border: 1px solid var(--lagen-rule); border-radius: 14px; background: transparent; box-shadow: 0 4px 14px rgba(36,31,28,.08); }
 body.lagen-site .curated-demo-video { display: block; width: 100%; height: auto; }
-body.lagen-site .latency-death-canvas { position: absolute; inset: 0; z-index: 2; display: block; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity .08s linear; }
-body.lagen-site .latency-death-canvas.is-visible { opacity: 1; }
-body.lagen-site .latency-death-x { position: absolute; z-index: 3; top: 50%; left: 75%; color: #c52f36; font-size: clamp(3rem, 10vw, 7.5rem); font-weight: 800; line-height: 1; opacity: 0; pointer-events: none; text-shadow: 0 2px 5px rgba(30,10,10,.3); transform: translate(-50%, -50%); }
-body.lagen-site .latency-death-x.is-visible { opacity: 1; }
 body.lagen-site .latency-action-docks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; margin-top: .55rem; opacity: 1; transition: opacity .2s ease; }
 body.lagen-site .latency-carousel-slide[aria-hidden="true"] .latency-action-docks { opacity: 0; }
 body.lagen-site .latency-action-dock-slot { display: flex; min-width: 0; justify-content: center; }
