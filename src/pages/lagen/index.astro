@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import AuthorsCitation from '../../components/AuthorsCitation.astro';
 import LatencyActionDock from '../../components/LatencyActionDock.astro';
-import candidates from '../../data/demo-candidate-gallery.json';
+import showcase from '../../data/real-latency-showcase.json';
 import '../../styles/section.css';
 import '../../styles/hero.css';
 import '../../styles/authors.css';
@@ -11,87 +11,60 @@ import '../../styles/lagen.css';
 
 const basePath = import.meta.env.BASE_URL;
 const asset = (name: string) => `${basePath}lagen/${name}`;
-const mediaVersion = '20260817c';
+const mediaVersion = '20260818a';
 const mediaAsset = (name: string) => `${asset(name)}?v=${mediaVersion}`;
-const candidateById = Object.fromEntries(
-  candidates.map((candidate) => [candidate.id, candidate]),
-) as Record<string, (typeof candidates)[number]>;
 const demoGroups = [
   {
-    id: 'flappy-bird',
+    id: 'flappy',
     title: 'Flappy Bird',
-    comparison: 'Left: No Latency · Right: Latency 5',
     mediaWidth: 576,
     mediaHeight: 424,
-    requestDisplayFrames: 6,
-    actionKeys: {
-      FLAP: ['flap'],
-    },
-    demos: [
-      ['F01', 'demo-showcase/flappy/F01-l5'],
-      ['F06', 'demo-showcase/flappy/F06-l5'],
-      ['F07', 'demo-showcase/flappy/F07-l5'],
-    ],
+    defaultLatency: 3,
+    maxLatency: 6,
   },
   {
-    id: 'demon-attack',
+    id: 'demon_attack',
     title: 'Demon Attack',
-    comparison: 'Left: No Latency · Right: Latency 6',
     mediaWidth: 576,
     mediaHeight: 378,
-    requestDisplayFrames: 9,
-    actionKeys: {
-      LEFT: ['move-left'],
-      FIRE: ['fire'],
-      RIGHT: ['move-right'],
-      LEFTFIRE: ['move-left', 'fire'],
-      RIGHTFIRE: ['move-right', 'fire'],
-    },
-    demos: [
-      ['D03', 'demo-showcase/demon_attack/D03'],
-      ['D07', 'demo-showcase/demon_attack/D07'],
-      ['D08', 'demo-showcase/demon_attack/D08'],
-    ],
+    defaultLatency: 8,
+    maxLatency: 16,
   },
   {
-    id: 'deadly-corridor',
+    id: 'deadly_corridor',
     title: 'Deadly Corridor',
-    comparison: 'Left: No Latency · Right: Latency 6',
     mediaWidth: 576,
     mediaHeight: 216,
-    requestDisplayFrames: 24,
-    actionKeys: {
-      MOVE_LEFT: ['move-left'],
-      MOVE_RIGHT: ['move-right'],
-    },
-    demos: [
-      ['C03', 'demo-showcase/deadly_corridor/C03-l6'],
-      ['C04', 'demo-showcase/deadly_corridor/C04-l6'],
-      ['C05', 'demo-showcase/deadly_corridor/C05-l6'],
-    ],
+    defaultLatency: 8,
+    maxLatency: 16,
   },
 ];
 const carouselData = demoGroups.map((group) => ({
   id: group.id,
-  comparison: group.comparison,
+  title: group.title,
   mediaWidth: group.mediaWidth,
   mediaHeight: group.mediaHeight,
-  requestDisplayFrames: group.requestDisplayFrames,
-  actionKeys: group.actionKeys,
-  videos: group.demos.map(([candidateId, mediaStem], index) => {
-    const candidate = candidateById[candidateId];
+  defaultLatency: group.defaultLatency,
+  maxLatency: group.maxLatency,
+  videos: showcase.filter((candidate) => candidate.game === group.id).map((candidate, index) => {
     return {
-      src: mediaAsset(`${mediaStem}.mp4`),
-      poster: mediaAsset(`${mediaStem}.webp`),
-      label: `${group.title} example ${index + 1}: ${group.comparison}`,
+      envFps: candidate.envFps,
       requests: candidate.requests,
       stateFps: candidate.stateFps,
       encodedFps: candidate.encodedFps,
+      poster: mediaAsset(candidate.poster),
+      variants: candidate.variants.map((variant) => ({
+        video: mediaAsset(variant.video),
+        rightDeathEncodedFrame: variant.rightDeathEncodedFrame,
+      })),
+      label: `${group.title} example ${index + 1}`,
     };
   }),
 }));
 const initialCarouselGroup = carouselData[0];
 const initialCarouselPositions = ['left', 'center', 'right'];
+const initialLatency = initialCarouselGroup.defaultLatency;
+const initialLatencyMs = Math.round(initialLatency / initialCarouselGroup.videos[0].envFps * 1000);
 const pageTitle = 'LAGEN: Latency-Aware Agents';
 const citation = `@misc{latencyawareagents2026,
   title={The Cost of Thinking: Evaluating Latency Sensitivity in Real-Time Foundation Model Agents},
@@ -170,7 +143,7 @@ const citation = `@misc{latencyawareagents2026,
       aria-labelledby="latency-in-action"
     >
       <h2 id="latency-in-action" class="curated-demo-title">Latency in Action</h2>
-      <p class="curated-demo-intro">The same requested action follows two execution clocks: immediate on the left, delayed on the right.</p>
+      <p class="curated-demo-intro">The same recorded policy request stream is replayed from one simulator state: immediate on the left, delayed on the right.</p>
       <div class="latency-carousel-tabs" role="tablist" aria-label="Choose an environment">
         {demoGroups.map((group, index) => (
           <button
@@ -181,14 +154,36 @@ const citation = `@misc{latencyawareagents2026,
             aria-controls="latency-carousel-panel"
             aria-selected={index === 0}
             tabindex={index === 0 ? 0 : -1}
-            data-carousel-tab={index}
+            data-carousel-tab
           >
             <span>{group.title}</span>
           </button>
         ))}
       </div>
 
-      <p class="latency-carousel-context" data-carousel-context>{initialCarouselGroup.comparison}</p>
+      <div class="latency-control">
+        <label class="latency-control-label" for="latency-raw-frames">
+          Right-side inference latency
+          <output for="latency-raw-frames">
+            <span data-latency-frames>{initialLatency} raw frames</span>
+            <span aria-hidden="true"> · </span>
+            <span data-latency-ms>{initialLatencyMs} ms</span>
+          </output>
+        </label>
+        <input
+          id="latency-raw-frames"
+          class="latency-control-range"
+          type="range"
+          min="0"
+          max={initialCarouselGroup.maxLatency}
+          step="1"
+          value={initialLatency}
+          aria-label={`Right-side inference latency for ${initialCarouselGroup.title}`}
+          data-latency-slider
+        />
+      </div>
+
+      <p class="latency-carousel-context" data-carousel-context></p>
 
       <div class="latency-carousel-stage">
         <button class="latency-carousel-arrow latency-carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous comparison">
@@ -198,14 +193,14 @@ const citation = `@misc{latencyawareagents2026,
           class="latency-carousel-viewport"
           id="latency-carousel-panel"
           role="tabpanel"
-          aria-labelledby="latency-tab-flappy-bird"
+          aria-labelledby="latency-tab-flappy"
           data-carousel-viewport
         >
           <div class="latency-carousel-track" data-carousel-track>
             {initialCarouselGroup.videos.map((item, index) => (
               <article
                 class="latency-carousel-slide"
-                data-carousel-slide={index}
+                data-carousel-slide
                 aria-hidden={index !== 1}
                 aria-label={item.label}
                 role="group"
@@ -217,7 +212,7 @@ const citation = `@misc{latencyawareagents2026,
                   <figure class="curated-demo-card" data-carousel-media>
                     <video
                       class="curated-demo-video"
-                      src={item.src}
+                      src={item.variants[initialLatency].video}
                       poster={item.poster}
                       width={initialCarouselGroup.mediaWidth}
                       height={initialCarouselGroup.mediaHeight}
@@ -230,6 +225,8 @@ const citation = `@misc{latencyawareagents2026,
                       tabindex="-1"
                       data-carousel-video
                     ></video>
+                    <canvas class="latency-death-canvas" data-death-canvas aria-hidden="true"></canvas>
+                    <span class="latency-death-x" data-death-x aria-hidden="true">&#x2715;</span>
                   </figure>
                   <div class="latency-action-docks">
                     <div class="latency-action-dock-slot"><LatencyActionDock /></div>

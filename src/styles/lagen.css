@@ -24,9 +24,14 @@ body.lagen-site .latency-carousel-tab:hover { background: #f1e8e0; }
 body.lagen-site .latency-carousel-tab:focus-visible { outline: 2px solid var(--lagen-plum); outline-offset: 2px; }
 body.lagen-site .latency-carousel-tab[aria-selected="true"] { border-color: var(--lagen-plum); background: var(--lagen-plum); color: var(--lagen-paper-raised); }
 body.lagen-site .latency-carousel-context { margin: 0 0 .45rem; color: var(--lagen-plum); font-size: .82rem; font-weight: 700; text-align: center; }
-body.lagen-site .latency-carousel[data-carousel-environment="flappy-bird"] { --latency-carousel-slide-width: min(72%, 640px); }
-body.lagen-site .latency-carousel[data-carousel-environment="demon-attack"] { --latency-carousel-slide-width: min(76%, 720px); }
-body.lagen-site .latency-carousel[data-carousel-environment="deadly-corridor"] { --latency-carousel-slide-width: min(82%, 960px); }
+body.lagen-site .latency-control { width: min(100%, 620px); margin: 0 auto .8rem; padding: .65rem 1rem .75rem; border: 1px solid var(--lagen-rule); border-radius: 10px; background: var(--lagen-paper-raised); }
+body.lagen-site .latency-control-label { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; color: var(--lagen-soft); font-size: .82rem; font-weight: 700; }
+body.lagen-site .latency-control output { color: var(--lagen-plum); font-variant-numeric: tabular-nums; white-space: nowrap; }
+body.lagen-site .latency-control-range { display: block; width: 100%; margin: .45rem 0 0; accent-color: var(--lagen-plum); cursor: pointer; }
+body.lagen-site .latency-control-range:focus-visible { outline: 2px solid var(--lagen-plum); outline-offset: 3px; }
+body.lagen-site .latency-carousel[data-carousel-environment="flappy"] { --latency-carousel-slide-width: min(72%, 640px); }
+body.lagen-site .latency-carousel[data-carousel-environment="demon_attack"] { --latency-carousel-slide-width: min(76%, 720px); }
+body.lagen-site .latency-carousel[data-carousel-environment="deadly_corridor"] { --latency-carousel-slide-width: min(82%, 960px); }
 body.lagen-site .latency-carousel-stage { --latency-carousel-arrow-y: 50%; --latency-carousel-media-left: 25%; --latency-carousel-media-right: 25%; --latency-carousel-arrow-outset: 3.55rem; position: relative; margin-bottom: 2.1rem; }
 body.lagen-site .latency-carousel-arrow { position: absolute; z-index: 5; top: var(--latency-carousel-arrow-y); display: inline-grid; width: 2.65rem; height: 2.65rem; padding: 0; place-items: center; border: 1px solid var(--lagen-rule); border-radius: 50%; background: rgba(252,250,246,.97); box-shadow: 0 4px 14px rgba(36,31,28,.11); color: var(--lagen-plum); cursor: pointer; font-size: .86rem; line-height: 1; transform: translateY(-50%); transition: border-color .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease; }
 body.lagen-site .latency-carousel-arrow-prev { left: max(.4rem, calc(var(--latency-carousel-media-left) - var(--latency-carousel-arrow-outset))); }
@@ -46,16 +51,20 @@ body.lagen-site .latency-carousel-slide[data-carousel-wrap="previous"] { animati
 body.lagen-site .latency-carousel-slide[aria-hidden="true"] { pointer-events: none; }
 body.lagen-site .latency-carousel-slide:focus-visible { border-radius: 14px; outline: 3px solid rgba(125,52,85,.22); outline-offset: 2px; }
 body.lagen-site .latency-carousel-media-well { width: 100%; }
-body.lagen-site .curated-demo-card { width: 100%; margin: 0; overflow: hidden; border: 1px solid var(--lagen-rule); border-radius: 14px; background: transparent; box-shadow: 0 4px 14px rgba(36,31,28,.08); }
+body.lagen-site .curated-demo-card { position: relative; width: 100%; margin: 0; overflow: hidden; border: 1px solid var(--lagen-rule); border-radius: 14px; background: transparent; box-shadow: 0 4px 14px rgba(36,31,28,.08); }
 body.lagen-site .curated-demo-video { display: block; width: 100%; height: auto; }
+body.lagen-site .latency-death-canvas { position: absolute; inset: 0; z-index: 2; display: block; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity .08s linear; }
+body.lagen-site .latency-death-canvas.is-visible { opacity: 1; }
+body.lagen-site .latency-death-x { position: absolute; z-index: 3; top: 50%; left: 75%; color: #c52f36; font-size: clamp(3rem, 10vw, 7.5rem); font-weight: 800; line-height: 1; opacity: 0; pointer-events: none; text-shadow: 0 2px 5px rgba(30,10,10,.3); transform: translate(-50%, -50%); }
+body.lagen-site .latency-death-x.is-visible { opacity: 1; }
 body.lagen-site .latency-action-docks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; margin-top: .55rem; opacity: 1; transition: opacity .2s ease; }
 body.lagen-site .latency-carousel-slide[aria-hidden="true"] .latency-action-docks { opacity: 0; }
 body.lagen-site .latency-action-dock-slot { display: flex; min-width: 0; justify-content: center; }
 body.lagen-site .latency-action-dock { --latency-action-key-size: 44px; --latency-action-fire-width: 66px; --latency-action-key-gap: 5px; display: inline-flex; width: max-content; max-width: calc(100% - .75rem); padding: 5px; border: 1px solid var(--lagen-rule); border-radius: 9px; background: var(--lagen-paper-raised); box-shadow: 0 2px 7px rgba(36,31,28,.08); }
 body.lagen-site .latency-action-layout { display: none; align-items: center; gap: var(--latency-action-key-gap); }
-body.lagen-site .latency-carousel[data-carousel-environment="flappy-bird"] .latency-action-layout-flappy,
-body.lagen-site .latency-carousel[data-carousel-environment="demon-attack"] .latency-action-layout-demon,
-body.lagen-site .latency-carousel[data-carousel-environment="deadly-corridor"] .latency-action-layout-deadly { display: flex; }
+body.lagen-site .latency-carousel[data-carousel-environment="flappy"] .latency-action-layout-flappy,
+body.lagen-site .latency-carousel[data-carousel-environment="demon_attack"] .latency-action-layout-demon,
+body.lagen-site .latency-carousel[data-carousel-environment="deadly_corridor"] .latency-action-layout-deadly { display: flex; }
 body.lagen-site .latency-action-layout-deadly { align-items: flex-end; }
 body.lagen-site .latency-action-keypad { display: grid; grid-template-columns: repeat(3, var(--latency-action-key-size)); gap: var(--latency-action-key-gap); }
 body.lagen-site .latency-action-key { display: inline-grid; width: var(--latency-action-key-size); height: var(--latency-action-key-size); flex: 0 0 auto; place-items: center; border: 1px solid rgba(125,52,85,.48); border-radius: 6px; background: #fffaf5; color: var(--lagen-plum); box-shadow: inset 0 -1px 0 rgba(36,31,28,.08); font-size: 16px; line-height: 1; transition: border-color .12s ease, background-color .12s ease, color .12s ease, box-shadow .12s ease; }
