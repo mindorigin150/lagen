@@ -10,599 +10,67 @@
         "action": "noop"
       },
       {
-        "tick": 1,
-        "action": "flap"
-      },
-      {
-        "tick": 2,
-        "action": "flap"
-      },
-      {
-        "tick": 3,
-        "action": "flap"
-      },
-      {
-        "tick": 4,
-        "action": "noop"
-      },
-      {
-        "tick": 5,
-        "action": "noop"
-      },
-      {
-        "tick": 6,
-        "action": "noop"
-      },
-      {
-        "tick": 7,
-        "action": "noop"
-      },
-      {
-        "tick": 8,
-        "action": "noop"
-      },
-      {
-        "tick": 9,
-        "action": "noop"
-      },
-      {
-        "tick": 10,
-        "action": "noop"
-      },
-      {
-        "tick": 11,
-        "action": "noop"
-      },
-      {
         "tick": 12,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 13,
         "action": "noop"
       },
       {
-        "tick": 14,
-        "action": "noop"
-      },
-      {
-        "tick": 15,
-        "action": "noop"
-      },
-      {
-        "tick": 16,
-        "action": "noop"
-      },
-      {
-        "tick": 17,
-        "action": "noop"
-      },
-      {
-        "tick": 18,
-        "action": "noop"
-      },
-      {
-        "tick": 19,
-        "action": "noop"
-      },
-      {
-        "tick": 20,
-        "action": "noop"
-      },
-      {
-        "tick": 21,
-        "action": "noop"
-      },
-      {
-        "tick": 22,
-        "action": "noop"
-      },
-      {
-        "tick": 23,
-        "action": "flap"
-      },
-      {
-        "tick": 24,
-        "action": "flap"
-      },
-      {
-        "tick": 25,
-        "action": "noop"
-      },
-      {
-        "tick": 26,
-        "action": "noop"
-      },
-      {
-        "tick": 27,
-        "action": "noop"
-      },
-      {
-        "tick": 28,
-        "action": "noop"
-      },
-      {
-        "tick": 29,
-        "action": "noop"
-      },
-      {
-        "tick": 30,
-        "action": "noop"
-      },
-      {
         "tick": 31,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 32,
         "action": "noop"
       },
       {
-        "tick": 33,
-        "action": "noop"
-      },
-      {
-        "tick": 34,
-        "action": "noop"
-      },
-      {
-        "tick": 35,
-        "action": "noop"
-      },
-      {
-        "tick": 36,
-        "action": "noop"
-      },
-      {
-        "tick": 37,
-        "action": "noop"
-      },
-      {
-        "tick": 38,
-        "action": "noop"
-      },
-      {
-        "tick": 39,
-        "action": "noop"
-      },
-      {
-        "tick": 40,
-        "action": "noop"
-      },
-      {
-        "tick": 41,
-        "action": "noop"
-      },
-      {
-        "tick": 42,
-        "action": "noop"
-      },
-      {
-        "tick": 43,
-        "action": "noop"
-      },
-      {
-        "tick": 44,
-        "action": "noop"
-      },
-      {
-        "tick": 45,
-        "action": "noop"
-      },
-      {
-        "tick": 46,
-        "action": "noop"
-      },
-      {
-        "tick": 47,
-        "action": "noop"
-      },
-      {
-        "tick": 48,
-        "action": "noop"
-      },
-      {
-        "tick": 49,
-        "action": "noop"
-      },
-      {
         "tick": 50,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 51,
         "action": "noop"
       },
       {
-        "tick": 52,
-        "action": "flap"
-      },
-      {
-        "tick": 53,
-        "action": "flap"
-      },
-      {
-        "tick": 54,
-        "action": "flap"
-      },
-      {
-        "tick": 55,
-        "action": "flap"
-      },
-      {
-        "tick": 56,
-        "action": "noop"
-      },
-      {
-        "tick": 57,
-        "action": "noop"
-      },
-      {
-        "tick": 58,
-        "action": "flap"
-      },
-      {
-        "tick": 59,
-        "action": "flap"
-      },
-      {
-        "tick": 60,
-        "action": "flap"
-      },
-      {
-        "tick": 61,
-        "action": "flap"
-      },
-      {
-        "tick": 62,
-        "action": "noop"
-      },
-      {
-        "tick": 63,
-        "action": "noop"
-      },
-      {
-        "tick": 64,
-        "action": "noop"
-      },
-      {
-        "tick": 65,
-        "action": "noop"
-      },
-      {
-        "tick": 66,
-        "action": "noop"
-      },
-      {
-        "tick": 67,
-        "action": "noop"
-      },
-      {
-        "tick": 68,
-        "action": "noop"
-      },
-      {
         "tick": 69,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 70,
         "action": "noop"
       },
       {
-        "tick": 71,
-        "action": "noop"
-      },
-      {
-        "tick": 72,
-        "action": "noop"
-      },
-      {
-        "tick": 73,
-        "action": "noop"
-      },
-      {
-        "tick": 74,
-        "action": "noop"
-      },
-      {
-        "tick": 75,
-        "action": "noop"
-      },
-      {
-        "tick": 76,
-        "action": "noop"
-      },
-      {
-        "tick": 77,
-        "action": "noop"
-      },
-      {
-        "tick": 78,
-        "action": "noop"
-      },
-      {
-        "tick": 79,
-        "action": "noop"
-      },
-      {
-        "tick": 80,
-        "action": "noop"
-      },
-      {
-        "tick": 81,
-        "action": "noop"
-      },
-      {
-        "tick": 82,
-        "action": "noop"
-      },
-      {
-        "tick": 83,
-        "action": "noop"
-      },
-      {
-        "tick": 84,
-        "action": "noop"
-      },
-      {
-        "tick": 85,
-        "action": "noop"
-      },
-      {
-        "tick": 86,
-        "action": "noop"
-      },
-      {
         "tick": 87,
-        "action": "noop"
-      },
-      {
-        "tick": 88,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 89,
         "action": "noop"
       },
       {
-        "tick": 90,
-        "action": "flap"
-      },
-      {
-        "tick": 91,
-        "action": "flap"
-      },
-      {
-        "tick": 92,
-        "action": "noop"
-      },
-      {
-        "tick": 93,
-        "action": "flap"
-      },
-      {
-        "tick": 94,
-        "action": "flap"
-      },
-      {
-        "tick": 95,
-        "action": "flap"
-      },
-      {
-        "tick": 96,
-        "action": "flap"
-      },
-      {
-        "tick": 97,
-        "action": "flap"
-      },
-      {
-        "tick": 98,
-        "action": "noop"
-      },
-      {
-        "tick": 99,
-        "action": "noop"
-      },
-      {
-        "tick": 100,
-        "action": "noop"
-      },
-      {
-        "tick": 101,
-        "action": "noop"
-      },
-      {
-        "tick": 102,
-        "action": "noop"
-      },
-      {
-        "tick": 103,
-        "action": "noop"
-      },
-      {
-        "tick": 104,
-        "action": "noop"
-      },
-      {
-        "tick": 105,
-        "action": "noop"
-      },
-      {
-        "tick": 106,
-        "action": "noop"
-      },
-      {
-        "tick": 107,
-        "action": "noop"
-      },
-      {
         "tick": 108,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 109,
         "action": "noop"
       },
       {
-        "tick": 110,
-        "action": "noop"
-      },
-      {
-        "tick": 111,
-        "action": "noop"
-      },
-      {
-        "tick": 112,
-        "action": "noop"
-      },
-      {
-        "tick": 113,
-        "action": "noop"
-      },
-      {
-        "tick": 114,
-        "action": "flap"
-      },
-      {
-        "tick": 115,
-        "action": "flap"
-      },
-      {
-        "tick": 116,
-        "action": "flap"
-      },
-      {
-        "tick": 117,
-        "action": "flap"
-      },
-      {
-        "tick": 118,
-        "action": "flap"
-      },
-      {
-        "tick": 119,
-        "action": "flap"
-      },
-      {
-        "tick": 120,
-        "action": "noop"
-      },
-      {
-        "tick": 121,
-        "action": "noop"
-      },
-      {
-        "tick": 122,
-        "action": "noop"
-      },
-      {
-        "tick": 123,
-        "action": "noop"
-      },
-      {
-        "tick": 124,
-        "action": "noop"
-      },
-      {
-        "tick": 125,
-        "action": "noop"
-      },
-      {
-        "tick": 126,
-        "action": "noop"
-      },
-      {
         "tick": 127,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 128,
         "action": "noop"
       },
       {
-        "tick": 129,
-        "action": "noop"
-      },
-      {
-        "tick": 130,
-        "action": "noop"
-      },
-      {
-        "tick": 131,
-        "action": "noop"
-      },
-      {
-        "tick": 132,
-        "action": "noop"
-      },
-      {
-        "tick": 133,
-        "action": "noop"
-      },
-      {
-        "tick": 134,
-        "action": "noop"
-      },
-      {
-        "tick": 135,
-        "action": "noop"
-      },
-      {
-        "tick": 136,
-        "action": "noop"
-      },
-      {
-        "tick": 137,
-        "action": "noop"
-      },
-      {
-        "tick": 138,
-        "action": "noop"
-      },
-      {
-        "tick": 139,
+        "tick": 147,
         "action": "flap"
       },
       {
-        "tick": 140,
-        "action": "noop"
-      },
-      {
-        "tick": 141,
-        "action": "noop"
-      },
-      {
-        "tick": 142,
-        "action": "noop"
-      },
-      {
-        "tick": 143,
-        "action": "noop"
-      },
-      {
-        "tick": 144,
-        "action": "noop"
-      },
-      {
-        "tick": 145,
-        "action": "noop"
-      },
-      {
-        "tick": 146,
-        "action": "noop"
-      },
-      {
-        "tick": 147,
-        "action": "noop"
-      },
-      {
         "tick": 148,
-        "action": "noop"
-      },
-      {
-        "tick": 149,
         "action": "noop"
       }
     ],
@@ -645,86 +113,14 @@
     "requests": [
       {
         "tick": 0,
-        "action": "flap"
-      },
-      {
-        "tick": 1,
-        "action": "flap"
-      },
-      {
-        "tick": 2,
-        "action": "flap"
-      },
-      {
-        "tick": 3,
-        "action": "flap"
-      },
-      {
-        "tick": 4,
-        "action": "noop"
-      },
-      {
-        "tick": 5,
-        "action": "noop"
-      },
-      {
-        "tick": 6,
         "action": "noop"
       },
       {
         "tick": 7,
-        "action": "noop"
-      },
-      {
-        "tick": 8,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 9,
-        "action": "noop"
-      },
-      {
-        "tick": 10,
-        "action": "noop"
-      },
-      {
-        "tick": 11,
-        "action": "noop"
-      },
-      {
-        "tick": 12,
-        "action": "noop"
-      },
-      {
-        "tick": 13,
-        "action": "noop"
-      },
-      {
-        "tick": 14,
-        "action": "noop"
-      },
-      {
-        "tick": 15,
-        "action": "noop"
-      },
-      {
-        "tick": 16,
-        "action": "noop"
-      },
-      {
-        "tick": 17,
-        "action": "noop"
-      },
-      {
-        "tick": 18,
-        "action": "noop"
-      },
-      {
-        "tick": 19,
-        "action": "noop"
-      },
-      {
-        "tick": 20,
         "action": "noop"
       },
       {
@@ -733,82 +129,6 @@
       },
       {
         "tick": 22,
-        "action": "flap"
-      },
-      {
-        "tick": 23,
-        "action": "noop"
-      },
-      {
-        "tick": 24,
-        "action": "noop"
-      },
-      {
-        "tick": 25,
-        "action": "noop"
-      },
-      {
-        "tick": 26,
-        "action": "noop"
-      },
-      {
-        "tick": 27,
-        "action": "noop"
-      },
-      {
-        "tick": 28,
-        "action": "noop"
-      },
-      {
-        "tick": 29,
-        "action": "noop"
-      },
-      {
-        "tick": 30,
-        "action": "noop"
-      },
-      {
-        "tick": 31,
-        "action": "noop"
-      },
-      {
-        "tick": 32,
-        "action": "noop"
-      },
-      {
-        "tick": 33,
-        "action": "noop"
-      },
-      {
-        "tick": 34,
-        "action": "noop"
-      },
-      {
-        "tick": 35,
-        "action": "noop"
-      },
-      {
-        "tick": 36,
-        "action": "noop"
-      },
-      {
-        "tick": 37,
-        "action": "noop"
-      },
-      {
-        "tick": 38,
-        "action": "noop"
-      },
-      {
-        "tick": 39,
-        "action": "noop"
-      },
-      {
-        "tick": 40,
-        "action": "noop"
-      },
-      {
-        "tick": 41,
         "action": "noop"
       },
       {
@@ -817,270 +137,30 @@
       },
       {
         "tick": 43,
-        "action": "flap"
-      },
-      {
-        "tick": 44,
-        "action": "noop"
-      },
-      {
-        "tick": 45,
-        "action": "noop"
-      },
-      {
-        "tick": 46,
         "action": "noop"
       },
       {
         "tick": 47,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 48,
         "action": "noop"
       },
       {
-        "tick": 49,
-        "action": "noop"
-      },
-      {
-        "tick": 50,
-        "action": "noop"
-      },
-      {
-        "tick": 51,
-        "action": "noop"
-      },
-      {
-        "tick": 52,
-        "action": "noop"
-      },
-      {
-        "tick": 53,
-        "action": "noop"
-      },
-      {
-        "tick": 54,
-        "action": "noop"
-      },
-      {
-        "tick": 55,
-        "action": "noop"
-      },
-      {
-        "tick": 56,
-        "action": "noop"
-      },
-      {
-        "tick": 57,
-        "action": "noop"
-      },
-      {
-        "tick": 58,
-        "action": "noop"
-      },
-      {
-        "tick": 59,
-        "action": "flap"
-      },
-      {
-        "tick": 60,
-        "action": "flap"
-      },
-      {
-        "tick": 61,
-        "action": "flap"
-      },
-      {
-        "tick": 62,
-        "action": "flap"
-      },
-      {
-        "tick": 63,
-        "action": "flap"
-      },
-      {
-        "tick": 64,
-        "action": "noop"
-      },
-      {
-        "tick": 65,
-        "action": "noop"
-      },
-      {
-        "tick": 66,
-        "action": "noop"
-      },
-      {
         "tick": 67,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 68,
         "action": "noop"
       },
       {
-        "tick": 69,
-        "action": "noop"
-      },
-      {
-        "tick": 70,
-        "action": "noop"
-      },
-      {
-        "tick": 71,
-        "action": "noop"
-      },
-      {
-        "tick": 72,
-        "action": "noop"
-      },
-      {
-        "tick": 73,
-        "action": "noop"
-      },
-      {
-        "tick": 74,
-        "action": "noop"
-      },
-      {
-        "tick": 75,
-        "action": "noop"
-      },
-      {
-        "tick": 76,
-        "action": "noop"
-      },
-      {
-        "tick": 77,
-        "action": "noop"
-      },
-      {
-        "tick": 78,
-        "action": "noop"
-      },
-      {
-        "tick": 79,
-        "action": "noop"
-      },
-      {
-        "tick": 80,
-        "action": "noop"
-      },
-      {
-        "tick": 81,
-        "action": "noop"
-      },
-      {
-        "tick": 82,
-        "action": "noop"
-      },
-      {
-        "tick": 83,
-        "action": "noop"
-      },
-      {
-        "tick": 84,
-        "action": "noop"
-      },
-      {
-        "tick": 85,
+        "tick": 92,
         "action": "flap"
       },
       {
-        "tick": 86,
-        "action": "noop"
-      },
-      {
-        "tick": 87,
-        "action": "noop"
-      },
-      {
-        "tick": 88,
-        "action": "noop"
-      },
-      {
-        "tick": 89,
-        "action": "noop"
-      },
-      {
-        "tick": 90,
-        "action": "noop"
-      },
-      {
-        "tick": 91,
-        "action": "noop"
-      },
-      {
-        "tick": 92,
-        "action": "noop"
-      },
-      {
         "tick": 93,
-        "action": "noop"
-      },
-      {
-        "tick": 94,
-        "action": "noop"
-      },
-      {
-        "tick": 95,
-        "action": "noop"
-      },
-      {
-        "tick": 96,
-        "action": "noop"
-      },
-      {
-        "tick": 97,
-        "action": "noop"
-      },
-      {
-        "tick": 98,
-        "action": "noop"
-      },
-      {
-        "tick": 99,
-        "action": "noop"
-      },
-      {
-        "tick": 100,
-        "action": "noop"
-      },
-      {
-        "tick": 101,
-        "action": "noop"
-      },
-      {
-        "tick": 102,
-        "action": "noop"
-      },
-      {
-        "tick": 103,
-        "action": "noop"
-      },
-      {
-        "tick": 104,
-        "action": "noop"
-      },
-      {
-        "tick": 105,
-        "action": "noop"
-      },
-      {
-        "tick": 106,
-        "action": "noop"
-      },
-      {
-        "tick": 107,
-        "action": "noop"
-      },
-      {
-        "tick": 108,
-        "action": "noop"
-      },
-      {
-        "tick": 109,
         "action": "noop"
       },
       {
@@ -1088,160 +168,24 @@
         "action": "flap"
       },
       {
-        "tick": 111,
-        "action": "flap"
-      },
-      {
         "tick": 112,
-        "action": "flap"
-      },
-      {
-        "tick": 113,
-        "action": "flap"
-      },
-      {
-        "tick": 114,
-        "action": "flap"
-      },
-      {
-        "tick": 115,
-        "action": "flap"
-      },
-      {
-        "tick": 116,
-        "action": "flap"
-      },
-      {
-        "tick": 117,
-        "action": "flap"
-      },
-      {
-        "tick": 118,
-        "action": "flap"
-      },
-      {
-        "tick": 119,
-        "action": "noop"
-      },
-      {
-        "tick": 120,
-        "action": "noop"
-      },
-      {
-        "tick": 121,
-        "action": "noop"
-      },
-      {
-        "tick": 122,
-        "action": "noop"
-      },
-      {
-        "tick": 123,
-        "action": "noop"
-      },
-      {
-        "tick": 124,
         "action": "noop"
       },
       {
         "tick": 125,
-        "action": "noop"
-      },
-      {
-        "tick": 126,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 127,
         "action": "noop"
       },
       {
-        "tick": 128,
-        "action": "noop"
-      },
-      {
-        "tick": 129,
-        "action": "noop"
-      },
-      {
-        "tick": 130,
-        "action": "noop"
-      },
-      {
-        "tick": 131,
-        "action": "noop"
-      },
-      {
-        "tick": 132,
-        "action": "noop"
-      },
-      {
-        "tick": 133,
-        "action": "noop"
-      },
-      {
-        "tick": 134,
-        "action": "noop"
-      },
-      {
-        "tick": 135,
-        "action": "noop"
-      },
-      {
-        "tick": 136,
-        "action": "noop"
-      },
-      {
-        "tick": 137,
-        "action": "noop"
-      },
-      {
-        "tick": 138,
-        "action": "noop"
-      },
-      {
-        "tick": 139,
-        "action": "noop"
-      },
-      {
-        "tick": 140,
-        "action": "noop"
-      },
-      {
-        "tick": 141,
-        "action": "noop"
-      },
-      {
-        "tick": 142,
-        "action": "noop"
-      },
-      {
-        "tick": 143,
-        "action": "noop"
-      },
-      {
-        "tick": 144,
-        "action": "noop"
-      },
-      {
-        "tick": 145,
-        "action": "noop"
-      },
-      {
         "tick": 146,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 147,
-        "action": "flap"
-      },
-      {
-        "tick": 148,
         "action": "noop"
-      },
-      {
-        "tick": 149,
-        "action": "flap"
       }
     ],
     "variants": [
@@ -1283,15 +227,7 @@
     "requests": [
       {
         "tick": 0,
-        "action": "flap"
-      },
-      {
-        "tick": 1,
-        "action": "flap"
-      },
-      {
-        "tick": 2,
-        "action": "flap"
+        "action": "noop"
       },
       {
         "tick": 3,
@@ -1302,584 +238,68 @@
         "action": "noop"
       },
       {
-        "tick": 5,
-        "action": "noop"
-      },
-      {
-        "tick": 6,
-        "action": "noop"
-      },
-      {
-        "tick": 7,
-        "action": "noop"
-      },
-      {
-        "tick": 8,
-        "action": "noop"
-      },
-      {
-        "tick": 9,
-        "action": "noop"
-      },
-      {
-        "tick": 10,
-        "action": "noop"
-      },
-      {
-        "tick": 11,
-        "action": "noop"
-      },
-      {
-        "tick": 12,
-        "action": "noop"
-      },
-      {
-        "tick": 13,
-        "action": "noop"
-      },
-      {
-        "tick": 14,
-        "action": "noop"
-      },
-      {
-        "tick": 15,
-        "action": "noop"
-      },
-      {
-        "tick": 16,
-        "action": "noop"
-      },
-      {
-        "tick": 17,
-        "action": "noop"
-      },
-      {
-        "tick": 18,
-        "action": "noop"
-      },
-      {
-        "tick": 19,
-        "action": "noop"
-      },
-      {
-        "tick": 20,
-        "action": "flap"
-      },
-      {
-        "tick": 21,
-        "action": "flap"
-      },
-      {
-        "tick": 22,
-        "action": "flap"
-      },
-      {
-        "tick": 23,
-        "action": "noop"
-      },
-      {
-        "tick": 24,
-        "action": "noop"
-      },
-      {
-        "tick": 25,
-        "action": "noop"
-      },
-      {
         "tick": 26,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 27,
         "action": "noop"
       },
       {
-        "tick": 28,
-        "action": "noop"
-      },
-      {
-        "tick": 29,
-        "action": "noop"
-      },
-      {
-        "tick": 30,
-        "action": "noop"
-      },
-      {
-        "tick": 31,
-        "action": "noop"
-      },
-      {
-        "tick": 32,
-        "action": "noop"
-      },
-      {
-        "tick": 33,
-        "action": "noop"
-      },
-      {
-        "tick": 34,
-        "action": "noop"
-      },
-      {
-        "tick": 35,
-        "action": "noop"
-      },
-      {
-        "tick": 36,
-        "action": "noop"
-      },
-      {
-        "tick": 37,
-        "action": "noop"
-      },
-      {
-        "tick": 38,
-        "action": "noop"
-      },
-      {
-        "tick": 39,
-        "action": "noop"
-      },
-      {
-        "tick": 40,
-        "action": "noop"
-      },
-      {
-        "tick": 41,
-        "action": "flap"
-      },
-      {
         "tick": 42,
         "action": "flap"
-      },
-      {
-        "tick": 43,
-        "action": "noop"
       },
       {
         "tick": 44,
         "action": "noop"
       },
       {
-        "tick": 45,
-        "action": "noop"
-      },
-      {
-        "tick": 46,
-        "action": "noop"
-      },
-      {
-        "tick": 47,
-        "action": "noop"
-      },
-      {
-        "tick": 48,
-        "action": "noop"
-      },
-      {
-        "tick": 49,
-        "action": "noop"
-      },
-      {
-        "tick": 50,
-        "action": "noop"
-      },
-      {
-        "tick": 51,
-        "action": "noop"
-      },
-      {
-        "tick": 52,
-        "action": "noop"
-      },
-      {
-        "tick": 53,
-        "action": "noop"
-      },
-      {
-        "tick": 54,
-        "action": "noop"
-      },
-      {
-        "tick": 55,
-        "action": "noop"
-      },
-      {
-        "tick": 56,
-        "action": "noop"
-      },
-      {
-        "tick": 57,
-        "action": "noop"
-      },
-      {
-        "tick": 58,
-        "action": "noop"
-      },
-      {
-        "tick": 59,
-        "action": "noop"
-      },
-      {
-        "tick": 60,
-        "action": "noop"
-      },
-      {
-        "tick": 61,
-        "action": "noop"
-      },
-      {
-        "tick": 62,
-        "action": "noop"
-      },
-      {
-        "tick": 63,
-        "action": "noop"
-      },
-      {
-        "tick": 64,
-        "action": "noop"
-      },
-      {
         "tick": 65,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 66,
         "action": "noop"
       },
       {
-        "tick": 67,
-        "action": "noop"
-      },
-      {
-        "tick": 68,
-        "action": "noop"
-      },
-      {
-        "tick": 69,
-        "action": "flap"
-      },
-      {
-        "tick": 70,
-        "action": "flap"
-      },
-      {
-        "tick": 71,
-        "action": "flap"
-      },
-      {
-        "tick": 72,
-        "action": "flap"
-      },
-      {
-        "tick": 73,
-        "action": "flap"
-      },
-      {
-        "tick": 74,
-        "action": "flap"
-      },
-      {
-        "tick": 75,
-        "action": "noop"
-      },
-      {
-        "tick": 76,
-        "action": "noop"
-      },
-      {
-        "tick": 77,
-        "action": "noop"
-      },
-      {
-        "tick": 78,
-        "action": "noop"
-      },
-      {
-        "tick": 79,
-        "action": "noop"
-      },
-      {
         "tick": 80,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 81,
         "action": "noop"
       },
       {
-        "tick": 82,
-        "action": "noop"
-      },
-      {
-        "tick": 83,
-        "action": "noop"
-      },
-      {
-        "tick": 84,
-        "action": "noop"
-      },
-      {
-        "tick": 85,
-        "action": "noop"
-      },
-      {
-        "tick": 86,
-        "action": "noop"
-      },
-      {
-        "tick": 87,
-        "action": "noop"
-      },
-      {
-        "tick": 88,
-        "action": "noop"
-      },
-      {
-        "tick": 89,
-        "action": "noop"
-      },
-      {
-        "tick": 90,
-        "action": "noop"
-      },
-      {
-        "tick": 91,
-        "action": "noop"
-      },
-      {
-        "tick": 92,
-        "action": "noop"
-      },
-      {
-        "tick": 93,
-        "action": "flap"
-      },
-      {
-        "tick": 94,
-        "action": "flap"
-      },
-      {
-        "tick": 95,
-        "action": "noop"
-      },
-      {
-        "tick": 96,
-        "action": "noop"
-      },
-      {
-        "tick": 97,
-        "action": "flap"
-      },
-      {
-        "tick": 98,
-        "action": "flap"
-      },
-      {
-        "tick": 99,
-        "action": "flap"
-      },
-      {
-        "tick": 100,
-        "action": "flap"
-      },
-      {
-        "tick": 101,
-        "action": "noop"
-      },
-      {
-        "tick": 102,
-        "action": "noop"
-      },
-      {
         "tick": 103,
-        "action": "noop"
-      },
-      {
-        "tick": 104,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 105,
         "action": "noop"
       },
       {
-        "tick": 106,
-        "action": "noop"
-      },
-      {
-        "tick": 107,
-        "action": "noop"
-      },
-      {
-        "tick": 108,
-        "action": "noop"
-      },
-      {
-        "tick": 109,
-        "action": "noop"
-      },
-      {
-        "tick": 110,
-        "action": "noop"
-      },
-      {
-        "tick": 111,
-        "action": "noop"
-      },
-      {
-        "tick": 112,
-        "action": "noop"
-      },
-      {
-        "tick": 113,
-        "action": "noop"
-      },
-      {
-        "tick": 114,
-        "action": "noop"
-      },
-      {
-        "tick": 115,
-        "action": "noop"
-      },
-      {
-        "tick": 116,
-        "action": "noop"
-      },
-      {
         "tick": 117,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 118,
         "action": "noop"
       },
       {
-        "tick": 119,
-        "action": "noop"
-      },
-      {
-        "tick": 120,
-        "action": "flap"
-      },
-      {
-        "tick": 121,
-        "action": "flap"
-      },
-      {
-        "tick": 122,
-        "action": "noop"
-      },
-      {
-        "tick": 123,
-        "action": "noop"
-      },
-      {
-        "tick": 124,
-        "action": "noop"
-      },
-      {
-        "tick": 125,
-        "action": "noop"
-      },
-      {
-        "tick": 126,
-        "action": "noop"
-      },
-      {
-        "tick": 127,
-        "action": "noop"
-      },
-      {
-        "tick": 128,
-        "action": "noop"
-      },
-      {
-        "tick": 129,
-        "action": "noop"
-      },
-      {
-        "tick": 130,
-        "action": "noop"
-      },
-      {
-        "tick": 131,
-        "action": "noop"
-      },
-      {
-        "tick": 132,
-        "action": "noop"
-      },
-      {
-        "tick": 133,
-        "action": "noop"
-      },
-      {
-        "tick": 134,
-        "action": "noop"
-      },
-      {
-        "tick": 135,
-        "action": "noop"
-      },
-      {
-        "tick": 136,
-        "action": "noop"
-      },
-      {
-        "tick": 137,
-        "action": "noop"
-      },
-      {
-        "tick": 138,
-        "action": "noop"
-      },
-      {
-        "tick": 139,
-        "action": "noop"
-      },
-      {
-        "tick": 140,
-        "action": "noop"
-      },
-      {
-        "tick": 141,
-        "action": "noop"
-      },
-      {
-        "tick": 142,
-        "action": "noop"
-      },
-      {
         "tick": 143,
-        "action": "noop"
+        "action": "flap"
       },
       {
         "tick": 144,
         "action": "noop"
       },
       {
-        "tick": 145,
+        "tick": 156,
+        "action": "flap"
+      },
+      {
+        "tick": 158,
         "action": "noop"
-      },
-      {
-        "tick": 146,
-        "action": "flap"
-      },
-      {
-        "tick": 147,
-        "action": "flap"
-      },
-      {
-        "tick": 148,
-        "action": "flap"
-      },
-      {
-        "tick": 149,
-        "action": "flap"
       }
     ],
     "variants": [
@@ -1920,304 +340,172 @@
     "poster": "demo-showcase-real/demon_attack/demon_attack-real-01.webp",
     "requests": [
       {
-        "tick": 3,
-        "action": "FIRE"
-      },
-      {
-        "tick": 7,
-        "action": "FIRE"
-      },
-      {
-        "tick": 11,
-        "action": "FIRE"
-      },
-      {
-        "tick": 15,
-        "action": "FIRE"
-      },
-      {
-        "tick": 19,
-        "action": "FIRE"
-      },
-      {
-        "tick": 23,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 27,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 31,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 35,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 39,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 43,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 47,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 51,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 55,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 59,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 63,
+        "tick": 0,
         "action": "RIGHT"
       },
       {
-        "tick": 67,
+        "tick": 4,
+        "action": "LEFT"
+      },
+      {
+        "tick": 40,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 44,
         "action": "RIGHT"
       },
       {
-        "tick": 71,
+        "tick": 52,
         "action": "NOOP"
       },
       {
-        "tick": 75,
+        "tick": 60,
         "action": "LEFT"
       },
       {
-        "tick": 79,
+        "tick": 68,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 83,
-        "action": "LEFTFIRE"
+        "tick": 72,
+        "action": "RIGHT"
       },
       {
-        "tick": 87,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 91,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 95,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 99,
-        "action": "LEFT"
-      },
-      {
-        "tick": 103,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 107,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 111,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 115,
-        "action": "FIRE"
-      },
-      {
-        "tick": 119,
+        "tick": 76,
         "action": "NOOP"
       },
       {
-        "tick": 123,
+        "tick": 112,
+        "action": "RIGHT"
+      },
+      {
+        "tick": 116,
         "action": "NOOP"
       },
       {
-        "tick": 127,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 131,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 135,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 139,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 143,
+        "tick": 124,
         "action": "FIRE"
       },
       {
-        "tick": 147,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 151,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 155,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 159,
-        "action": "FIRE"
-      },
-      {
-        "tick": 163,
-        "action": "FIRE"
-      },
-      {
-        "tick": 167,
-        "action": "FIRE"
-      },
-      {
-        "tick": 171,
-        "action": "FIRE"
-      },
-      {
-        "tick": 175,
-        "action": "FIRE"
-      },
-      {
-        "tick": 179,
-        "action": "FIRE"
-      },
-      {
-        "tick": 183,
-        "action": "FIRE"
-      },
-      {
-        "tick": 187,
-        "action": "FIRE"
-      },
-      {
-        "tick": 191,
-        "action": "FIRE"
-      },
-      {
-        "tick": 195,
-        "action": "FIRE"
-      },
-      {
-        "tick": 199,
+        "tick": 136,
         "action": "LEFT"
       },
       {
-        "tick": 203,
+        "tick": 140,
+        "action": "LEFTFIRE"
+      },
+      {
+        "tick": 148,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 207,
+        "tick": 152,
         "action": "LEFTFIRE"
       },
       {
-        "tick": 211,
+        "tick": 176,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 180,
         "action": "LEFTFIRE"
       },
       {
-        "tick": 215,
-        "action": "LEFTFIRE"
+        "tick": 192,
+        "action": "FIRE"
       },
       {
-        "tick": 219,
+        "tick": 208,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 224,
+        "action": "NOOP"
+      },
+      {
+        "tick": 232,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 248,
         "action": "LEFT"
       },
       {
-        "tick": 223,
-        "action": "FIRE"
-      },
-      {
-        "tick": 227,
-        "action": "FIRE"
-      },
-      {
-        "tick": 231,
-        "action": "FIRE"
-      },
-      {
-        "tick": 235,
-        "action": "FIRE"
-      },
-      {
-        "tick": 239,
+        "tick": 260,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 243,
-        "action": "RIGHTFIRE"
+        "tick": 268,
+        "action": "RIGHT"
       },
       {
-        "tick": 247,
-        "action": "FIRE"
+        "tick": 272,
+        "action": "NOOP"
       },
       {
-        "tick": 251,
-        "action": "RIGHTFIRE"
+        "tick": 280,
+        "action": "LEFT"
       },
       {
-        "tick": 255,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 259,
-        "action": "FIRE"
-      },
-      {
-        "tick": 263,
+        "tick": 284,
         "action": "LEFTFIRE"
       },
       {
-        "tick": 267,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 271,
+        "tick": 288,
         "action": "FIRE"
       },
       {
-        "tick": 275,
+        "tick": 292,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 279,
+        "tick": 300,
+        "action": "NOOP"
+      },
+      {
+        "tick": 308,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 283,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 287,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 291,
+        "tick": 312,
         "action": "LEFT"
       },
       {
-        "tick": 295,
+        "tick": 320,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 299,
+        "tick": 328,
+        "action": "FIRE"
+      },
+      {
+        "tick": 348,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 356,
+        "action": "FIRE"
+      },
+      {
+        "tick": 360,
         "action": "LEFT"
+      },
+      {
+        "tick": 368,
+        "action": "RIGHTFIRE"
+      },
+      {
+        "tick": 392,
+        "action": "FIRE"
+      },
+      {
+        "tick": 400,
+        "action": "LEFT"
+      },
+      {
+        "tick": 408,
+        "action": "RIGHT"
       }
     ],
     "variants": [
@@ -2251,187 +539,71 @@
     "requests": [
       {
         "tick": 0,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 4,
-        "action": "LEFTFIRE"
+        "action": "RIGHT"
       },
       {
         "tick": 8,
-        "action": "FIRE"
+        "action": "LEFTFIRE"
       },
       {
         "tick": 12,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 16,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 20,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 24,
-        "action": "FIRE"
-      },
-      {
-        "tick": 28,
-        "action": "FIRE"
-      },
-      {
-        "tick": 32,
-        "action": "FIRE"
-      },
-      {
-        "tick": 36,
-        "action": "FIRE"
-      },
-      {
-        "tick": 40,
-        "action": "FIRE"
-      },
-      {
-        "tick": 44,
-        "action": "FIRE"
+        "action": "LEFT"
       },
       {
         "tick": 48,
-        "action": "FIRE"
+        "action": "RIGHTFIRE"
       },
       {
         "tick": 52,
-        "action": "FIRE"
-      },
-      {
-        "tick": 56,
-        "action": "FIRE"
+        "action": "RIGHT"
       },
       {
         "tick": 60,
-        "action": "FIRE"
-      },
-      {
-        "tick": 64,
-        "action": "LEFT"
+        "action": "NOOP"
       },
       {
         "tick": 68,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 72,
-        "action": "LEFTFIRE"
+        "action": "LEFT"
       },
       {
         "tick": 76,
-        "action": "LEFTFIRE"
+        "action": "RIGHTFIRE"
       },
       {
         "tick": 80,
-        "action": "LEFTFIRE"
+        "action": "RIGHT"
       },
       {
         "tick": 84,
-        "action": "LEFT"
-      },
-      {
-        "tick": 88,
-        "action": "FIRE"
-      },
-      {
-        "tick": 92,
-        "action": "FIRE"
-      },
-      {
-        "tick": 96,
-        "action": "FIRE"
-      },
-      {
-        "tick": 100,
-        "action": "FIRE"
-      },
-      {
-        "tick": 104,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 108,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 112,
-        "action": "FIRE"
-      },
-      {
-        "tick": 116,
-        "action": "RIGHTFIRE"
+        "action": "NOOP"
       },
       {
         "tick": 120,
-        "action": "RIGHTFIRE"
+        "action": "RIGHT"
       },
       {
         "tick": 124,
-        "action": "FIRE"
-      },
-      {
-        "tick": 128,
-        "action": "LEFTFIRE"
+        "action": "NOOP"
       },
       {
         "tick": 132,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 136,
         "action": "FIRE"
       },
       {
-        "tick": 140,
-        "action": "RIGHTFIRE"
-      },
-      {
         "tick": 144,
-        "action": "RIGHTFIRE"
+        "action": "LEFT"
       },
       {
         "tick": 148,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 152,
-        "action": "RIGHTFIRE"
+        "action": "LEFTFIRE"
       },
       {
         "tick": 156,
-        "action": "LEFT"
+        "action": "RIGHTFIRE"
       },
       {
         "tick": 160,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 164,
-        "action": "LEFT"
-      },
-      {
-        "tick": 168,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 172,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 176,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 180,
-        "action": "RIGHTFIRE"
+        "action": "LEFTFIRE"
       },
       {
         "tick": 184,
@@ -2439,115 +611,51 @@
       },
       {
         "tick": 188,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 192,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 196,
-        "action": "RIGHTFIRE"
+        "action": "LEFTFIRE"
       },
       {
         "tick": 200,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 204,
-        "action": "LEFT"
-      },
-      {
-        "tick": 208,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 212,
-        "action": "RIGHTFIRE"
+        "action": "FIRE"
       },
       {
         "tick": 216,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 220,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 224,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 228,
-        "action": "FIRE"
-      },
-      {
         "tick": 232,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 236,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 240,
         "action": "NOOP"
       },
       {
-        "tick": 244,
-        "action": "FIRE"
-      },
-      {
-        "tick": 248,
-        "action": "FIRE"
-      },
-      {
-        "tick": 252,
-        "action": "FIRE"
+        "tick": 240,
+        "action": "RIGHTFIRE"
       },
       {
         "tick": 256,
         "action": "LEFT"
       },
       {
-        "tick": 260,
-        "action": "RIGHT"
-      },
-      {
-        "tick": 264,
-        "action": "LEFTFIRE"
-      },
-      {
         "tick": 268,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 272,
-        "action": "LEFTFIRE"
+        "action": "RIGHTFIRE"
       },
       {
         "tick": 276,
-        "action": "LEFTFIRE"
+        "action": "RIGHT"
       },
       {
         "tick": 280,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 284,
-        "action": "LEFTFIRE"
+        "action": "NOOP"
       },
       {
         "tick": 288,
-        "action": "LEFTFIRE"
+        "action": "LEFT"
       },
       {
         "tick": 292,
-        "action": "RIGHTFIRE"
+        "action": "LEFTFIRE"
       },
       {
         "tick": 296,
-        "action": "RIGHTFIRE"
+        "action": "FIRE"
       }
     ],
     "variants": [
@@ -2581,283 +689,119 @@
     "requests": [
       {
         "tick": 0,
-        "action": "FIRE"
-      },
-      {
-        "tick": 4,
-        "action": "FIRE"
-      },
-      {
-        "tick": 8,
-        "action": "LEFT"
-      },
-      {
-        "tick": 12,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 16,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 20,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 24,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 28,
         "action": "LEFT"
       },
       {
         "tick": 32,
-        "action": "FIRE"
+        "action": "RIGHTFIRE"
       },
       {
         "tick": 36,
-        "action": "FIRE"
-      },
-      {
-        "tick": 40,
-        "action": "FIRE"
+        "action": "RIGHT"
       },
       {
         "tick": 44,
-        "action": "FIRE"
-      },
-      {
-        "tick": 48,
-        "action": "RIGHTFIRE"
+        "action": "NOOP"
       },
       {
         "tick": 52,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 56,
-        "action": "FIRE"
-      },
-      {
-        "tick": 60,
-        "action": "RIGHTFIRE"
+        "action": "LEFT"
       },
       {
         "tick": 64,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 68,
-        "action": "FIRE"
-      },
-      {
         "tick": 72,
-        "action": "LEFTFIRE"
+        "action": "RIGHT"
       },
       {
         "tick": 76,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 80,
-        "action": "FIRE"
-      },
-      {
-        "tick": 84,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 88,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 92,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 96,
-        "action": "RIGHTFIRE"
+        "action": "NOOP"
       },
       {
         "tick": 100,
-        "action": "LEFT"
+        "action": "FIRE"
       },
       {
         "tick": 104,
-        "action": "RIGHTFIRE"
+        "action": "NOOP"
       },
       {
         "tick": 108,
-        "action": "LEFT"
+        "action": "RIGHT"
       },
       {
         "tick": 112,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 116,
-        "action": "RIGHTFIRE"
+        "action": "NOOP"
       },
       {
         "tick": 120,
-        "action": "RIGHTFIRE"
+        "action": "FIRE"
       },
       {
         "tick": 124,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 128,
-        "action": "RIGHTFIRE"
+        "action": "LEFTFIRE"
       },
       {
         "tick": 132,
-        "action": "RIGHTFIRE"
+        "action": "LEFT"
       },
       {
         "tick": 136,
-        "action": "RIGHTFIRE"
+        "action": "LEFTFIRE"
       },
       {
         "tick": 140,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 144,
-        "action": "RIGHTFIRE"
-      },
-      {
         "tick": 148,
-        "action": "LEFT"
-      },
-      {
-        "tick": 152,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 156,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 160,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 164,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 168,
-        "action": "RIGHTFIRE"
+        "action": "LEFTFIRE"
       },
       {
         "tick": 172,
-        "action": "FIRE"
+        "action": "RIGHTFIRE"
       },
       {
         "tick": 176,
         "action": "LEFTFIRE"
       },
       {
-        "tick": 180,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 184,
-        "action": "NOOP"
-      },
-      {
         "tick": 188,
         "action": "FIRE"
       },
       {
-        "tick": 192,
-        "action": "FIRE"
-      },
-      {
-        "tick": 196,
-        "action": "FIRE"
-      },
-      {
-        "tick": 200,
-        "action": "LEFT"
-      },
-      {
         "tick": 204,
-        "action": "RIGHT"
-      },
-      {
-        "tick": 208,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 212,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 216,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 220,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 224,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 228,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 232,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 236,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 240,
+        "tick": 220,
+        "action": "NOOP"
+      },
+      {
+        "tick": 228,
         "action": "RIGHTFIRE"
       },
       {
         "tick": 244,
-        "action": "RIGHTFIRE"
-      },
-      {
-        "tick": 248,
-        "action": "RIGHT"
-      },
-      {
-        "tick": 252,
-        "action": "RIGHT"
+        "action": "LEFT"
       },
       {
         "tick": 256,
         "action": "RIGHTFIRE"
       },
       {
-        "tick": 260,
-        "action": "RIGHT"
-      },
-      {
         "tick": 264,
-        "action": "RIGHTFIRE"
+        "action": "RIGHT"
       },
       {
         "tick": 268,
-        "action": "RIGHT"
-      },
-      {
-        "tick": 272,
-        "action": "RIGHT"
+        "action": "NOOP"
       },
       {
         "tick": 276,
-        "action": "RIGHTFIRE"
+        "action": "LEFT"
       },
       {
         "tick": 280,
@@ -2865,19 +809,15 @@
       },
       {
         "tick": 284,
-        "action": "LEFTFIRE"
+        "action": "FIRE"
       },
       {
         "tick": 288,
-        "action": "LEFTFIRE"
-      },
-      {
-        "tick": 292,
-        "action": "LEFTFIRE"
+        "action": "RIGHTFIRE"
       },
       {
         "tick": 296,
-        "action": "LEFTFIRE"
+        "action": "NOOP"
       }
     ],
     "variants": [
@@ -2911,127 +851,71 @@
     "requests": [
       {
         "tick": 0,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 4,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 8,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_LEFT+MOVE_BACKWARD"
       },
       {
         "tick": 12,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 16,
         "action": "MOVE_FORWARD+ATTACK"
       },
       {
-        "tick": 20,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
         "tick": 24,
-        "action": "TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 28,
         "action": "MOVE_FORWARD+ATTACK"
       },
       {
-        "tick": 32,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
         "tick": 36,
         "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
-        "tick": 40,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 44,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 48,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 52,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+TURN_RIGHT+ATTACK"
-      },
-      {
         "tick": 56,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
       },
       {
         "tick": 60,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_RIGHT"
       },
       {
         "tick": 64,
-        "action": "MOVE_FORWARD+TURN_RIGHT+ATTACK"
-      },
-      {
-        "tick": 68,
-        "action": "MOVE_FORWARD"
-      },
-      {
-        "tick": 72,
         "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
+        "tick": 68,
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
         "tick": 76,
-        "action": "MOVE_FORWARD+TURN_RIGHT+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 80,
-        "action": "MOVE_FORWARD+TURN_RIGHT+ATTACK"
-      },
-      {
-        "tick": 84,
         "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 88,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 92,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
       },
       {
         "tick": 96,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+        "action": "MOVE_FORWARD"
       },
       {
         "tick": 100,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD"
       },
       {
         "tick": 104,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+        "action": "MOVE_FORWARD"
       },
       {
         "tick": 108,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
-      },
-      {
-        "tick": 112,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
-      },
-      {
-        "tick": 116,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_LEFT"
       },
       {
         "tick": 120,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_LEFT+ATTACK"
       },
       {
         "tick": 124,
@@ -3039,19 +923,43 @@
       },
       {
         "tick": 128,
-        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_LEFT+ATTACK"
       },
       {
         "tick": 132,
-        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 136,
-        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_RIGHT"
       },
       {
         "tick": 140,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+      },
+      {
+        "tick": 144,
+        "action": "TURN_LEFT+MOVE_FORWARD"
+      },
+      {
+        "tick": 148,
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 152,
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 156,
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 160,
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 180,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       }
     ],
     "variants": [
@@ -3085,127 +993,71 @@
     "requests": [
       {
         "tick": 0,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 4,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 8,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_LEFT+MOVE_BACKWARD"
       },
       {
         "tick": 12,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 16,
         "action": "MOVE_FORWARD+ATTACK"
       },
       {
-        "tick": 20,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
         "tick": 24,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 28,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
-      },
-      {
-        "tick": 32,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
-      },
-      {
-        "tick": 36,
         "action": "MOVE_FORWARD+ATTACK"
       },
       {
-        "tick": 40,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 44,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 48,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 52,
+        "tick": 32,
         "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 56,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 60,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
       },
       {
         "tick": 64,
-        "action": "MOVE_FORWARD+TURN_RIGHT+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 68,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 72,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 76,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 80,
-        "action": "MOVE_FORWARD+TURN_RIGHT+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 84,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "MOVE_FORWARD"
       },
       {
         "tick": 88,
         "action": "MOVE_FORWARD+ATTACK"
       },
       {
-        "tick": 92,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
-      },
-      {
         "tick": 96,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD"
       },
       {
         "tick": 100,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
-      },
-      {
-        "tick": 104,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+        "action": "MOVE_FORWARD"
       },
       {
         "tick": 108,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
-      },
-      {
-        "tick": 112,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
-      },
-      {
-        "tick": 116,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_LEFT"
       },
       {
         "tick": 120,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_LEFT+ATTACK"
       },
       {
         "tick": 124,
@@ -3213,27 +1065,27 @@
       },
       {
         "tick": 128,
-        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD"
       },
       {
         "tick": 132,
-        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 136,
-        "action": "MOVE_FORWARD+MOVE_LEFT+TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_RIGHT"
       },
       {
         "tick": 140,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+TURN_LEFT"
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 144,
-        "action": "MOVE_FORWARD+TURN_LEFT"
+        "action": "TURN_LEFT+MOVE_FORWARD"
       },
       {
         "tick": 148,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 152,
@@ -3241,23 +1093,19 @@
       },
       {
         "tick": 156,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+TURN_LEFT+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 160,
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 180,
         "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
-        "tick": 164,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 168,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 172,
-        "action": "MOVE_RIGHT"
+        "tick": 184,
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
       }
     ],
     "variants": [
@@ -3291,95 +1139,119 @@
     "requests": [
       {
         "tick": 0,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 4,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 8,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_LEFT+MOVE_BACKWARD"
       },
       {
         "tick": 12,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 16,
         "action": "MOVE_FORWARD+ATTACK"
       },
       {
-        "tick": 20,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
         "tick": 24,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 28,
         "action": "MOVE_FORWARD+ATTACK"
       },
       {
-        "tick": 32,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
         "tick": 36,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 40,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 44,
         "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 48,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
-      },
-      {
-        "tick": 52,
-        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
       },
       {
         "tick": 56,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
       },
       {
         "tick": 60,
-        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 64,
-        "action": "MOVE_FORWARD+MOVE_LEFT+MOVE_RIGHT+ATTACK"
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 68,
-        "action": "MOVE_FORWARD+ATTACK"
-      },
-      {
-        "tick": 72,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       },
       {
         "tick": 76,
-        "action": "MOVE_FORWARD+ATTACK"
+        "action": "TURN_RIGHT+MOVE_FORWARD+ATTACK"
       },
       {
         "tick": 80,
         "action": "MOVE_FORWARD+ATTACK"
       },
       {
-        "tick": 84,
-        "action": "MOVE_FORWARD+ATTACK"
+        "tick": 92,
+        "action": "TURN_LEFT+MOVE_FORWARD"
       },
       {
-        "tick": 88,
-        "action": "MOVE_FORWARD+ATTACK"
+        "tick": 96,
+        "action": "MOVE_FORWARD"
+      },
+      {
+        "tick": 104,
+        "action": "MOVE_FORWARD+MOVE_LEFT"
+      },
+      {
+        "tick": 112,
+        "action": "TURN_RIGHT+MOVE_FORWARD+MOVE_LEFT"
+      },
+      {
+        "tick": 116,
+        "action": "MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 124,
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_LEFT+ATTACK"
+      },
+      {
+        "tick": 128,
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 132,
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 136,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
+      },
+      {
+        "tick": 140,
+        "action": "TURN_LEFT+MOVE_FORWARD"
+      },
+      {
+        "tick": 144,
+        "action": "TURN_LEFT+MOVE_FORWARD+ATTACK"
+      },
+      {
+        "tick": 148,
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 152,
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 156,
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 168,
+        "action": "TURN_LEFT+MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 172,
+        "action": "MOVE_FORWARD+MOVE_RIGHT"
+      },
+      {
+        "tick": 180,
+        "action": "MOVE_FORWARD+MOVE_RIGHT+ATTACK"
       }
     ],
     "variants": [

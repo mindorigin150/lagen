@@ -89,6 +89,7 @@ const initLatencyCarousel = () => {
     MOVE_LEFT: ['move-left'],
     MOVE_RIGHT: ['move-right'],
     MOVE_FORWARD: ['move-forward'],
+    MOVE_BACKWARD: [],
     TURN_LEFT: ['turn-left'],
     TURN_RIGHT: ['turn-right'],
     ATTACK: ['fire'],
